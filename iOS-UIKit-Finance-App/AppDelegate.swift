@@ -10,18 +10,38 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    
 
     // Reference ViewController from AppDelegate
     var window: UIWindow?
+    
+    let onboardingContainerViewController = OnboardingContainerViewController()
+    let viewController = ViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .orange
+        window?.backgroundColor = .systemBackground
+        
+        onboardingContainerViewController.delegate = self
+        
         window?.rootViewController = ViewController()
         
+        if LocalState.hasOnboarded  {
+            prepMainView()
+            setRootViewController(viewController)
+        } else {
+            setRootViewController(onboardingContainerViewController)
+        }
+        
         return true
+    }
+    
+    private func prepMainView() {
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = .darkGray
     }
     
    
@@ -71,5 +91,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: OnboardingContainerViewControllerDelegate {
+    
+    // Sets a given UIViewController onto the viewController with a smooth transition
+    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            return
+        }
+        
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: nil, completion: nil)
+    }
+    
+    // Onboarding delegate
+    func didFinishOnboarding() {
+        LocalState.hasOnboarded = true
+        prepMainView()
+        setRootViewController(viewController)
+    }
 }
 
