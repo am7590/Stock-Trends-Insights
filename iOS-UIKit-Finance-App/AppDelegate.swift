@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let onboardingContainerViewController = OnboardingContainerViewController()
     let viewController = ViewController()
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -27,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         onboardingContainerViewController.delegate = self
         
-        window?.rootViewController = ViewController()
+        window?.rootViewController = viewController
+        
+        LocalState.hasOnboarded = false
         
         if LocalState.hasOnboarded  {
             prepMainView()

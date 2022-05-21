@@ -10,6 +10,11 @@
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
+		292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D8283981E900460F81 /* RequestWatchlistViewController.swift */; };
+		292317DC28398E3A00460F81 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317DB28398E3A00460F81 /* APIService.swift */; };
+		292317DF28398E6500460F81 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317DE28398E6500460F81 /* SearchResults.swift */; };
+		292317E22839913E00460F81 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E02839913E00460F81 /* Stock+CoreDataClass.swift */; };
+		292317E32839913E00460F81 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E12839913E00460F81 /* Stock+CoreDataProperties.swift */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
 		29954FC4283971430086949E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* ViewController.swift */; };
 		29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */; };
@@ -21,6 +26,11 @@
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		292317D8283981E900460F81 /* RequestWatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWatchlistViewController.swift; sourceTree = "<group>"; };
+		292317DB28398E3A00460F81 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		292317DE28398E6500460F81 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		292317E02839913E00460F81 /* Stock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataClass.swift"; sourceTree = "<group>"; };
+		292317E12839913E00460F81 /* Stock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29954FBF283971430086949E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29954FC3283971430086949E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +56,7 @@
 			children = (
 				292317D128397DD300460F81 /* OnboardingContainerViewController.swift */,
 				292317D328397DEE00460F81 /* OnboardingViewController.swift */,
+				292317D8283981E900460F81 /* RequestWatchlistViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -58,9 +69,27 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		292317DA28398E1200460F81 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				292317DB28398E3A00460F81 /* APIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		292317DD28398E5200460F81 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				292317DE28398E6500460F81 /* SearchResults.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		29954FB3283971430086949E = {
 			isa = PBXGroup;
 			children = (
+				292317E02839913E00460F81 /* Stock+CoreDataClass.swift */,
+				292317E12839913E00460F81 /* Stock+CoreDataProperties.swift */,
 				29954FBE283971430086949E /* iOS-UIKit-Finance-App */,
 				29954FBD283971430086949E /* Products */,
 			);
@@ -77,6 +106,8 @@
 		29954FBE283971430086949E /* iOS-UIKit-Finance-App */ = {
 			isa = PBXGroup;
 			children = (
+				292317DD28398E5200460F81 /* Model */,
+				292317DA28398E1200460F81 /* Service */,
 				292317D528397F1400460F81 /* Utilities */,
 				292317D028397D5600460F81 /* Onboarding */,
 				29954FBF283971430086949E /* AppDelegate.swift */,
@@ -159,11 +190,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292317E22839913E00460F81 /* Stock+CoreDataClass.swift in Sources */,
 				29954FC4283971430086949E /* ViewController.swift in Sources */,
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
+				292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */,
+				292317E32839913E00460F81 /* Stock+CoreDataProperties.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
+				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
+				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
 				292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
