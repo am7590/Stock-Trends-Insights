@@ -16,6 +16,7 @@
 		292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */; };
 		292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */; };
 		2942A6F5283ABEED008DC092 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2942A6F4283ABEED008DC092 /* Charts */; };
+		2942A6F7283AC218008DC092 /* NewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942A6F6283AC218008DC092 /* NewsData.swift */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
 		29954FC4283971430086949E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* FirstViewController.swift */; };
 		29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 		292317DE28398E6500460F81 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataClass.swift"; sourceTree = "<group>"; };
 		292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2942A6F6283AC218008DC092 /* NewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsData.swift; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29954FBF283971430086949E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29954FC3283971430086949E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				292317DE28398E6500460F81 /* SearchResults.swift */,
+				2942A6F6283AC218008DC092 /* NewsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */,
 				29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */,
 				29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */,
+				2942A6F7283AC218008DC092 /* NewsData.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
