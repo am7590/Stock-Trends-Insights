@@ -16,10 +16,11 @@
 		292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */; };
 		292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
-		29954FC4283971430086949E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* ViewController.swift */; };
+		29954FC4283971430086949E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* FirstViewController.swift */; };
 		29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */; };
 		29954FCC283971440086949E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29954FCB283971440086949E /* Assets.xcassets */; };
 		29954FCF283971440086949E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29954FCD283971440086949E /* LaunchScreen.storyboard */; };
+		29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF093A283AB3EA004FBB29 /* UIViewController+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +34,12 @@
 		292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29954FBF283971430086949E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29954FC3283971430086949E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29954FC3283971430086949E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		29954FC9283971430086949E /* iOS_UIKit_Finance_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOS_UIKit_Finance_App.xcdatamodel; sourceTree = "<group>"; };
 		29954FCB283971440086949E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29954FCE283971440086949E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29954FD0283971440086949E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29BF093A283AB3EA004FBB29 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				292317D628397F2600460F81 /* LocalState.swift */,
+				29BF093A283AB3EA004FBB29 /* UIViewController+Utils.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -111,7 +114,7 @@
 				292317D528397F1400460F81 /* Utilities */,
 				292317D028397D5600460F81 /* Onboarding */,
 				29954FBF283971430086949E /* AppDelegate.swift */,
-				29954FC3283971430086949E /* ViewController.swift */,
+				29954FC3283971430086949E /* FirstViewController.swift */,
 				29954FCB283971440086949E /* Assets.xcassets */,
 				29954FCD283971440086949E /* LaunchScreen.storyboard */,
 				29954FD0283971440086949E /* Info.plist */,
@@ -191,13 +194,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */,
-				29954FC4283971430086949E /* ViewController.swift in Sources */,
+				29954FC4283971430086949E /* FirstViewController.swift in Sources */,
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
 				292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
+				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
 				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
 				292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */,
@@ -269,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -324,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
