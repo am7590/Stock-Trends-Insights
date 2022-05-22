@@ -7,8 +7,11 @@
 
 import Foundation
 import Combine
- 
+import UIKit
+import CoreData
+
 struct APIService {
+    
     
     // Custom error
     enum APIServiceError: Error {
@@ -51,6 +54,7 @@ struct APIService {
         let urlString = "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=\(symbol)&apikey=\(API_KEY)"
         
         let urlResult = parseURL(urlString: urlString)
+        print(urlResult)
         
         switch urlResult {
         case .success(let url):
@@ -61,7 +65,9 @@ struct APIService {
                 .receive(on: RunLoop.main)
                 .eraseToAnyPublisher()
         case .failure(let error):
+            print("failed to get data")
             return Fail(error: error).eraseToAnyPublisher()
+            
         }
         
         

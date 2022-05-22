@@ -17,6 +17,10 @@ class RequestWatchlistViewController: UIViewController {
         case search
     }
     
+    lazy var coreDataContext: NSManagedObjectContext = {
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    }() as! NSManagedObjectContext
+    
     // Stock search
     @Published private var searchQueryTextOccupied = false
     @Published private var mode: Mode = .selected
@@ -26,7 +30,6 @@ class RequestWatchlistViewController: UIViewController {
     private var subscribers = Set<AnyCancellable>()
     var loading = true
     var notSearchingQuery = false
-    
     
     let label = UILabel()
     let tableView = UITableView()
@@ -39,7 +42,7 @@ class RequestWatchlistViewController: UIViewController {
         sc.obscuresBackgroundDuringPresentation = false
         sc.searchBar.placeholder = "Search to add another stock"
         sc.searchBar.autocapitalizationType = .allCharacters
-        sc.searchBar.scopeButtonTitles = ["Securities"]
+        //sc.searchBar.scopeButtonTitles = ["Securities"]
         return sc
     }()
     
@@ -64,32 +67,33 @@ class RequestWatchlistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        observeForm()
         fetchSecurities()
         style()
         layout()
-        observeForm()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
     }
     
     // MARK: CoreData
-    // Reference to Core Data managed object context
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
     // Second table view
-    @Published private var orignalSearchQuery = ["TSLA", "GME"]
+    @Published private var orignalSearchQuery = []
     
     @Published private var listOfSecurities:[Stock]?
     
     
     func addDummyStockData() {
         // Add TSLA as starter data
-        let stock = NSEntityDescription.insertNewObject(forEntityName: "Stock", into: context) as! Stock
+        let stock = NSEntityDescription.insertNewObject(forEntityName: "Stock", into: coreDataContext) as! Stock
         stock.name = "TSLA"
     }
     
     func fetchSecurities() {
         do {
-            self.listOfSecurities = try context.fetch(Stock.fetchRequest())  // Get all items
+            self.listOfSecurities = try coreDataContext.fetch(Stock.fetchRequest())  // Get all items
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -169,14 +173,21 @@ extension RequestWatchlistViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .systemGreen
-        tableView.rowHeight = 25
+        tableView.rowHeight = 35
         
 
     }
     
     private func layout() {
         stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(searchController.searchBar)
+        
+        let searchBarPlaceholderView = UIView()
+        searchBarPlaceholderView.addSubview(searchController.searchBar)
+        searchBarPlaceholderView.translatesAutoresizingMaskIntoConstraints = false
+        searchBarPlaceholderView.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        stackView.addArrangedSubview(searchBarPlaceholderView)
+        
+        
         stackView.addArrangedSubview(tableView)
         
         
@@ -225,8 +236,8 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
             }
         
         } else {
-            let security = self.listOfSecurities![indexPath.row]
-            cell.textLabel?.text = security.name
+            let security = orignalSearchQuery[indexPath.row]
+            cell.textLabel?.text = security
             cell.detailTextLabel?.text = ""
             
         }
@@ -245,15 +256,16 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
             
             // Save to core data
             do {
-                let newStock = Stock(context: self.context)
+                let newStock = Stock(context: self.coreDataContext)
                 newStock.name = symbol.uppercased()
-                try self.context.save()
+                try self.coreDataContext.save()
             } catch {
                 // Error
             }
-           
+
             // Re-fetch data
-            self.fetchSecurities()
+            //self.fetchSecurities()
+            self.tableView.reloadData()
             
         }
         
@@ -265,6 +277,18 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
     // Called when the user types on the table view cell
     private func handleSelection(for symbol: String, searchResult: SearchResult) {
         
+        if mode == .search {
+            print("selected")
+            
+            
+            
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            searchController.isActive = false
+        }
+        
         // Loading animation
         // showLoadingAnimation()
         
@@ -273,6 +297,8 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
 
 extension RequestWatchlistViewController: UISearchResultsUpdating, UISearchControllerDelegate{
     func updateSearchResults(for searchController: UISearchController) {
+        
+        
         searchQueryTextOccupied = searchController.searchBar.text == ""
         // let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonImage]
         
@@ -288,6 +314,8 @@ extension RequestWatchlistViewController: UISearchResultsUpdating, UISearchContr
         self.searchQuery = searchQuery
         tableView.reloadData()
     }
+    
+    
 }
 
 
