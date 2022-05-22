@@ -15,12 +15,19 @@
 		292317DF28398E6500460F81 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317DE28398E6500460F81 /* SearchResults.swift */; };
 		292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */; };
 		292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */; };
+		2942A6F5283ABEED008DC092 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2942A6F4283ABEED008DC092 /* Charts */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
 		29954FC4283971430086949E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* FirstViewController.swift */; };
 		29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */; };
 		29954FCC283971440086949E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29954FCB283971440086949E /* Assets.xcassets */; };
 		29954FCF283971440086949E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29954FCD283971440086949E /* LaunchScreen.storyboard */; };
 		29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF093A283AB3EA004FBB29 /* UIViewController+Utils.swift */; };
+		29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF093D283AB67F004FBB29 /* HomeViewController.swift */; };
+		29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF093F283AB699004FBB29 /* NewsViewController.swift */; };
+		29BF0942283AB6A6004FBB29 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */; };
+		29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */; };
+		29BF0946283ABA88004FBB29 /* APIStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0945283ABA88004FBB29 /* APIStruct.swift */; };
+		29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0947283ABAA6004FBB29 /* APIParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,12 @@
 		29954FCE283971440086949E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29954FD0283971440086949E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29BF093A283AB3EA004FBB29 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		29BF093D283AB67F004FBB29 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		29BF093F283AB699004FBB29 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
+		29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalDataViewController.swift; sourceTree = "<group>"; };
+		29BF0945283ABA88004FBB29 /* APIStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStruct.swift; sourceTree = "<group>"; };
+		29BF0947283ABAA6004FBB29 /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2942A6F5283ABEED008DC092 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				292317DB28398E3A00460F81 /* APIService.swift */,
+				29BF0945283ABA88004FBB29 /* APIStruct.swift */,
+				29BF0947283ABAA6004FBB29 /* APIParser.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -113,6 +129,7 @@
 				292317DA28398E1200460F81 /* Service */,
 				292317D528397F1400460F81 /* Utilities */,
 				292317D028397D5600460F81 /* Onboarding */,
+				29BF093C283AB653004FBB29 /* Main Views */,
 				29954FBF283971430086949E /* AppDelegate.swift */,
 				29954FC3283971430086949E /* FirstViewController.swift */,
 				29954FCB283971440086949E /* Assets.xcassets */,
@@ -121,6 +138,17 @@
 				29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */,
 			);
 			path = "iOS-UIKit-Finance-App";
+			sourceTree = "<group>";
+		};
+		29BF093C283AB653004FBB29 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				29BF093D283AB67F004FBB29 /* HomeViewController.swift */,
+				29BF093F283AB699004FBB29 /* NewsViewController.swift */,
+				29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */,
+				29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */,
+			);
+			path = "Main Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +167,9 @@
 			dependencies = (
 			);
 			name = "iOS-UIKit-Finance-App";
+			packageProductDependencies = (
+				2942A6F4283ABEED008DC092 /* Charts */,
+			);
 			productName = "iOS-UIKit-Finance-App";
 			productReference = 29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 29954FB3283971430086949E;
+			packageReferences = (
+				2942A6F3283ABEED008DC092 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 29954FBD283971430086949E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -199,11 +233,17 @@
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
 				292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */,
+				29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */,
+				29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
 				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
+				29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */,
+				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
+				29BF0946283ABA88004FBB29 /* APIStruct.swift in Sources */,
+				29BF0942283AB6A6004FBB29 /* SocialMediaViewController.swift in Sources */,
 				292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +454,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2942A6F3283ABEED008DC092 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2942A6F4283ABEED008DC092 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2942A6F3283ABEED008DC092 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */ = {

@@ -20,7 +20,7 @@ class FirstViewController: UITabBarController {
         let homeViewController = HomeViewController()
         let newsViewController = NewsViewController()
         let socialMediaViewController = SocialMediaViewController()
-        let fundamentalDataViewController = FundamantalDataViewController()
+        let fundamentalDataViewController = FundamentalDataViewController()
         
         homeViewController.setTabBarImage(imageName: "house", title: "Home")
         newsViewController.setTabBarImage(imageName: "newspaper", title: "News")
@@ -40,33 +40,11 @@ class FirstViewController: UITabBarController {
         tabBar.tintColor = .systemGreen
         tabBar.isTranslucent = false
     }
-    
-
-
-    
-    
 }
 
-class HomeViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemTeal
-    }
-}
 
-class NewsViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemCyan
-    }
-}
 
-class SocialMediaViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemBlue
-    }
-}
 
-class FundamantalDataViewController: UIViewController {
-    override func viewDidLoad() {
-        view.backgroundColor = .systemPurple
-    }
-}
+
+
+
