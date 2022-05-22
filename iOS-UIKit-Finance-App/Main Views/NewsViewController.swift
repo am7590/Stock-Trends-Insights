@@ -44,13 +44,16 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         size.width = UIScreen.main.bounds.width
         header.frame.size = size
         
+        
         tableView.tableHeaderView = header
+        
     }
     
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupBarChart()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,9 +68,11 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         
         tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseID)
         tableView.rowHeight = NewsCell.rowHeight
-        
+        tableView.clipsToBounds = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
+        
+        
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -87,8 +92,7 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
         barChart.invalidateIntrinsicContentSize()
         //barChart.center = view.center
-        view.addSubview(barChart)
-        
+        //view.addSubview(barChart)
         
 
     }
@@ -157,10 +161,9 @@ extension NewsViewController {
             
             
             // Reload tableview
-//            DispatchQueue.main.async {
-//                //self.tableView.reloadData()
-//                self.loadChartData()
-//            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
             
             
         }).resume()
@@ -210,12 +213,41 @@ extension NewsViewController {
 }
 
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 300
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        if loading {
+            return 0
+        } else {
+            return newsArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+        cell.selectionStyle = .none
+        
+        if loading {
+            cell.textLabel?.text = "Loading news..."
+        } else {
+            
+            
+            let news = newsArray[indexPath.row]
+            //cell.configure(with: news)
+            // print(news)
+            
+            // News data points: Ticker, Date, Time, Title, Source, Link
+            
+            
+            cell.textLabel?.text = news[0] + "       " + news[3]
+            cell.detailTextLabel?.text = news[2] + " " + news[1] + " " + news[4]
+            //cell.detailTextLabel?.text = news.
+        }
+        
+        return cell
+        
     }
     
     
@@ -225,4 +257,8 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
 class NewsCell: UITableViewCell {
     static let reuseID = "NewsCell"
     static let rowHeight: CGFloat = 112
+    
+    func configure(with news: [String]) {
+        
+    }
 }
