@@ -16,6 +16,7 @@ class FirstViewController: UITabBarController {
     }
     
     private func setupViews() {
+        view.backgroundColor = .systemBackground
         
         let homeViewController = HomeViewController()
         let newsViewController = NewsViewController()

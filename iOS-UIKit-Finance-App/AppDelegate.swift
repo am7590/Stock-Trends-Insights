@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func prepMainView() {
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().backgroundColor = .darkGray
+        UINavigationBar.appearance().backgroundColor = .systemBackground
     }
     
    

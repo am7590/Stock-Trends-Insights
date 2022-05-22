@@ -19,15 +19,32 @@ class NewsViewController: UIViewController, ChartViewDelegate {
     var dataEntries: [BarChartDataEntry] = []
     var parser = APIParser()
     var newsArray = [[String]]()
+    var newsDataNotLoaded = true
     var loading = true
+    let array = ["News", "Array"]
     
     // Chart
     var barChart = BarChartView()
+    let tableView = UITableView()
     
     override func viewDidLoad() {
         // view.backgroundColor = .systemCyan
-        fetchSecurities()
-        setupBarChart()
+        setupHeader()
+        // fetchSecurities()
+        //setupBarChart()
+        setupTableView()
+   
+    }
+    
+    func setupHeader() {
+        let header = barChart //AccountSummaryHeaderView(frame: .zero)
+        
+        // Layout header is smallest size possible, keep width size of screen
+        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        header.frame.size = size
+        
+        tableView.tableHeaderView = header
     }
     
 
@@ -37,19 +54,42 @@ class NewsViewController: UIViewController, ChartViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchSecurities()
+        if newsDataNotLoaded {
+            fetchSecurities()
+        }
     }
 
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseID)
+        tableView.rowHeight = NewsCell.rowHeight
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+    }
+    
 
     // MARK: Populate Charts
     func setupBarChart() {
-        barChart.delegate = self
         
-        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
-        barChart.center = view.center
-        view.addSubview(barChart)
-        // chartDataSet.colors = ChartColorTemplates.colorful()
+        barChart.delegate = self
 
+        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
+        barChart.invalidateIntrinsicContentSize()
+        //barChart.center = view.center
+        view.addSubview(barChart)
+        
+        
 
     }
 
@@ -60,7 +100,7 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         print("zzz: \(chartDataSet)")
         chartDataSet.colors = ChartColorTemplates.colorful()
 
-        barChart.data = chartData
+       barChart.data = chartData
     }
 
     // MARK: Get stock data from CoreData
@@ -72,6 +112,8 @@ class NewsViewController: UIViewController, ChartViewDelegate {
                 getNews(ticker: item.name ?? "")
                 getSentiment(ticker: item.name ?? "")
             }
+            newsDataNotLoaded = false
+            
         } catch {
             
         }
@@ -115,10 +157,10 @@ extension NewsViewController {
             
             
             // Reload tableview
-            DispatchQueue.main.async {
-                //self.tableView.reloadData()
-                self.loadChartData()
-            }
+//            DispatchQueue.main.async {
+//                //self.tableView.reloadData()
+//                self.loadChartData()
+//            }
             
             
         }).resume()
@@ -153,6 +195,10 @@ extension NewsViewController {
                     }
                     
                     print("iii: \(self.sentimentArray)")
+                    DispatchQueue.main.async {
+                        self.loadChartData()
+                    }
+                    
                     
                 } catch {
                     print("Error parsing JSON")
@@ -161,4 +207,22 @@ extension NewsViewController {
             
         }).resume()
     }
+}
+
+extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
+
+
+class NewsCell: UITableViewCell {
+    static let reuseID = "NewsCell"
+    static let rowHeight: CGFloat = 112
 }
