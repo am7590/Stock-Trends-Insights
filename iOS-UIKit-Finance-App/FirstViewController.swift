@@ -11,12 +11,24 @@ class FirstViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTopColor()
         setupViews()
         setupTabBar()
+   
+    }
+    
+    private func setTopColor() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .systemGreen
+        
+        UINavigationBar.appearance().standardAppearance = appearance // for scrolling bg color
+        UINavigationBar.appearance().compactAppearance = appearance // not sure why it's here, but u can remove it and still works
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance // for large title bg color
+        
     }
     
     private func setupViews() {
-        view.backgroundColor = .systemBackground
+        //view.backgroundColor = .systemGreen
         
         let homeViewController = HomeViewController()
         let newsViewController = NewsViewController()
