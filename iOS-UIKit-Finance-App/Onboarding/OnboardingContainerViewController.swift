@@ -32,7 +32,7 @@ class OnboardingContainerViewController: UIViewController {
         let page2 = OnboardingViewController(heroImageName: "placeholder", titleText: "Splash screen 2")
         let page3 = OnboardingViewController(heroImageName: "placeholder", titleText: "Splash screen 3")
         let page4 = RequestWatchlistViewController(titleText: "Enter your watchlist below:")
-        
+                
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
@@ -55,6 +55,8 @@ class OnboardingContainerViewController: UIViewController {
         layout()
     }
     
+    
+    
     private func setup() {
         view.backgroundColor = .systemGreen
         
@@ -65,6 +67,7 @@ class OnboardingContainerViewController: UIViewController {
         
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
@@ -78,6 +81,8 @@ class OnboardingContainerViewController: UIViewController {
     }
     
     private func style() {
+        pageViewController
+        
         // closeButton
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.setTitle("Close", for: [])

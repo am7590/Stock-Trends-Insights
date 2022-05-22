@@ -30,10 +30,14 @@ class RequestWatchlistViewController: UIViewController {
     private var subscribers = Set<AnyCancellable>()
     var loading = true
     var notSearchingQuery = false
+    var canceledSearchController = false
+    weak var delegate: OnboardingContainerViewControllerDelegate?
+    
     
     let label = UILabel()
     let tableView = UITableView()
     let stackView = UIStackView()
+    let doneButton = UIButton(type: .system)
    
     private lazy var searchController: UISearchController = {
         let sc = UISearchController(searchResultsController: nil)
@@ -43,14 +47,9 @@ class RequestWatchlistViewController: UIViewController {
         sc.searchBar.placeholder = "Search to add another stock"
         sc.searchBar.autocapitalizationType = .allCharacters
         //sc.searchBar.scopeButtonTitles = ["Securities"]
+//        sc.searchBar.barTintColor = .systemGreen
         return sc
     }()
-    
-    let games = [
-            "Pacman",
-            "Space Invaders",
-            "Space Patrol",
-        ]
     
     private let titleText: String
     
@@ -67,6 +66,7 @@ class RequestWatchlistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         observeForm()
         fetchSecurities()
@@ -80,16 +80,10 @@ class RequestWatchlistViewController: UIViewController {
     // MARK: CoreData
     
     // Second table view
-    @Published private var orignalSearchQuery = []
+    @Published private var orignalSearchQuery: [Stock]?
     
     @Published private var listOfSecurities:[Stock]?
     
-    
-    func addDummyStockData() {
-        // Add TSLA as starter data
-        let stock = NSEntityDescription.insertNewObject(forEntityName: "Stock", into: coreDataContext) as! Stock
-        stock.name = "TSLA"
-    }
     
     func fetchSecurities() {
         do {
@@ -172,9 +166,19 @@ extension RequestWatchlistViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .systemGreen
+//        tableView.backgroundColor = .systemGreen
         tableView.rowHeight = 35
         
+        // doneButton
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.backgroundColor = .systemGreen
+        doneButton.layer.cornerRadius = 5
+        doneButton.layer.borderWidth = 1
+        doneButton.layer.borderColor = CGColor(red: 0, green: 1, blue: 0, alpha: 0)
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.tintColor = .secondarySystemBackground
+        doneButton.addTarget(self, action: #selector(doneButtonAction), for: .primaryActionTriggered)
+        doneButton.isUserInteractionEnabled = true
 
     }
     
@@ -186,19 +190,32 @@ extension RequestWatchlistViewController {
         searchBarPlaceholderView.translatesAutoresizingMaskIntoConstraints = false
         searchBarPlaceholderView.heightAnchor.constraint(equalToConstant: 56).isActive = true
         stackView.addArrangedSubview(searchBarPlaceholderView)
-        
-        
+
         stackView.addArrangedSubview(tableView)
+        stackView.addArrangedSubview(doneButton)
         
         
         view.addSubview(stackView)
                 
+        
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 4),
-            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 5),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
         ])
+//
+//        NSLayoutConstraint.activate([
+//            stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 4),
+//            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+//            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+//            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+//        ])
+    }
+    
+    @objc func doneButtonAction(sender: UIButton!) {
+        delegate?.didFinishOnboarding()
+        print("pressed")
     }
     
 }
@@ -219,25 +236,41 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        cell.backgroundColor = .systemGreen
         if let searchResults = self.searchResults {
-            
-            if searchController.isActive {
-                let searchResult = searchResults.items[indexPath.row]
-                if searchQueryTextOccupied { return cell}
+            if canceledSearchController {
                 
-                if notSearchingQuery {
-                    cell.textLabel?.text = searchResult.symbol
-                    cell.detailTextLabel?.text = searchResult.name
+                cell.textLabel?.text = listOfSecurities?[indexPath.row].name
+            }
+            if searchController.isActive {
+                if canceledSearchController {
+                    print("two")
+                    cell.textLabel?.text = listOfSecurities?[indexPath.row].name
+                    canceledSearchController = false
+                    
                 } else {
-                    cell.textLabel?.text = "searchResult.symbol"
-                    cell.detailTextLabel?.text = "searchResult.name"
+                    let searchResult = searchResults.items[indexPath.row]
+                    if searchQueryTextOccupied { return cell}
+                    
+                    if notSearchingQuery {
+                        print("\(searchResult.symbol) \(searchResult.name)")
+                        cell.textLabel?.text = searchResult.symbol
+                        //cell.detailTextLabel?.text = searchResult.name   //
+                    } else {
+                        cell.textLabel?.text = "searchResult.symbol"
+                        cell.detailTextLabel?.text = "searchResult.name"
+                    }
                 }
+                
             }
         
         } else {
-            let security = orignalSearchQuery[indexPath.row]
-            cell.textLabel?.text = security
+            fetchSecurities()
+            print(listOfSecurities)
+            let security = listOfSecurities?[indexPath.row]
+            cell.textLabel?.text = security?.name
             cell.detailTextLabel?.text = ""
             
         }
@@ -250,14 +283,21 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
         if let searchResults = self.searchResults {
             let searchResult = searchResults.items[indexPath.item]
             let symbol = searchResult.symbol
-            orignalSearchQuery.append(symbol)
-            print(orignalSearchQuery)
+            
+            
+            // MARK: didSelectRowat
+            
+            //print(orignalSearchQuery)
             handleSelection(for: symbol, searchResult: searchResult)
             
             // Save to core data
             do {
                 let newStock = Stock(context: self.coreDataContext)
                 newStock.name = symbol.uppercased()
+                
+                listOfSecurities?.append(newStock)
+                print("listOfSecurities: \(listOfSecurities)")
+                //orignalSearchQuery?.append(newStock)
                 try self.coreDataContext.save()
             } catch {
                 // Error
@@ -278,15 +318,16 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
     private func handleSelection(for symbol: String, searchResult: SearchResult) {
         
         if mode == .search {
-            print("selected")
             
             
             
             
+
+            searchController.isActive = false
+            self.canceledSearchController = true
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            searchController.isActive = false
         }
         
         // Loading animation
