@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = viewController
         
-        LocalState.hasOnboarded = false
+        // LocalState.hasOnboarded = false
         
         if LocalState.hasOnboarded  {
             prepMainView()
