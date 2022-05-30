@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 import UIKit
-import CoreData
 
 struct APIService {
     
@@ -82,6 +81,39 @@ struct APIService {
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
+    
+    func fetchAnalystRatings(ticker: String) { //
+        
+        let result = parseQuery(text: ticker)
+        var symbol = String()
+ 
+        switch result {
+        case.success(let query):
+            symbol = query
+        case.failure(let error):
+            print("failure")  //return  Fail(error: error).eraseToAnyPublisher()
+        }
+        
+        let urlString = "https://cloud.iexapis.com/stable/time-series/CORE_ESTIMATES/\(symbol)?token=pk_b8d39299974f41f99ef8f79101ab2617"
+        
+        print(urlString)
+        
+        let urlrequest = URLRequest(url: URL(string: urlString)!)
+        
+        
+        URLSession.shared.dataTask(with: urlrequest, completionHandler: { (data, response, error) in
+            if let data = data {
+                    print(data)
+            } else if let response = response {
+                print(response)
+            } else {
+                print(error)
+            }
+        }
+        )
+    }
+                                   
+                                   
     
     
     private func parseQuery(text: String) -> Result<String, Error> {

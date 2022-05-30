@@ -13,10 +13,15 @@ class HomeViewController: UIViewController {
     
     var tableView = UITableView()
     let homeHeader = HomeHeaderViewController()
+    let service = APICall()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+        //let url = URL(string: "https://cloud.iexapis.com/stable/time-series/CORE_ESTIMATES/TSLA?token=pk_b8d39299974f41f99ef8f79101ab2617")!
+        service.fetch()
+    
     }
     
     private func setup() {
