@@ -29,6 +29,8 @@
 		29BF0946283ABA88004FBB29 /* APIStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0945283ABA88004FBB29 /* APIStruct.swift */; };
 		29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0947283ABAA6004FBB29 /* APIParser.swift */; };
 		29D61D9928451B0D00E602D7 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D61D9828451B0D00E602D7 /* APICall.swift */; };
+		29D61D9B2845247900E602D7 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D61D9A2845247900E602D7 /* HomeModels.swift */; };
+		29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D61D9C284524CD00E602D7 /* URLSession+Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		29BF0945283ABA88004FBB29 /* APIStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStruct.swift; sourceTree = "<group>"; };
 		29BF0947283ABAA6004FBB29 /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 		29D61D9828451B0D00E602D7 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
+		29D61D9A2845247900E602D7 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		29D61D9C284524CD00E602D7 /* URLSession+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Request.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			children = (
 				292317D628397F2600460F81 /* LocalState.swift */,
 				29BF093A283AB3EA004FBB29 /* UIViewController+Utils.swift */,
+				29D61D9C284524CD00E602D7 /* URLSession+Request.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				292317DE28398E6500460F81 /* SearchResults.swift */,
+				29D61D9A2845247900E602D7 /* HomeModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +244,7 @@
 				292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */,
 				29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */,
 				29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */,
+				29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
@@ -246,6 +253,7 @@
 				29D61D9928451B0D00E602D7 /* APICall.swift in Sources */,
 				29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */,
 				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
+				29D61D9B2845247900E602D7 /* HomeModels.swift in Sources */,
 				29BF0946283ABA88004FBB29 /* APIStruct.swift in Sources */,
 				29BF0942283AB6A6004FBB29 /* SocialMediaViewController.swift in Sources */,
 				292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */,
