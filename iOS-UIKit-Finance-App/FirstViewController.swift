@@ -11,6 +11,7 @@ class FirstViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setTopColor()
         setupViews()
         setupTabBar()

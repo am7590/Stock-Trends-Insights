@@ -9,22 +9,46 @@ import UIKit
 
 class APICall {
     
-    private var models: [Codable] = []
     
     func fetch() {
+        // fetchAnalystRatings()
+        // fetchIntradayPrice()
+    }
+    
+    func fetchAnalystRatings(ticker: String, completion: @escaping (Result<[AnalystRecommendationsPriceTargets], Error>) -> Void) {
+                
         URLSession.shared.request(url: URLs.analystRecommendationsPriceTargets, expecting: [AnalystRecommendationsPriceTargets].self) {
-            [weak self] result in
+            result in
+            DispatchQueue.main.async {
                 switch result {
                 case .success(let success):
-                    DispatchQueue.main.async {
-                        self?.models = success
-                        print(self?.models)
-                    }
+                    completion(.success(success))
+                    // print(analyst)
+                    
                 case .failure(let error):
                     print(error)
+                    completion(.failure(error))
                 }
             }
+            
         }
+        
+    }
+    
+//    func fetchIntradayPrice() {
+//        URLSession.shared.requestL(url: URLs.fetchIntradayPrice, expecting: [[FetchIntradayPrice].self]) {
+//            [weak self] result in
+//                switch result {
+//                case .success(let success):
+//                    DispatchQueue.main.async {
+//                        self?.models = success
+//                        print(self?.modelList)
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//                }
+//            }
+//    }
 }
 
 

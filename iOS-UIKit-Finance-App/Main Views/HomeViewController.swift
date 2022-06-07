@@ -10,10 +10,16 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let cells = ["Analyst ratings", "Calendar", "Tap here to leave us an App Store Rating", "Leave feedback", "Terms of Service & Privacy Policy"]
+    lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    @Published private var listOfSecurities:[Stock]?
+    var analystDataNotLoaded = true
     
     var tableView = UITableView()
-    let homeHeader = HomeHeaderViewController()
     let service = APICall()
+    
+    let label = UILabel()
+    let label2 = UILabel()
+    let label3 = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +30,16 @@ class HomeViewController: UIViewController {
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if analystDataNotLoaded {
+            //fetchSecurities()
+            loadAnalystData()
+        }
+    }
+    
     private func setup() {
         setupTableView()
+        
     }
 
     
@@ -51,8 +65,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-               
+        
         let cell = UITableViewCell()
+        if indexPath.row >= 2 {
+            
+        } else {
+            //cell.backgroundColor = UIColor(red: 247.0/255, green: 247.0/255, blue: 247.0/255, alpha: 1.0)
+            cell.layer.cornerRadius = 25
+        }
+            
         cell.textLabel?.text = cells[indexPath.row]
         cell.textLabel?.textAlignment = .center
         return cell
@@ -70,16 +91,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-          // headerView.backgroundColor = .systemGreen
-//        let label = UILabel()
-//        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-//        label.text = "Notification Times"
-//        label.font = .systemFont(ofSize: 16)
-//        label.textColor = .yellow
-//
-//        headerView.addSubview(label)
+        
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label.text = "xxx"
+        label.font = .systemFont(ofSize: 16)
+        
+        label2.frame = CGRect.init(x: 5, y: 20, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label2.text = "xxx"
+        label2.font = .systemFont(ofSize: 16)
+        
+        label3.frame = CGRect.init(x: 5, y: 35, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label3.text = "xxx"
+        label3.font = .systemFont(ofSize: 16)
+
+        headerView.addSubview(label)
+        headerView.addSubview(label2)
+        headerView.addSubview(label3)
         
         return headerView
     }
@@ -88,11 +119,30 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 300
     }
 
-}
+    // MARK: Get stock data from CoreData
+    func fetchSecurities() {
+        do {
+            self.listOfSecurities = try context.fetch(Stock.fetchRequest()) // Get all items
+            
+        } catch {
+            
+        }
+    }
+    
+    private func loadAnalystData() {
+        service.fetchAnalystRatings(ticker: "TSLA", completion: { result in
+            switch result {
+            case .success(let ratings):
+                self.analystDataNotLoaded = false
+                self.label.text = "\(ratings[0].symbol)  \(ratings[0].consensusDate)"
+                self.label2.text = "\(ratings[0].analystCount) analaysts feel \(ratings[0].marketConsensus)"
+                self.label3.text = "Price target: \(ratings[0].marketConsensusTargetPrice)"
 
-class HomeHeaderViewController: UIViewController {
-    override func viewDidLoad() {
-        view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
     }
     
 }
+
