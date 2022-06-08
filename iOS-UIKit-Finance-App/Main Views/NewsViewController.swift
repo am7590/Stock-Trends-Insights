@@ -10,7 +10,6 @@ import CoreData
 import Charts
 
 class NewsViewController: UIViewController, ChartViewDelegate {
-    
 
     lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @Published private var listOfSecurities:[Stock]?

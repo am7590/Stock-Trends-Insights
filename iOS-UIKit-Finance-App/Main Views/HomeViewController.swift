@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         setup()
         
         //let url = URL(string: "https://cloud.iexapis.com/stable/time-series/CORE_ESTIMATES/TSLA?token=pk_b8d39299974f41f99ef8f79101ab2617")!
-        service.fetch()
+        //service.fetch()
     
     }
     
@@ -39,6 +39,7 @@ class HomeViewController: UIViewController {
     
     private func setup() {
         setupTableView()
+        setupTableViewHeader()
         
     }
 
@@ -56,6 +57,17 @@ class HomeViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    private func setupTableViewHeader() {
+//        let header = HomeViewHeaderViewController()  //AccountSummaryHeaderView(frame: .zero)
+        
+        // Layout header is smallest size possible, keep width size of screen
+        // var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        // size.width = UIScreen.main.bounds.width
+        // header.frame.size = size
+        
+//        tableView.tableHeaderView = header
     }
 }
 
@@ -94,30 +106,33 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        
-        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-        label.text = "xxx"
-        label.font = .systemFont(ofSize: 16)
-        
-        label2.frame = CGRect.init(x: 5, y: 20, width: headerView.frame.width-10, height: headerView.frame.height-10)
-        label2.text = "xxx"
-        label2.font = .systemFont(ofSize: 16)
-        
-        label3.frame = CGRect.init(x: 5, y: 35, width: headerView.frame.width-10, height: headerView.frame.height-10)
-        label3.text = "xxx"
-        label3.font = .systemFont(ofSize: 16)
-
-        headerView.addSubview(label)
-        headerView.addSubview(label2)
-        headerView.addSubview(label3)
-        
+//        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+//
+//        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+//        label.text = "xxx"
+//        label.font = .systemFont(ofSize: 16)
+//
+//        label2.frame = CGRect.init(x: 5, y: 20, width: headerView.frame.width-10, height: headerView.frame.height-10)
+//        label2.text = "xxx"
+//        label2.font = .systemFont(ofSize: 16)
+//
+//        label3.frame = CGRect.init(x: 5, y: 35, width: headerView.frame.width-10, height: headerView.frame.height-10)
+//        label3.text = "xxx"
+//        label3.font = .systemFont(ofSize: 16)
+//
+//        headerView.addSubview(label)
+//        headerView.addSubview(label2)
+//        headerView.addSubview(label3)
+        let headerView = HomeViewHeaderViewController()
         return headerView
     }
+//
+
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 300
+        return 144
     }
+    
 
     // MARK: Get stock data from CoreData
     func fetchSecurities() {
@@ -134,9 +149,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             switch result {
             case .success(let ratings):
                 self.analystDataNotLoaded = false
-                self.label.text = "\(ratings[0].symbol)  \(ratings[0].consensusDate)"
-                self.label2.text = "\(ratings[0].analystCount) analaysts feel \(ratings[0].marketConsensus)"
-                self.label3.text = "Price target: \(ratings[0].marketConsensusTargetPrice)"
+//                self.label.text = "\(ratings[0].symbol)  \(ratings[0].consensusDate)"
+//                self.label2.text = "\(ratings[0].analystCount) analaysts feel \(ratings[0].marketConsensus)"
+//                self.label3.text = "Price target: \(ratings[0].marketConsensusTargetPrice)"
 
             case .failure(let error):
                 print(error.localizedDescription)
