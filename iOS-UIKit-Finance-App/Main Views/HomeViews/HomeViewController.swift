@@ -76,9 +76,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
+        var cell = UITableViewCell()
         if indexPath.row >= 2 {
             
+        } else if indexPath.row == 1 {
+            cell = AnalystRatingsView(coder: NSCoder) ?? UITableViewCell()
         } else {
             //cell.backgroundColor = UIColor(red: 247.0/255, green: 247.0/255, blue: 247.0/255, alpha: 1.0)
             cell.layer.cornerRadius = 25
