@@ -36,5 +36,10 @@ extension HomeViewHeaderViewController {
         
         backgroundColor = .black
     }
+    
+    // pass in view model: (viewModel: ViewModel)
+    func configure() {
+        
+    }
 
 }

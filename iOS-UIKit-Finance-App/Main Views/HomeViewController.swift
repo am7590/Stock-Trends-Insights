@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     var analystDataNotLoaded = true
     
     var tableView = UITableView()
+    var headerView = HomeHeaderView(frame: .zero)
     let service = APICall()
     
     let label = UILabel()
@@ -39,8 +40,8 @@ class HomeViewController: UIViewController {
     
     private func setup() {
         setupTableView()
-        setupTableViewHeader()
-        
+        setupTableHeaderView()
+        self.configureTableHeaderView()
     }
 
     
@@ -59,15 +60,12 @@ class HomeViewController: UIViewController {
         ])
     }
     
-    private func setupTableViewHeader() {
-//        let header = HomeViewHeaderViewController()  //AccountSummaryHeaderView(frame: .zero)
+    private func setupTableHeaderView() {
+        var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        headerView.frame.size = size
         
-        // Layout header is smallest size possible, keep width size of screen
-        // var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        // size.width = UIScreen.main.bounds.width
-        // header.frame.size = size
-        
-//        tableView.tableHeaderView = header
+        tableView.tableHeaderView = headerView
     }
 }
 
@@ -103,31 +101,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
-//
-//        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
-//        label.text = "xxx"
-//        label.font = .systemFont(ofSize: 16)
-//
-//        label2.frame = CGRect.init(x: 5, y: 20, width: headerView.frame.width-10, height: headerView.frame.height-10)
-//        label2.text = "xxx"
-//        label2.font = .systemFont(ofSize: 16)
-//
-//        label3.frame = CGRect.init(x: 5, y: 35, width: headerView.frame.width-10, height: headerView.frame.height-10)
-//        label3.text = "xxx"
-//        label3.font = .systemFont(ofSize: 16)
-//
-//        headerView.addSubview(label)
-//        headerView.addSubview(label2)
-//        headerView.addSubview(label3)
-        let headerView = HomeViewHeaderViewController()
-        return headerView
-    }
-//
-
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 144
@@ -158,6 +131,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
         })
     }
+    // (with header: Header)
+    private func configureTableHeaderView() {
+        let vm = ViewModel(welcomeLabel: "Good Afternoon Alek", statusMessage1: "Your portfolio has done well this month.", statusMessage2: "You are down 0.5% this week,", statusMessage3: "and are up 1.4% today.")
+        headerView.configure(viewModel: vm)
+    }
+    
+//    private func configureTableCells(with accounts: [Account]) {
+//        accountCellViewModels = accounts.map {
+//            AccountSummaryCell.ViewModel(accountType: $0.type,
+//                                         accountName: $0.name,
+//                                         balance: $0.amount)
+//        }
+//    }
     
 }
 
