@@ -111,7 +111,7 @@ struct Dividends: Codable {
     let symbol: String?
     let id: String?
     let key: String?
-    let subkey: Int?
+    let subkey: String?
     // let date: Int64?
     let updated: Double?
 }

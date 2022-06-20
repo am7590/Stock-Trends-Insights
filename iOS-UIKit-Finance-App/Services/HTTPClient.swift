@@ -32,7 +32,7 @@ extension HTTPClient {
             case 200...299:
                 guard let decodedResponse = try?
                         JSONDecoder().decode(responseModel, from: data) else {
-                    print("Failed to decode")
+                            print("Failed to decode \(T.Type.self)")
                     return .failure(.decode)
                 }
                 return .success(decodedResponse)

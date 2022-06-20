@@ -153,45 +153,93 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
         
+        Task(priority: .background) {
+            let result = await service.getStats(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
+        Task(priority: .background) {
+            let result = await service.getNews(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
+        Task(priority: .background) {
+            let result = await service.getDividends(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
-//        service.fetchAnalystRatings(ticker: "TSLA", completion: { result in
-//            switch result {
-//            case .success(let ratings):
-//                self.analystDataNotLoaded = false
-////                self.label.text = "\(ratings[0].symbol)  \(ratings[0].consensusDate)"
-////                self.label2.text = "\(ratings[0].analystCount) analaysts feel \(ratings[0].marketConsensus)"
-////                self.label3.text = "Price target: \(ratings[0].marketConsensusTargetPrice)"
-//
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        })
+        Task(priority: .background) {
+            let result = await service.getInsitutionalOwnership(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
-//        service.fetchLogo(ticker: "TSLA", completion: { result in
-//            switch result {
-//            case .success(let logo):
-//                print(logo)
-//                // TODO: parse json
-//            
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        })
+        Task(priority: .background) {
+            let result = await service.getInsiderTransactions(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
+        Task(priority: .background) {
+            let result = await service.getCeoCompensation(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
-//        service.fetchCompanyInfo(ticker: "TSLA", completion: { result in
-//            switch result {
-//            case .success(let companyInfo):
-//                print(companyInfo)
-//                // TODO: parse json
-//
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        })
+        Task(priority: .background) {
+            let result = await service.getDividendsForcast(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         
+        Task(priority: .background) {
+            let result = await service.getAnalystRatings(stock: "AAPL")
+            switch result {
+            case .success(let response):
+                print(response)
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
     // (with header: Header)
