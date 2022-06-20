@@ -84,3 +84,34 @@ struct Stats: Codable {
     let day30ChangePercent: Double?
     let day5ChangePercent: Double?
 }
+
+struct News: Codable {
+    let datetime: Int?
+    let headline: String?
+    let source: String?
+    let url: String?
+    let summary: String?
+    let related: String?
+    let image: String?
+    let lang: String?
+    let hasPaywall: Bool?
+}
+
+struct Dividends: Codable {
+    let amount: Double?
+    let currency: String?
+    let declaredDate: String?
+    let description: String?
+    let exDate: String?
+    let flag: String?
+    let frequency: String?
+    let paymentDate: String?
+    let recordDate: String?
+    let refid: Int?
+    let symbol: String?
+    let id: String?
+    let key: String?
+    let subkey: Int?
+    let date: Int64?
+    let updated: Double?
+}
