@@ -10,8 +10,6 @@ import Foundation
 struct URLs {
     static let analystRecommendationsPriceTargets = URL(string: "https://cloud.iexapis.com/stable/time-series/CORE_ESTIMATES/aapl?token=pk_b8d39299974f41f99ef8f79101ab2617")
     static let fetchIntradayPrice = URL(string:"https://cloud.iexapis.com/stable/time-series/CORE_ESTIMATES/aapl?token=pk_b8d39299974f41f99ef8f79101ab2617")
-    static let logo = URL(string: "http://127.0.0.1:8000/logo/tsla")
-    static let companyInfo = URL(string: "http://127.0.0.1:8000/company-info/tsla")
 }
 
 struct AnalystRecommendationsPriceTargets: Codable {
@@ -28,25 +26,7 @@ struct AnalystRecommendationsPriceTargets: Codable {
     
 }
 
-struct Logo: Codable {
-    let url: URL?
-}
 
-struct CompanyInfo: Codable {
-    let symbol: String
-    let companyName: String
-    let exchange: String
-    let industry: String
-    let description: String
-    let issueType: String
-    let sector: String
-    let employees: Int
-    let tags: [String]
-    let address: String
-    let state: String
-    let city: String
-    // Zip, country, phone
-}
 
 
 

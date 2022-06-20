@@ -132,10 +132,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     private func loadAnalystData() {
         
         Task(priority: .background) {
-            let result = await service.getLogo()
+            let result = await service.getLogo(stock: "TSLA")
             switch result {
             case .success(let response):
                 print(response.url ?? "")
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        Task(priority: .background) {
+            let result = await service.getCompanyInfo(stock: "GME")
+            switch result {
+            case .success(let response):
+                print(response)
                 
             case .failure(let error):
                 print(error.localizedDescription)

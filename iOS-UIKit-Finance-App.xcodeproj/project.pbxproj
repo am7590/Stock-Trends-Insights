@@ -20,6 +20,7 @@
 		293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C82860D9DB00BE90B9 /* RequestError.swift */; };
 		293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CA2860DC2D00BE90B9 /* IEXApiService.swift */; };
 		293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */; };
+		293B69CF2861096500BE90B9 /* IEXModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CE2861096500BE90B9 /* IEXModels.swift */; };
 		2942A6F5283ABEED008DC092 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2942A6F4283ABEED008DC092 /* Charts */; };
 		2959FF58285033C800B5E9F1 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */; };
 		2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */; };
@@ -54,6 +55,7 @@
 		293B69C82860D9DB00BE90B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		293B69CA2860DC2D00BE90B9 /* IEXApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXApiService.swift; sourceTree = "<group>"; };
 		293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXEndpoint.swift; sourceTree = "<group>"; };
+		293B69CE2861096500BE90B9 /* IEXModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXModels.swift; sourceTree = "<group>"; };
 		2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingsView.swift; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 			children = (
 				292317DE28398E6500460F81 /* SearchResults.swift */,
 				29D61D9A2845247900E602D7 /* HomeModels.swift */,
+				293B69CE2861096500BE90B9 /* IEXModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
 				293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
+				293B69CF2861096500BE90B9 /* IEXModels.swift in Sources */,
 				2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */,
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
 				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
