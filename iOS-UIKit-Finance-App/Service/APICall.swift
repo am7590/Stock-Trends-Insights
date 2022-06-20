@@ -13,6 +13,7 @@ class APICall {
     func fetch() {
         // fetchAnalystRatings()
         // fetchIntradayPrice()
+        
     }
     
     func fetchAnalystRatings(ticker: String, completion: @escaping (Result<[AnalystRecommendationsPriceTargets], Error>) -> Void) {
@@ -30,10 +31,43 @@ class APICall {
                     completion(.failure(error))
                 }
             }
-            
         }
-        
     }
+    
+    func fetchLogo(ticker: String, completion: @escaping (Result<String, Error>) -> Void) {
+                
+        URLSession.shared.request(url: URLs.logo, expecting: String.self) {
+            result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let success):
+                    completion(.success(success))
+                    
+                case .failure(let error):
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    func fetchCompanyInfo(ticker: String, completion: @escaping (Result<CompanyInfo, Error>) -> Void) {
+                
+        URLSession.shared.request(url: URLs.companyInfo, expecting: CompanyInfo.self) {
+            result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let success):
+                    completion(.success(success))
+                    
+                case .failure(let error):
+                    print(error)
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
     
 //    func fetchIntradayPrice() {
 //        URLSession.shared.requestL(url: URLs.fetchIntradayPrice, expecting: [[FetchIntradayPrice].self]) {

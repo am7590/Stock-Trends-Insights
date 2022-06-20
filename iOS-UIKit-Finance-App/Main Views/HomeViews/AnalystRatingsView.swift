@@ -15,11 +15,11 @@ class AnalystRatingsView: UITableViewCell {
     let statusMessage2 = UILabel()
     let statusMessage3 = UILabel()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-        layout()
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        setup()
+//        layout()
+//    }
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: 224)

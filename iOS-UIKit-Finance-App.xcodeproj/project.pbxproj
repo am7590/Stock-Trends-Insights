@@ -15,6 +15,11 @@
 		292317DF28398E6500460F81 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317DE28398E6500460F81 /* SearchResults.swift */; };
 		292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */; };
 		292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */; };
+		293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C42860D85200BE90B9 /* Endpoint.swift */; };
+		293B69C72860D9BB00BE90B9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C62860D9BB00BE90B9 /* HTTPClient.swift */; };
+		293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C82860D9DB00BE90B9 /* RequestError.swift */; };
+		293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CA2860DC2D00BE90B9 /* IEXApiService.swift */; };
+		293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */; };
 		2942A6F5283ABEED008DC092 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2942A6F4283ABEED008DC092 /* Charts */; };
 		2959FF58285033C800B5E9F1 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */; };
 		2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */; };
@@ -44,6 +49,11 @@
 		292317DE28398E6500460F81 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataClass.swift"; sourceTree = "<group>"; };
 		292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		293B69C42860D85200BE90B9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		293B69C62860D9BB00BE90B9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		293B69C82860D9DB00BE90B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		293B69CA2860DC2D00BE90B9 /* IEXApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXApiService.swift; sourceTree = "<group>"; };
+		293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXEndpoint.swift; sourceTree = "<group>"; };
 		2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingsView.swift; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +127,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		293B69C32860D83C00BE90B9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				293B69C42860D85200BE90B9 /* Endpoint.swift */,
+				293B69C62860D9BB00BE90B9 /* HTTPClient.swift */,
+				293B69C82860D9DB00BE90B9 /* RequestError.swift */,
+				293B69CA2860DC2D00BE90B9 /* IEXApiService.swift */,
+				293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		2959FF59285039D100B5E9F1 /* HomeViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				292317DD28398E5200460F81 /* Model */,
+				293B69C32860D83C00BE90B9 /* Services */,
 				292317DA28398E1200460F81 /* Service */,
 				292317D528397F1400460F81 /* Utilities */,
 				292317D028397D5600460F81 /* Onboarding */,
@@ -251,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */,
+				293B69C72860D9BB00BE90B9 /* HTTPClient.swift in Sources */,
 				29954FC4283971430086949E /* FirstViewController.swift in Sources */,
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
@@ -260,7 +284,9 @@
 				29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */,
 				29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */,
 				29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */,
+				293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
+				293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
 				2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */,
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
@@ -270,6 +296,8 @@
 				29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */,
 				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
 				29D61D9B2845247900E602D7 /* HomeModels.swift in Sources */,
+				293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */,
+				293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */,
 				29BF0946283ABA88004FBB29 /* APIStruct.swift in Sources */,
 				29BF0942283AB6A6004FBB29 /* SocialMediaViewController.swift in Sources */,
 				292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */,

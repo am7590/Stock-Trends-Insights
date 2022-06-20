@@ -31,7 +31,7 @@ class FirstViewController: UITabBarController {
     private func setupViews() {
         //view.backgroundColor = .systemGreen
         
-        let homeViewController = HomeViewController()
+        let homeViewController = HomeViewController(service: IEXApiService())
         let newsViewController = NewsViewController()
         let socialMediaViewController = SocialMediaViewController()
         let fundamentalDataViewController = FundamentalDataViewController()
