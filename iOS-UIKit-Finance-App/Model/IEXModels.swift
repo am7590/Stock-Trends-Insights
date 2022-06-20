@@ -86,7 +86,7 @@ struct Stats: Codable {
 }
 
 struct News: Codable {
-    let datetime: Int?
+    // let datetime: Int64?
     let headline: String?
     let source: String?
     let url: String?
@@ -112,7 +112,7 @@ struct Dividends: Codable {
     let id: String?
     let key: String?
     let subkey: Int?
-    let date: Int64?
+    // let date: Int64?
     let updated: Double?
 }
 
@@ -125,14 +125,14 @@ struct InstitutionalOwnership: Codable {
     let reportDate: Int?
     let filingDate: String?
     let reportedHolding: Int?
-    let date: Int64?
-    let updated: Int64?
+    // let date: Int64?
+    // let updated: Int64?
 }
 
 struct InsiderTransactions: Codable {
     let conversionOrExercisePrice: Double?
     let directIndirect: String?
-    let effectiveDate: Int64?
+    // let effectiveDate: Int64?
     let filingDate: String?
     let fullName: String?
     let is10b51: Bool?
@@ -147,9 +147,71 @@ struct InsiderTransactions: Codable {
     let id: String?
     let key: String?
     let subkey: String?
-    let date: Int64
+    // let date: Int64
     let updated: Double?
     let tranPrice: Double?
     let tranShares: Double?
     let tranValue: Int?
+}
+
+struct CeoCompensation: Codable {
+    let symbol: String?
+    let name: String?
+    let companyName: String?
+    let location: String?
+    let salary: Int?
+    let bonus: Int?
+    let stockAwards: Int?
+    let optionAwards: Int?
+    let nonEquityIncentives: Int?
+    let pensionAndDeferred: Int?
+    let otherComp: Int?
+    let total: Int?
+    let year: String?
+}
+
+struct DividendsForcast: Codable {
+    let adjustedAmount: Double?
+    let amount: Double?
+    let currency: String?
+    let declaredDate: String?
+    let disbursementAmount: Double?
+    let disbursementType: String?
+    let exDate: String?
+    let fiscalYear: Int?
+    // fiscalYearEndDate
+    let frequency: String?
+    // fxDate
+    let lastChange: String?
+    let marker: String?
+    let name: String?
+    // nonTaxedAmount
+    let paymentDate: String?
+    // periodEndDate
+    let position: Int?
+    let recordDate: String?
+    let recordUpdated: String?
+        let sharesHeld: Int?
+        let sharesReceived: Int?
+    let status: String?
+    let symbol: String?
+    let id: String?
+    let key: String?
+    let subkey: String?
+    // let date: Int64?
+    let updated: Double?
+}
+
+struct AnalystRatings: Codable {
+    let id: String?
+    let key: String?
+    let subkey: String?
+    let symbol: String?
+    let analystCount: Int?
+    let consensusDate: String?
+    let marketConsensus: Double?
+    let marketConsensusTargetPrice: Double?
+    //let date: Int64
+    //let updated: Int64
+    
 }

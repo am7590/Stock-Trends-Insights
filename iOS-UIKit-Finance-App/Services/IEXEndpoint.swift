@@ -15,6 +15,9 @@ enum IEXEndpoint {
     case dividends(stock: String)
     case institutionalOwnership(stock: String)
     case insiderTransactions(stock: String)
+    case ceoCompensation(stock: String)
+    case dividendsForcast(stock: String)
+    case analystRatings(stock: String)
 }
 
 extension IEXEndpoint: Endpoint {
@@ -34,6 +37,12 @@ extension IEXEndpoint: Endpoint {
             return "/institutional-ownership/\(stock)"
         case .insiderTransactions(stock: let stock):
             return "/insider-transactions/\(stock)"
+        case .ceoCompensation(stock: let stock):
+            return "/ceo-compensation/\(stock)"
+        case .dividendsForcast(stock: let stock):
+            return "/dividends-forcast/\(stock)"
+        case .analystRatings(stock: let stock):
+            return "/analyst-ratings/\(stock)"
         }
     }
 }

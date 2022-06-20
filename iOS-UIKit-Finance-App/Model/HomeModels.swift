@@ -12,19 +12,7 @@ struct URLs {
     static let fetchIntradayPrice = URL(string:"https://cloud.iexapis.com/stable/time-series/CORE_ESTIMATES/aapl?token=pk_b8d39299974f41f99ef8f79101ab2617")
 }
 
-struct AnalystRecommendationsPriceTargets: Codable {
-    let id: String
-    let key: String
-    let subkey: String
-    let symbol: String
-    let analystCount: Int
-    let consensusDate: String
-    let marketConsensus: Double
-    let marketConsensusTargetPrice: Double
-    //let date: Int64
-    //let updated: Int64
-    
-}
+
 
 
 

@@ -16,9 +16,9 @@ class APICall {
         
     }
     
-    func fetchAnalystRatings(ticker: String, completion: @escaping (Result<[AnalystRecommendationsPriceTargets], Error>) -> Void) {
+    func fetchAnalystRatings(ticker: String, completion: @escaping (Result<[AnalystRatings], Error>) -> Void) {
                 
-        URLSession.shared.request(url: URLs.analystRecommendationsPriceTargets, expecting: [AnalystRecommendationsPriceTargets].self) {
+        URLSession.shared.request(url: URLs.analystRecommendationsPriceTargets, expecting: [AnalystRatings].self) {
             result in
             DispatchQueue.main.async {
                 switch result {
