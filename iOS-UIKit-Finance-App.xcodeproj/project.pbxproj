@@ -26,6 +26,8 @@
 		294920F3286D4BCF00E2653B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F2286D4BCF00E2653B /* DashboardViewController.swift */; };
 		294920F6286D4C5700E2653B /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F5286D4C5700E2653B /* GreetingView.swift */; };
 		294920F8286D4CF500E2653B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F7286D4CF500E2653B /* StatsView.swift */; };
+		294920FA286D529C00E2653B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F9286D529C00E2653B /* CalendarView.swift */; };
+		294920FC286D550600E2653B /* DividendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920FB286D550600E2653B /* DividendsView.swift */; };
 		2959FF58285033C800B5E9F1 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */; };
 		2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
@@ -61,6 +63,8 @@
 		294920F2286D4BCF00E2653B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		294920F5286D4C5700E2653B /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		294920F7286D4CF500E2653B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		294920F9286D529C00E2653B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		294920FB286D550600E2653B /* DividendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsView.swift; sourceTree = "<group>"; };
 		2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingsView.swift; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,8 @@
 				294920F2286D4BCF00E2653B /* DashboardViewController.swift */,
 				294920F5286D4C5700E2653B /* GreetingView.swift */,
 				294920F7286D4CF500E2653B /* StatsView.swift */,
+				294920F9286D529C00E2653B /* CalendarView.swift */,
+				294920FB286D550600E2653B /* DividendsView.swift */,
 			);
 			path = "Dashboard Views";
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */,
 				293B69C72860D9BB00BE90B9 /* HTTPClient.swift in Sources */,
 				29954FC4283971430086949E /* FirstViewController.swift in Sources */,
+				294920FC286D550600E2653B /* DividendsView.swift in Sources */,
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
@@ -299,6 +306,7 @@
 				29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */,
 				29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */,
 				293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */,
+				294920FA286D529C00E2653B /* CalendarView.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
 				293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,

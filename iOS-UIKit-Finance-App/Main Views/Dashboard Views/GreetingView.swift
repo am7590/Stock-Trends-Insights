@@ -11,8 +11,21 @@ struct GreetingView: View {
     var body: some View {
         ZStack {
             Color.red
-            Text("This is GreetingView")
-        }.frame(width: UIScreen.main.bounds.size.width, height: 300, alignment: .center)
+            
+            VStack {
+                Text("This is GreetingView")
+                Text("This is GreetingView")
+                Text("This is GreetingView")
+                Text("This is GreetingView")
+                Text("This is GreetingView")
+                Text("This is GreetingView")
+                Text("This is GreetingView")
+            }
+            
+            
+        }.cornerRadius(16)
+            
+            
     }
 }
 
