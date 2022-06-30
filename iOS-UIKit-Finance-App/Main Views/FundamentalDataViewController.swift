@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SwiftUI
 
 class FundamentalDataViewController: UIViewController {
+    let scrollView = UIScrollView()
     let stackView = UIStackView()
     let label = UILabel()
     
@@ -20,6 +22,8 @@ class FundamentalDataViewController: UIViewController {
 
 extension FundamentalDataViewController {
     func style() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
         // stackView
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -27,18 +31,40 @@ extension FundamentalDataViewController {
         
         // label
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Welcome"
+        label.text = "Title"
         label.font = UIFont.preferredFont(forTextStyle: .title1)
     }
     
     func layout() {
-        stackView.addArrangedSubview(label)
+        scrollView.addSubview(stackView)
         
-        view.addSubview(stackView)
+        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(UIHostingController(rootView: CompanyHeaderView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: CompanyTechnicalData()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: CompanyPriceData()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: AnalystRatingView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: DividendsForcastView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: CEODataView()).view)
+        
+        view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            view.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            view.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
         ])
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+        ])
+        
+        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        stackView.spacing = 5
+        stackView.backgroundColor = .secondarySystemBackground
+        
     }
 }
