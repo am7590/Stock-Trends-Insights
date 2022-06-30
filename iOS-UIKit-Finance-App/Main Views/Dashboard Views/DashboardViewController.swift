@@ -1,13 +1,14 @@
 //
-//  FundamentalDataViewController.swift
+//  DashboardViewController.swift
 //  iOS-UIKit-Finance-App
 //
-//  Created by Alek Michelson on 5/22/22.
+//  Created by Alek Michelson on 6/29/22.
 //
 
 import UIKit
+import SwiftUI
 
-class FundamentalDataViewController: UIViewController {
+class DashboardViewController: UIViewController {
     let stackView = UIStackView()
     let label = UILabel()
     
@@ -18,7 +19,7 @@ class FundamentalDataViewController: UIViewController {
     }
 }
 
-extension FundamentalDataViewController {
+extension DashboardViewController {
     func style() {
         // stackView
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,14 +28,18 @@ extension FundamentalDataViewController {
         
         // label
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Welcome"
+        label.text = "Title"
         label.font = UIFont.preferredFont(forTextStyle: .title1)
     }
     
     func layout() {
         stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(UIHostingController(rootView: GreetingView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: StatsView()).view)
         
         view.addSubview(stackView)
+        
+        //view.addSubview(UIView(frame: UIHostingController(rootView: GreetingView())))
         
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
