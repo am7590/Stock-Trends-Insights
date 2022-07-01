@@ -12,7 +12,7 @@ class FundamentalDataViewController: UIViewController {
     let scrollView = UIScrollView()
     let stackView = UIStackView()
     let label = UILabel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -68,3 +68,4 @@ extension FundamentalDataViewController {
         
     }
 }
+

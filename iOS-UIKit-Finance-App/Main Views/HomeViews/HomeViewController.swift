@@ -17,16 +17,6 @@ class HomeViewController: UIViewController {
     var tableView = UITableView()
     var headerView = HomeHeaderView(frame: .zero)
     // let service = APICall()
-    private let service: IEXServicable
-    
-    init(service: IEXServicable) {
-        self.service = service
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     let label = UILabel()
     let label2 = UILabel()
@@ -131,115 +121,115 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     private func loadAnalystData() {
         
-        Task(priority: .background) {
-            let result = await service.getLogo(stock: "TSLA")
-            switch result {
-            case .success(let response):
-                print(response.url ?? "")
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getCompanyInfo(stock: "GME")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getStats(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getNews(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getDividends(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getInsitutionalOwnership(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getInsiderTransactions(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getCeoCompensation(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getDividendsForcast(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-        
-        Task(priority: .background) {
-            let result = await service.getAnalystRatings(stock: "AAPL")
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+//        Task(priority: .background) {
+//            let result = await service.getLogo(stock: "TSLA")
+//            switch result {
+//            case .success(let response):
+//                print(response.url ?? "")
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getCompanyInfo(stock: "GME")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getStats(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getNews(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getDividends(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getInsitutionalOwnership(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getInsiderTransactions(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getCeoCompensation(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getDividendsForcast(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//        
+//        Task(priority: .background) {
+//            let result = await service.getAnalystRatings(stock: "AAPL")
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
     }
 
     // (with header: Header)
