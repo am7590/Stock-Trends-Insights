@@ -10,16 +10,14 @@ import SwiftUI
 struct CompanyHeaderView: View {
     
     @StateObject var viewModel = CompanyHeaderViewModel()
-
     
     var body: some View {
-        
-        switch viewModel.state {
-        case .loaded:
-            
-            ZStack {
+        ZStack {
+            switch viewModel.state {
+            case .loaded:
+                
                 Color.green
-                VStack(spacing: 8) {
+                VStack {
                     Text(String(describing: viewModel.logo?.url))
                     Text(String(describing: viewModel.companyInfo?.companyName))
                     Text(String(describing: viewModel.companyInfo?.address))
@@ -31,19 +29,19 @@ struct CompanyHeaderView: View {
                     Text(String(describing: viewModel.companyInfo?.description))
                     
                 }
-            }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
-                .padding(.horizontal)
-        case .error(let error):
-            Text(error)
-        case .loading:
-            Text("loading...")
-                .onAppear { viewModel.load() }
-        default:
-            Text("Default")
+                
+            case .error(let error):
+                Text(error)
+            case .loading:
+                Text("loading...")
+                    .onAppear { viewModel.load() }
+            default:
+                Text("Default")
+                
+            }
             
-        }
-    
-        
+        }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
+            .padding(.horizontal)
         
         
     }
@@ -71,7 +69,7 @@ struct CompanyHeaderView: View {
     @Published var logo: Logo?
     @Published var companyInfo: CompanyInfo?
     @Published var state: State = .loading
-
+    
     
     func load() {
         
@@ -100,6 +98,6 @@ struct CompanyHeaderView: View {
             }
             state = self.logo == nil || self.companyInfo == nil ? .loading : .loaded
         }
-
+        
     }
 }
