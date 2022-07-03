@@ -170,7 +170,7 @@ struct CeoCompensation: Codable {
     let year: String?
 }
 
-struct DividendsForcast: Codable {
+struct DividendsForcast: Codable, Identifiable {
     let adjustedAmount: Double?
     let amount: Double?
     let currency: String?
@@ -191,8 +191,8 @@ struct DividendsForcast: Codable {
     let position: Int?
     let recordDate: String?
     let recordUpdated: String?
-        let sharesHeld: Int?
-        let sharesReceived: Int?
+    let sharesHeld: Int?
+    let sharesReceived: Int?
     let status: String?
     let symbol: String?
     let id: String?
