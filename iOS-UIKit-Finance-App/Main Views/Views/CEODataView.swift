@@ -8,21 +8,40 @@
 import SwiftUI
 
 struct CEODataView: View {
+    @StateObject var viewModel = CEODataViewModel()
+    
     var body: some View {
-        
         ZStack {
-            Color.purple
-            VStack {
-                Text("This is CEODataView")
-                Text("Item 1")
-                Text("Item 2")
-                Text("Item 3")
-                Text("Item 4")
+            switch viewModel.state {
+            case .loaded:
+                
+                Color.pink
+                
+                VStack {
+                    
+                    Text(String(describing: viewModel.ceoCompensation?.name))
+                    Text(String(describing: viewModel.ceoCompensation?.salary))
+                    Text(String(describing: viewModel.ceoCompensation?.bonus))
+                    Text(String(describing: viewModel.ceoCompensation?.stockAwards))
+                    Text(String(describing: viewModel.ceoCompensation?.optionAwards))
+                    Text(String(describing: viewModel.ceoCompensation?.total))
+                    
+                }
+                
+            case .error(let error):
+                Text(error)
+            case .loading:
+                Text("loading...")
+                    .onAppear { viewModel.load() }
+            default:
+                Text("Default")
+                
             }
             
-        }.frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .center)
-            .cornerRadius(16)
+        }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
             .padding(.horizontal)
+        
+        
     }
 }
 

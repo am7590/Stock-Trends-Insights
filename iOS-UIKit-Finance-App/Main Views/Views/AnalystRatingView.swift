@@ -15,7 +15,7 @@ struct AnalystRatingView: View {
             switch viewModel.state {
             case .loaded:
                 
-                Color.pink
+                Color.purple
                 
                 VStack {
                     
