@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CompanyPriceData: View {
+struct CompanyPriceDataView: View {
     var body: some View {
         ZStack {
             Color.red
@@ -27,6 +27,6 @@ struct CompanyPriceData: View {
 
 struct CompanyPriceData_Previews: PreviewProvider {
     static var previews: some View {
-        CompanyPriceData()
+        CompanyPriceDataView()
     }
 }

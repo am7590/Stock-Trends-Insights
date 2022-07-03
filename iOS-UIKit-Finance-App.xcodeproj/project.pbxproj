@@ -29,8 +29,8 @@
 		294920FA286D529C00E2653B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F9286D529C00E2653B /* CalendarView.swift */; };
 		294920FC286D550600E2653B /* DividendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920FB286D550600E2653B /* DividendsView.swift */; };
 		294920FF286D55B600E2653B /* CompanyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920FE286D55B600E2653B /* CompanyHeaderView.swift */; };
-		29492101286D55F200E2653B /* CompanyTechnicalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492100286D55F200E2653B /* CompanyTechnicalData.swift */; };
-		29492103286D561000E2653B /* CompanyPriceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492102286D561000E2653B /* CompanyPriceData.swift */; };
+		29492101286D55F200E2653B /* CompanyTechnicalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492100286D55F200E2653B /* CompanyTechnicalDataView.swift */; };
+		29492103286D561000E2653B /* CompanyPriceDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492102286D561000E2653B /* CompanyPriceDataView.swift */; };
 		29492105286D576A00E2653B /* AnalystRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492104286D576A00E2653B /* AnalystRatingView.swift */; };
 		29492107286D579700E2653B /* DividendsForcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492106286D579700E2653B /* DividendsForcastView.swift */; };
 		29492109286D57D300E2653B /* CEODataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492108286D57D300E2653B /* CEODataView.swift */; };
@@ -48,6 +48,12 @@
 		29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */; };
 		29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0947283ABAA6004FBB29 /* APIParser.swift */; };
 		29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D61D9C284524CD00E602D7 /* URLSession+Request.swift */; };
+		29F1B3A428723E10002BCA20 /* CompanyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */; };
+		29F1B3A628723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */; };
+		29F1B3A828723ED1002BCA20 /* CompanyPriceDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A728723ED1002BCA20 /* CompanyPriceDataViewModel.swift */; };
+		29F1B3AA28723EDB002BCA20 /* AnalystRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A928723EDB002BCA20 /* AnalystRatingViewModel.swift */; };
+		29F1B3AC28723EEB002BCA20 /* DividendsForcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3AB28723EEB002BCA20 /* DividendsForcastViewModel.swift */; };
+		29F1B3AE28723EF3002BCA20 /* CEODataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3AD28723EF3002BCA20 /* CEODataViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +78,8 @@
 		294920F9286D529C00E2653B /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		294920FB286D550600E2653B /* DividendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsView.swift; sourceTree = "<group>"; };
 		294920FE286D55B600E2653B /* CompanyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderView.swift; sourceTree = "<group>"; };
-		29492100286D55F200E2653B /* CompanyTechnicalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTechnicalData.swift; sourceTree = "<group>"; };
-		29492102286D561000E2653B /* CompanyPriceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPriceData.swift; sourceTree = "<group>"; };
+		29492100286D55F200E2653B /* CompanyTechnicalDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTechnicalDataView.swift; sourceTree = "<group>"; };
+		29492102286D561000E2653B /* CompanyPriceDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPriceDataView.swift; sourceTree = "<group>"; };
 		29492104286D576A00E2653B /* AnalystRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingView.swift; sourceTree = "<group>"; };
 		29492106286D579700E2653B /* DividendsForcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsForcastView.swift; sourceTree = "<group>"; };
 		29492108286D57D300E2653B /* CEODataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEODataView.swift; sourceTree = "<group>"; };
@@ -93,6 +99,12 @@
 		29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalDataViewController.swift; sourceTree = "<group>"; };
 		29BF0947283ABAA6004FBB29 /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 		29D61D9C284524CD00E602D7 /* URLSession+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Request.swift"; sourceTree = "<group>"; };
+		29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderViewModel.swift; sourceTree = "<group>"; };
+		29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTechnicalDataViewModel.swift; sourceTree = "<group>"; };
+		29F1B3A728723ED1002BCA20 /* CompanyPriceDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPriceDataViewModel.swift; sourceTree = "<group>"; };
+		29F1B3A928723EDB002BCA20 /* AnalystRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingViewModel.swift; sourceTree = "<group>"; };
+		29F1B3AB28723EEB002BCA20 /* DividendsForcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsForcastViewModel.swift; sourceTree = "<group>"; };
+		29F1B3AD28723EF3002BCA20 /* CEODataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEODataViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,17 +183,17 @@
 			path = "Dashboard Views";
 			sourceTree = "<group>";
 		};
-		294920FD286D55A200E2653B /* Fundamental Data Views */ = {
+		294920FD286D55A200E2653B /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				294920FE286D55B600E2653B /* CompanyHeaderView.swift */,
-				29492100286D55F200E2653B /* CompanyTechnicalData.swift */,
-				29492102286D561000E2653B /* CompanyPriceData.swift */,
+				29492100286D55F200E2653B /* CompanyTechnicalDataView.swift */,
+				29492102286D561000E2653B /* CompanyPriceDataView.swift */,
 				29492104286D576A00E2653B /* AnalystRatingView.swift */,
 				29492106286D579700E2653B /* DividendsForcastView.swift */,
 				29492108286D57D300E2653B /* CEODataView.swift */,
 			);
-			path = "Fundamental Data Views";
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2959FF59285039D100B5E9F1 /* HomeViews */ = {
@@ -238,9 +250,23 @@
 				29BF093F283AB699004FBB29 /* NewsViewController.swift */,
 				29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */,
 				29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */,
-				294920FD286D55A200E2653B /* Fundamental Data Views */,
+				29F1B3A2286E88F2002BCA20 /* View Models */,
+				294920FD286D55A200E2653B /* Views */,
 			);
 			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		29F1B3A2286E88F2002BCA20 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */,
+				29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */,
+				29F1B3A728723ED1002BCA20 /* CompanyPriceDataViewModel.swift */,
+				29F1B3A928723EDB002BCA20 /* AnalystRatingViewModel.swift */,
+				29F1B3AB28723EEB002BCA20 /* DividendsForcastViewModel.swift */,
+				29F1B3AD28723EF3002BCA20 /* CEODataViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,12 +345,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29F1B3AA28723EDB002BCA20 /* AnalystRatingViewModel.swift in Sources */,
+				29F1B3A828723ED1002BCA20 /* CompanyPriceDataViewModel.swift in Sources */,
 				292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */,
 				293B69C72860D9BB00BE90B9 /* HTTPClient.swift in Sources */,
 				29954FC4283971430086949E /* FirstViewController.swift in Sources */,
-				29492101286D55F200E2653B /* CompanyTechnicalData.swift in Sources */,
-				29492103286D561000E2653B /* CompanyPriceData.swift in Sources */,
+				29492101286D55F200E2653B /* CompanyTechnicalDataView.swift in Sources */,
+				29492103286D561000E2653B /* CompanyPriceDataView.swift in Sources */,
 				294920FC286D550600E2653B /* DividendsView.swift in Sources */,
+				29F1B3A628723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift in Sources */,
+				29F1B3AC28723EEB002BCA20 /* DividendsForcastViewModel.swift in Sources */,
+				29F1B3AE28723EF3002BCA20 /* CEODataViewModel.swift in Sources */,
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
@@ -333,6 +364,7 @@
 				29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */,
 				29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */,
 				29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */,
+				29F1B3A428723E10002BCA20 /* CompanyHeaderViewModel.swift in Sources */,
 				293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */,
 				29492107286D579700E2653B /* DividendsForcastView.swift in Sources */,
 				294920FA286D529C00E2653B /* CalendarView.swift in Sources */,

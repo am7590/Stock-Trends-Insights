@@ -40,8 +40,8 @@ extension FundamentalDataViewController {
         
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(UIHostingController(rootView: CompanyHeaderView()).view)
-        stackView.addArrangedSubview(UIHostingController(rootView: CompanyTechnicalData()).view)
-        stackView.addArrangedSubview(UIHostingController(rootView: CompanyPriceData()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: CompanyTechnicalDataView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: CompanyPriceDataView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: AnalystRatingView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: DividendsForcastView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: CEODataView()).view)
