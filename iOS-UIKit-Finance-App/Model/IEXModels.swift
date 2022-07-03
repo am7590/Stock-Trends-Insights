@@ -202,7 +202,7 @@ struct DividendsForcast: Codable {
     let updated: Double?
 }
 
-struct AnalystRatings: Codable {
+struct AnalystRatings: Codable, Identifiable {
     let id: String?
     let key: String?
     let subkey: String?

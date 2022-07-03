@@ -8,20 +8,38 @@
 import SwiftUI
 
 struct AnalystRatingView: View {
+    @StateObject var viewModel = AnalystRatingViewModel()
+    
     var body: some View {
         ZStack {
-            Color.orange
-            VStack {
-                Text("This is AnalystRatingView")
-                Text("Item 1")
-                Text("Item 2")
-                Text("Item 3")
-                Text("Item 4")
+            switch viewModel.state {
+            case .loaded:
+                
+                Color.pink
+                
+                VStack {
+                    
+                    ForEach(viewModel.analystRatings!) { ratings in
+                        Text(String(describing: ratings.key))
+                        Text(String(describing: ratings.consensusDate))
+                        Text(String(describing: ratings.marketConsensus))
+                        Text(String(describing: ratings.marketConsensusTargetPrice))
+                    }
+                }
+                
+            case .error(let error):
+                Text(error)
+            case .loading:
+                Text("loading...")
+                    .onAppear { viewModel.load() }
+            default:
+                Text("Default")
+                
             }
             
-        }.frame(width: UIScreen.main.bounds.size.width, height: 300, alignment: .center)
-            .cornerRadius(16)
+        }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
             .padding(.horizontal)
+        
         
     }
 }
@@ -31,3 +49,4 @@ struct AnalystRatingView_Previews: PreviewProvider {
         AnalystRatingView()
     }
 }
+

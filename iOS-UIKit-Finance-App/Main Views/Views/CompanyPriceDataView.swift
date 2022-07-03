@@ -8,20 +8,34 @@
 import SwiftUI
 
 struct CompanyPriceDataView: View {
+    @StateObject var viewModel = CompanyTechnicalDataViewModel()
+    
     var body: some View {
         ZStack {
-            Color.red
-            VStack {
-                Text("This is CompanyTechnicalData")
-                Text("Item 1")
-                Text("Item 2")
-                Text("Item 3")
-                Text("Item 4")
+            switch viewModel.state {
+            case .loaded:
+                
+                Color.red
+                
+                VStack {
+                    Text(String(describing: viewModel.stats?.companyName))
+     
+                }
+                
+            case .error(let error):
+                Text(error)
+            case .loading:
+                Text("loading...")
+                    .onAppear { viewModel.load() }
+            default:
+                Text("Default")
+                
             }
             
         }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
-            .cornerRadius(16)
-            .padding(.horizontal)  
+            .padding(.horizontal)
+        
+        
     }
 }
 
