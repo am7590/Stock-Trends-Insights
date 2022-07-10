@@ -18,16 +18,23 @@ struct CompanyHeaderView: View {
                 
                 Color.green
                 VStack {
-                    Text(String(describing: viewModel.logo?.url))
-                    Text(String(describing: viewModel.companyInfo?.companyName))
-                    Text(String(describing: viewModel.companyInfo?.address))
-                    Text(String(describing: viewModel.companyInfo?.city))
-                    Text(String(describing: viewModel.companyInfo?.employees))
-                    Text(String(describing: viewModel.companyInfo?.industry))
-                    Text(String(describing: viewModel.companyInfo?.sector))
-                    Text(String(describing: viewModel.companyInfo?.exchange))
-                    Text(String(describing: viewModel.companyInfo?.description))
+                    Section {
+                        Text(String(describing: viewModel.logo?.url))
+                        Text(String(describing: viewModel.companyInfo?.companyName))
+                        Text(String(describing: viewModel.companyInfo?.address))
+                        Text(String(describing: viewModel.companyInfo?.city))
+                    }
                     
+                    Section {
+                        Text(String(describing: viewModel.companyInfo?.employees))
+                        Text(String(describing: viewModel.companyInfo?.industry))
+                        Text(String(describing: viewModel.companyInfo?.sector))
+                        Text(String(describing: viewModel.companyInfo?.exchange))
+                    }
+                   
+                    Section {
+                        Text(String(describing: viewModel.companyInfo?.description))
+                    }
                 }
                 
             case .error(let error):
