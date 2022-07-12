@@ -8,17 +8,14 @@
 import SwiftUI
 
 let width: CGFloat = UIScreen.main.bounds.size.width
-let height: CGFloat = 200
+let height: CGFloat = 250
 
 struct CEODataView: View {
     
     var body: some View {
-        ZStack {
-            FlippingView()
-        }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
-            .padding(.horizontal)
-            .fixedSize(horizontal: false, vertical: true)
         
+        Section(content: { FlippingView().foregroundColor(Color.black) })
+            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
     }
     
 }
@@ -79,51 +76,60 @@ struct CEOCompensationFront: View {
                 Image(systemName: "info.circle")
                     .imageScale(.large)
             }.listRowBackground(Color(UIColor.green))
-        
-//        switch viewModel.state {
-//        case .loaded:
-                VStack {
-                    Text(String(describing: "Name: \(String(describing: viewModel.ceoCompensation?.name))"))
-                    Text(String(describing: "salary"))
-                    Text(String(describing: "bonus"))
-                    Text(String(describing: "stockAwards"))
-                    Text(String(describing: "optionAwards"))
-                    Text(String(describing: "total"))
-                }
-                .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
-                //.frame(width: width-16, height: height)
+            VStack(alignment: .leading) {
                 
-//        case .loading:
-//            Text("loading").onAppear { viewModel.load() }
-//        case .empty(_):
-//            Text("empty")
-//        case .error(_):
-//            Text("error")
-//        }
+                switch viewModel.state {
+                case .loaded:
+                    Text(String(describing: "Name: \(viewModel.ceoCompensation?.name ?? "")"))
+                    
+                    if let compensation = viewModel.ceoCompensation?.salary {
+                        Text(String(describing: "Salary: \(compensation)"))
+                    }
+                    
+                    if let bonus = viewModel.ceoCompensation?.bonus {
+                        Text(String(describing: "Bonus: \(bonus)"))
+                    }
+                    
+                    if let stockAwards = viewModel.ceoCompensation?.stockAwards {
+                        Text(String(describing: "Stock Awards: \(stockAwards)"))
+                    }
+
+                    if let optionAwards = viewModel.ceoCompensation?.optionAwards {
+                        Text(String(describing: "Option Awards: \(optionAwards)"))
+                    }
+
+                    if let total = viewModel.ceoCompensation?.total {
+                        Text(String(describing: "Total Compensation: \(total)"))
+                    }
+                case .error(let error):
+                    Text(error)
+                case .empty(let empty):
+                    Text(empty)
+                default:
+                    Text("Loading...")
+                }
+                
+                
+            }.onAppear(perform: { viewModel.load() })
+            .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
         }.rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
     }
 }
 
 
 struct CEOCompensationBack: View {
-    
     @Binding var degree: Double
     
     var body: some View {
         
-        
         Form {
-            Label("What does this matter?", systemImage: "info.circle.fill")
-                .font(.title2)
+            Label("Why are CEO's paid with stocks and options?", systemImage: "info.circle.fill")
+                .font(.title3)
                 .padding(.horizontal)
-            
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
-            Button(action: {}, label:{ Link("Learn more", destination: URL(string: "https://www.hackingwithswift.com/quick-start/swiftui")!)})
+            Text("Compensation theory suggests that CEO's are more incentivized to act on behalf of their shareholders if you pay them a share-based compensation.")
+            Button(action: {}, label:{ Link("Learn more", destination: URL(string: "https://www.investopedia.com/articles/stocks/07/executive_compensation.asp#:~:text=Executive%20compensation%20is%20a%20very,and%20boost%20the%20share%20price.")!)})
         }
-        
-        
-        
-        .frame(width: width-16, height: height)
+
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
     }
 }
