@@ -7,16 +7,9 @@
 
 import Foundation
 
-@MainActor class CompanyTechnicalDataViewModel: ObservableObject {
+@MainActor class CompanyTechnicalDataViewModel: StockAppViewModel {
     let service = IEXApiService()
     let stock: String = "TSLA"
-    
-    enum State {
-        case loading
-        case loaded
-        case empty(String)
-        case error(String)
-    }
     
     @Published var stats: Stats?
     // @Published var companyInfo: CompanyInfo?

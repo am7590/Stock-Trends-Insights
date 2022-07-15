@@ -7,21 +7,23 @@
 
 import Foundation
 
-@MainActor class CompanyHeaderViewModel: ObservableObject {
-    let service = IEXApiService()
-    let stock: String = "TSLA"
-    
+class StockAppViewModel: ObservableObject {
+   
     enum State {
         case loading
         case loaded
         case empty(String)
         case error(String)
     }
+}
+
+@MainActor class CompanyHeaderViewModel: StockAppViewModel {
+    let service = IEXApiService()
+    let stock: String = "TSLA"
     
     @Published var logo: Logo?
     @Published var companyInfo: CompanyInfo?
     @Published var state: State = .loading
-    
     
     func load() {
         

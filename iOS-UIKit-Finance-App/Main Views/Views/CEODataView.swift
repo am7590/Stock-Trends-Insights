@@ -20,7 +20,6 @@ struct CEODataView: View {
     
 }
 
-
 struct FlippingView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
@@ -60,6 +59,10 @@ struct FlippingView: View {
 
 // TODO: Only flip sheet part of view (if possible)
 struct CEOCompensationFront: View {
+//    var title: String
+//    var iconSystemName: String
+//    var DataView: AnyView
+//    var viewModel: AnyClass
     
     @StateObject var viewModel = CEODataViewModel()
     @Binding var degree: Double
@@ -80,27 +83,7 @@ struct CEOCompensationFront: View {
                 
                 switch viewModel.state {
                 case .loaded:
-                    Text(String(describing: "Name: \(viewModel.ceoCompensation?.name ?? "")"))
-                    
-                    if let compensation = viewModel.ceoCompensation?.salary {
-                        Text(String(describing: "Salary: \(compensation)"))
-                    }
-                    
-                    if let bonus = viewModel.ceoCompensation?.bonus {
-                        Text(String(describing: "Bonus: \(bonus)"))
-                    }
-                    
-                    if let stockAwards = viewModel.ceoCompensation?.stockAwards {
-                        Text(String(describing: "Stock Awards: \(stockAwards)"))
-                    }
-
-                    if let optionAwards = viewModel.ceoCompensation?.optionAwards {
-                        Text(String(describing: "Option Awards: \(optionAwards)"))
-                    }
-
-                    if let total = viewModel.ceoCompensation?.total {
-                        Text(String(describing: "Total Compensation: \(total)"))
-                    }
+                    CEOCompensationView(viewModel: viewModel)
                 case .error(let error):
                     Text(error)
                 case .empty(let empty):
@@ -109,10 +92,37 @@ struct CEOCompensationFront: View {
                     Text("Loading...")
                 }
                 
-                
             }.onAppear(perform: { viewModel.load() })
             .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
         }.rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
+    }
+}
+
+struct CEOCompensationView: View {
+    let viewModel: CEODataViewModel
+    
+    var body: some View {
+        Text(String(describing: "Name: \(viewModel.ceoCompensation?.name ?? "")"))
+        
+        if let compensation = viewModel.ceoCompensation?.salary {
+            Text(String(describing: "Salary: \(compensation)"))
+        }
+        
+        if let bonus = viewModel.ceoCompensation?.bonus {
+            Text(String(describing: "Bonus: \(bonus)"))
+        }
+        
+        if let stockAwards = viewModel.ceoCompensation?.stockAwards {
+            Text(String(describing: "Stock Awards: \(stockAwards)"))
+        }
+
+        if let optionAwards = viewModel.ceoCompensation?.optionAwards {
+            Text(String(describing: "Option Awards: \(optionAwards)"))
+        }
+
+        if let total = viewModel.ceoCompensation?.total {
+            Text(String(describing: "Total Compensation: \(total)"))
+        }
     }
 }
 
