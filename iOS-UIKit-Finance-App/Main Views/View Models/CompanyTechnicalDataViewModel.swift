@@ -30,19 +30,5 @@ import Foundation
             }
             state = self.stats == nil ? .loading : .loaded
         }
-        
-//        Task(priority: .medium) {
-//            let result = await service.getCompanyInfo(stock: stock)
-//            switch result {
-//            case .success(let response):
-//                print(response)
-//                self.companyInfo = response
-//
-//            case .failure(let error):
-//                self.companyInfo = nil
-//            }
-//            state = self.logo == nil || self.companyInfo == nil ? .loading : .loaded
-//        }
-        
     }
 }

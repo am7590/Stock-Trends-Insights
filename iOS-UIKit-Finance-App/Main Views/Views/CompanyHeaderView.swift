@@ -120,7 +120,6 @@ struct CompanyHeaderDataView: View {
             if let exchange = companyInfo.exchange, let industry = companyInfo.industry {
                 Text(String(describing: "Exchange: \(exchange), Industry: \(industry)"))
             }
-            
         }
         
         if let securityName = companyInfo.securityName, let issueType = companyInfo.issueType {
@@ -145,9 +144,6 @@ struct CompanyHeaderDataView: View {
         if let address = companyInfo.address, let state = companyInfo.state, let city = companyInfo.city {
             Text(address + "\n" + city + ", " + state)
         }
-        
-        
-
     }
 }
 
