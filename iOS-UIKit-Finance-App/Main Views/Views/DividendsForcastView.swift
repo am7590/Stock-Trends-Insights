@@ -35,6 +35,7 @@ struct DividendsForcastFlippingView: View {
     
     var body: some View {
         ZStack {
+            Color(UIColor.secondarySystemBackground)
             DividendsForcastBack(degree: $frontDegree)
             DividendsForcastFront(degree: $backDegree)
         }.onTapGesture {
@@ -136,7 +137,7 @@ struct DividendsForcastBack: View {
             Label("How accurate is this?", systemImage: "info.circle.fill")
                 .font(.title3)
                 .padding(.horizontal)
-            Text("Employing an algorithm/analyst approach, our data provider Woodseer provides dividend forecast data for 8,500+ equities in over 60 countries. This approach enables broad coverage and strong accuracy.")
+            Text("Employing an algorithm/analyst approach, our data provider Woodseer provides dividend forecast data for 8,500+ equities. This approach enables broad coverage and strong accuracy.")
             Button(action: {}, label:{ Link("Learn more", destination: URL(string: "https://www.woodseerglobal.com/")!)})
         }
 

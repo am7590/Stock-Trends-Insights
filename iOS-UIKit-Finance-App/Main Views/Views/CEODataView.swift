@@ -38,6 +38,7 @@ struct CEOFlippingView: View {
     
     var body: some View {
         ZStack {
+            Color(UIColor.secondarySystemBackground)
             CEOCompensationBack(degree: $frontDegree)
             CEOCompensationFront(degree: $backDegree)
         }.onTapGesture {

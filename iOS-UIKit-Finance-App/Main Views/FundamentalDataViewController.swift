@@ -11,7 +11,6 @@ import SwiftUI
 class FundamentalDataViewController: UIViewController {
     let scrollView = UIScrollView()
     let stackView = UIStackView()
-    let label = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +27,11 @@ extension FundamentalDataViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
-        
-        // label
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Title"
-        label.font = UIFont.preferredFont(forTextStyle: .title1)
     }
     
     func layout() {
         scrollView.addSubview(stackView)
         
-        stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(UIHostingController(rootView: CompanyHeaderView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: CompanyTechnicalDataView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: CompanyPriceDataView()).view)
@@ -47,6 +40,7 @@ extension FundamentalDataViewController {
         stackView.addArrangedSubview(UIHostingController(rootView: CEODataView()).view)
         
         view.addSubview(scrollView)
+        view.backgroundColor = .secondarySystemBackground
         
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: scrollView.topAnchor),
