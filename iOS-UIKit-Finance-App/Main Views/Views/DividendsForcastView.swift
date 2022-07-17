@@ -7,42 +7,140 @@
 
 import SwiftUI
 
-struct DividendsForcastView: View {
-    @StateObject var viewModel = DividendsForcastViewModel()
+struct DividendsForcastFlippingView: View {
+    @State var backDegree = 0.0
+    @State var frontDegree = -90.0
+    @State var isFlipped = false
+    
+    let durationAndDelay: CGFloat = 0.2
+    
+    func flipCard () {
+        isFlipped = !isFlipped
+        if isFlipped {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                frontDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                backDegree = 0
+            }
+        }
+    }
     
     var body: some View {
         ZStack {
-            switch viewModel.state {
-            case .loaded:
+            DividendsForcastBack(degree: $frontDegree)
+            DividendsForcastFront(degree: $backDegree)
+        }.onTapGesture {
+            flipCard()
+        }
+    }
+    
+}
+
+struct DividendsForcastView: View {
+    
+    var body: some View {
+        Section(content: { DividendsForcastFlippingView().foregroundColor(Color.black) })
+            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
+    }
+}
+
+struct DividendsForcastFront: View {
+//    var title: String
+//    var iconSystemName: String
+//    var DataView: AnyView
+//    var viewModel: AnyClass
+    
+    @StateObject var viewModel = DividendsForcastViewModel()
+    @Binding var degree: Double
+    
+    var body: some View {
+        
+        Form {
+            HStack {
+                Text("Dividends Forcast")
+                    .font(.headline)
                 
-                Color.yellow
+                Spacer()
                 
-                VStack {
-                    
-                    ForEach(viewModel.dividendsForcast!) { dividends in
-                        Text(String(describing: dividends.declaredDate))
-                        Text(String(describing: dividends.disbursementAmount))
-                        Text(String(describing: dividends.disbursementType))
-                        Text(String(describing: dividends.status))
-                        
-                     
+                Image(systemName: "info.circle")
+                    .imageScale(.large)
+            }.listRowBackground(Color(UIColor.green))
+            VStack(alignment: .leading) {
+                
+                switch viewModel.state {
+                case .loaded:
+                    if let forcast = viewModel.dividendsForcast?[0] {
+                       DataView(dividendsForcast: forcast)
                     }
+                    
+                case .error(let error):
+                    Text(error)
+                case .empty(let empty):
+                    Text(empty)
+                default:
+                    Text("Loading...")
                 }
                 
-            case .error(let error):
-                Text(error)
-            case .loading:
-                Text("loading...")
-                    .onAppear { viewModel.load() }
-            default:
-                Text("Default")
-                
-            }
-            
-        }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
-            .padding(.horizontal)
+            }.onAppear(perform: { viewModel.load() })
+            .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
+        }.rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
+    }
+}
+
+struct DataView: View {
+    let dividendsForcast: DividendsForcast
+    
+    var body: some View {
         
+        if let adjAmount = dividendsForcast.adjustedAmount, let amount = dividendsForcast.amount {
+            Text(String(describing: "Amount (adjusted): \(amount) (\(adjAmount)) "))
+        }
         
+        if let declaredDate = dividendsForcast.declaredDate, let disbursementType = dividendsForcast.disbursementType {
+            Text(String(describing: "Announced \(declaredDate) with \(disbursementType) disbursement  "))
+        }
+        
+        if let disbursementAmount = dividendsForcast.disbursementAmount, let frequency = dividendsForcast.frequency {
+            Text(String(describing: "With \(disbursementAmount) every \(frequency)"))
+        }
+        
+        if let exData = dividendsForcast.exDate {
+            Text("Must be purchased before \(exData) to get dividend.")
+        }
+        
+        if let paymentDate = dividendsForcast.paymentDate {
+            Text("Dividend pays out on \(paymentDate)")
+        }
+        
+        if let sharesReceived = dividendsForcast.sharesReceived {
+            Text("with each share receiving \(sharesReceived)")
+        }
+    }
+}
+
+
+struct DividendsForcastBack: View {
+    @Binding var degree: Double
+    
+    var body: some View {
+        
+        Form {
+            Label("How accurate is this?", systemImage: "info.circle.fill")
+                .font(.title3)
+                .padding(.horizontal)
+            Text("Employing an algorithm/analyst approach, our data provider Woodseer provides dividend forecast data for 8,500+ equities in over 60 countries. This approach enables broad coverage and strong accuracy.")
+            Button(action: {}, label:{ Link("Learn more", destination: URL(string: "https://www.woodseerglobal.com/")!)})
+        }
+
+        .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
     }
 }
 

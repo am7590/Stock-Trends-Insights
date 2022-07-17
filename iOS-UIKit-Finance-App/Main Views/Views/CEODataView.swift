@@ -10,17 +10,7 @@ import SwiftUI
 let width: CGFloat = UIScreen.main.bounds.size.width
 let height: CGFloat = 250
 
-struct CEODataView: View {
-    
-    var body: some View {
-        
-        Section(content: { FlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
-    }
-    
-}
-
-struct FlippingView: View {
+struct CEOFlippingView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
@@ -57,7 +47,14 @@ struct FlippingView: View {
     
 }
 
-// TODO: Only flip sheet part of view (if possible)
+struct CEODataView: View {
+    
+    var body: some View {
+        Section(content: { CEOFlippingView().foregroundColor(Color.black) })
+            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
+    }
+}
+
 struct CEOCompensationFront: View {
 //    var title: String
 //    var iconSystemName: String
