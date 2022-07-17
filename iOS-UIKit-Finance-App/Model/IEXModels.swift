@@ -202,6 +202,8 @@ struct DividendsForcast: Codable, Identifiable {
     let updated: Double?
 }
 
+// TODO: Add analyst data from Refintiv
+// Current data is more of a price target (from doc.)
 struct AnalystRatings: Codable, Identifiable {
     let id: String?
     let key: String?
@@ -213,5 +215,4 @@ struct AnalystRatings: Codable, Identifiable {
     let marketConsensusTargetPrice: Double?
     //let date: Int64
     //let updated: Int64
-    
 }

@@ -9,11 +9,10 @@ import Foundation
 
 @MainActor class AnalystRatingViewModel: StockAppViewModel {
     let service = IEXApiService()
-    let stock: String = "TSLA"
+    let stock: String = "AAPL"
     
     @Published var analystRatings: [AnalystRatings]?
     @Published var state: State = .loading
-    
     
     func load() {
         
