@@ -51,7 +51,7 @@ struct AnalystRatingView: View {
     
     var body: some View {
         Section(content: { AnalystRatingFlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
+            .frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .leading)
     }
 }
 

@@ -51,7 +51,7 @@ struct FirstTechnicalView: View {
     
     var body: some View {
         Section(content: { FirstTechnicalViewFlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
+            .frame(width: UIScreen.main.bounds.size.width, height: 300, alignment: .leading)
     }
 }
 
@@ -134,10 +134,10 @@ struct FirstTechnicalBack: View {
     var body: some View {
         
         Form {
-            Label("What are price targets?", systemImage: "info.circle.fill")
+            Label("Technical Data", systemImage: "info.circle.fill")
                 .font(.title3)
                 .padding(.horizontal)
-            Text("It is a price at which an analyst believes a stock to be fairly valued relative to its projected and historical earnings.")
+            Text("Technical Data")
             Button(action: {}, label:{ Link("Learn more", destination: URL(string: "https://www.investopedia.com/terms/p/pricetarget.asp#:~:text=A%20price%20target%20is%20a,the%20stock%20price%20to%20rise.")!)})
         }
 

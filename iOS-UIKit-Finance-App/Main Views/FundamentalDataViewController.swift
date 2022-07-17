@@ -33,11 +33,12 @@ extension FundamentalDataViewController {
         scrollView.addSubview(stackView)
         
         stackView.addArrangedSubview(UIHostingController(rootView: CompanyHeaderView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: CEODataView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: AnalystRatingView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: FirstTechnicalView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: SecondTechnicalView()).view)
-        stackView.addArrangedSubview(UIHostingController(rootView: AnalystRatingView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: DividendsForcastView()).view)
-        stackView.addArrangedSubview(UIHostingController(rootView: CEODataView()).view)
+        
         
         view.addSubview(scrollView)
         view.backgroundColor = .secondarySystemBackground

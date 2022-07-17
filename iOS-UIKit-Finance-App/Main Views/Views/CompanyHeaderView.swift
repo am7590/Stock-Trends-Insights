@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct CompanyHeaderFlippingView: View {
     @State var backDegree = 0.0
@@ -51,7 +52,10 @@ struct CompanyHeaderView: View {
     
     var body: some View {
         Section(content: { CompanyHeaderFlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
+            .introspectScrollView { scrollView in
+                scrollView.showsVerticalScrollIndicator = false
+         }
+            .frame(width: UIScreen.main.bounds.size.width, height: 350, alignment: .leading)
     }
 }
 
@@ -97,7 +101,9 @@ struct CompanyHeaderFront: View {
                 
             }.onAppear(perform: { viewModel.load() })
             .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
-        }.rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
+        }
+        .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
+            
     }
 }
 

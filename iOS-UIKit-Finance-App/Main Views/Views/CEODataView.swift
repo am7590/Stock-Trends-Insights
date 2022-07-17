@@ -8,7 +8,6 @@
 import SwiftUI
 
 let width: CGFloat = UIScreen.main.bounds.size.width
-let height: CGFloat = 250
 
 struct CEOFlippingView: View {
     @State var backDegree = 0.0
@@ -52,7 +51,7 @@ struct CEODataView: View {
     
     var body: some View {
         Section(content: { CEOFlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
+            .frame(width: UIScreen.main.bounds.size.width, height: 225, alignment: .leading)
     }
 }
 
@@ -134,7 +133,7 @@ struct CEOCompensationBack: View {
             Label("Why are CEO's paid with stocks and options?", systemImage: "info.circle.fill")
                 .font(.title3)
                 .padding(.horizontal)
-            Text("Compensation theory suggests that CEO's are more incentivized to act on behalf of their shareholders if you pay them a share-based compensation.")
+            Text("CEO's are more incentivized to act on behalf of their shareholders if you pay them a share-based compensation.")
             Button(action: {}, label:{ Link("Learn more", destination: URL(string: "https://www.investopedia.com/articles/stocks/07/executive_compensation.asp#:~:text=Executive%20compensation%20is%20a%20very,and%20boost%20the%20share%20price.")!)})
         }
 
