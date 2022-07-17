@@ -30,7 +30,7 @@
 		294920FC286D550600E2653B /* DividendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920FB286D550600E2653B /* DividendsView.swift */; };
 		294920FF286D55B600E2653B /* CompanyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920FE286D55B600E2653B /* CompanyHeaderView.swift */; };
 		29492101286D55F200E2653B /* FirstTechnicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492100286D55F200E2653B /* FirstTechnicalView.swift */; };
-		29492103286D561000E2653B /* CompanyPriceDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492102286D561000E2653B /* CompanyPriceDataView.swift */; };
+		29492103286D561000E2653B /* SecondTechnicalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492102286D561000E2653B /* SecondTechnicalView.swift */; };
 		29492105286D576A00E2653B /* AnalystRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492104286D576A00E2653B /* AnalystRatingView.swift */; };
 		29492107286D579700E2653B /* DividendsForcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492106286D579700E2653B /* DividendsForcastView.swift */; };
 		29492109286D57D300E2653B /* CEODataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29492108286D57D300E2653B /* CEODataView.swift */; };
@@ -79,7 +79,7 @@
 		294920FB286D550600E2653B /* DividendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsView.swift; sourceTree = "<group>"; };
 		294920FE286D55B600E2653B /* CompanyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderView.swift; sourceTree = "<group>"; };
 		29492100286D55F200E2653B /* FirstTechnicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTechnicalView.swift; sourceTree = "<group>"; };
-		29492102286D561000E2653B /* CompanyPriceDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPriceDataView.swift; sourceTree = "<group>"; };
+		29492102286D561000E2653B /* SecondTechnicalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTechnicalView.swift; sourceTree = "<group>"; };
 		29492104286D576A00E2653B /* AnalystRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingView.swift; sourceTree = "<group>"; };
 		29492106286D579700E2653B /* DividendsForcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsForcastView.swift; sourceTree = "<group>"; };
 		29492108286D57D300E2653B /* CEODataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEODataView.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 			children = (
 				294920FE286D55B600E2653B /* CompanyHeaderView.swift */,
 				29492100286D55F200E2653B /* FirstTechnicalView.swift */,
-				29492102286D561000E2653B /* CompanyPriceDataView.swift */,
+				29492102286D561000E2653B /* SecondTechnicalView.swift */,
 				29492104286D576A00E2653B /* AnalystRatingView.swift */,
 				29492106286D579700E2653B /* DividendsForcastView.swift */,
 				29492108286D57D300E2653B /* CEODataView.swift */,
@@ -351,7 +351,7 @@
 				293B69C72860D9BB00BE90B9 /* HTTPClient.swift in Sources */,
 				29954FC4283971430086949E /* FirstViewController.swift in Sources */,
 				29492101286D55F200E2653B /* FirstTechnicalView.swift in Sources */,
-				29492103286D561000E2653B /* CompanyPriceDataView.swift in Sources */,
+				29492103286D561000E2653B /* SecondTechnicalView.swift in Sources */,
 				294920FC286D550600E2653B /* DividendsView.swift in Sources */,
 				29F1B3A628723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift in Sources */,
 				29F1B3AC28723EEB002BCA20 /* DividendsForcastViewModel.swift in Sources */,
