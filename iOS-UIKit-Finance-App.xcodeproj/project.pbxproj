@@ -23,6 +23,7 @@
 		293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */; };
 		293B69CF2861096500BE90B9 /* IEXModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CE2861096500BE90B9 /* IEXModels.swift */; };
 		293B69D22861263400BE90B9 /* NewsSentimentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69D12861263400BE90B9 /* NewsSentimentModels.swift */; };
+		293B8F28288772640057AEBE /* SocialMediaSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */; };
 		2942A6F5283ABEED008DC092 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2942A6F4283ABEED008DC092 /* Charts */; };
 		294920F3286D4BCF00E2653B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F2286D4BCF00E2653B /* DashboardViewController.swift */; };
 		294920F6286D4C5700E2653B /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F5286D4C5700E2653B /* GreetingView.swift */; };
@@ -73,6 +74,7 @@
 		293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXEndpoint.swift; sourceTree = "<group>"; };
 		293B69CE2861096500BE90B9 /* IEXModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXModels.swift; sourceTree = "<group>"; };
 		293B69D12861263400BE90B9 /* NewsSentimentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSentimentModels.swift; sourceTree = "<group>"; };
+		293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaSummaryCell.swift; sourceTree = "<group>"; };
 		294920F2286D4BCF00E2653B /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		294920F5286D4C5700E2653B /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		294920F7286D4CF500E2653B /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
@@ -173,6 +175,15 @@
 			path = "Stock Search Services";
 			sourceTree = "<group>";
 		};
+		293B8F262887724D0057AEBE /* Social Media Views */ = {
+			isa = PBXGroup;
+			children = (
+				29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */,
+				293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */,
+			);
+			path = "Social Media Views";
+			sourceTree = "<group>";
+		};
 		294920F4286D4C4000E2653B /* Dashboard Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +262,7 @@
 				2959FF59285039D100B5E9F1 /* HomeViews */,
 				29BF093F283AB699004FBB29 /* NewsViewController.swift */,
 				29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */,
-				29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */,
+				293B8F262887724D0057AEBE /* Social Media Views */,
 				29F1B3A2286E88F2002BCA20 /* View Models */,
 				294920FD286D55A200E2653B /* Views */,
 			);
@@ -388,6 +399,7 @@
 				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
 				293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */,
 				294920FF286D55B600E2653B /* CompanyHeaderView.swift in Sources */,
+				293B8F28288772640057AEBE /* SocialMediaSummaryCell.swift in Sources */,
 				293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */,
 				294920F8286D4CF500E2653B /* StatsView.swift in Sources */,
 				293B69D22861263400BE90B9 /* NewsSentimentModels.swift in Sources */,
