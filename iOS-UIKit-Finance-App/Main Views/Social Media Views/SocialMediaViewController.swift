@@ -9,8 +9,11 @@ import UIKit
 
 class SocialMediaViewController: UIViewController {
    
-    let cells = ["Twitter", "Reddit", "Facebook", "Stocktwits", "Wikipedia"]
     var tableView = UITableView()
+    
+    var fakeCells: [SocialMediaCell] {
+        return [SocialMediaCell(type: .Twitter, title: "Twitter", color: .blue, detailText: "Detail Text", cellValue: 40.0), SocialMediaCell(type: .Reddit, title: "Reddit", color: .red, detailText: "Detail Text", cellValue: 40.0), SocialMediaCell(type: .Facebook, title: "Facebook", color: .systemBlue, detailText: "Detail Text", cellValue: 40.0), SocialMediaCell(type: .Stocktwits, title: "Stocktwits", color: .green, detailText: "Detail Text", cellValue: 40.0), SocialMediaCell(type: .Wikipedia, title: "Wikipedia", color: .darkGray, detailText: "Detail Text", cellValue: 40.0)]
+    }
     
     override func viewDidLoad() {
         setupTableView()
@@ -19,7 +22,7 @@ class SocialMediaViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.register(SocialMediaSummaryCell.self, forCellReuseIdentifier: SocialMediaSummaryCell.reuseID)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -35,13 +38,16 @@ class SocialMediaViewController: UIViewController {
 
 extension SocialMediaViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells.count
+        return fakeCells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = cells[indexPath.row]
-        cell.textLabel?.textAlignment = .center
+        guard !fakeCells.isEmpty else { return UITableViewCell() }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SocialMediaSummaryCell.reuseID, for: indexPath) as! SocialMediaSummaryCell
+        let data = fakeCells[indexPath.row]
+        cell.configure(with: data)
+        
         return cell
     }
     

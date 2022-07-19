@@ -42,24 +42,12 @@ class SocialMediaSummaryCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with viewModel: ViewModel) {
-        
-        typeLabel.text = viewModel.accountType.rawValue
-        nameLabel.text = viewModel.accountName
-        balanceAmountLabel.attributedText = viewModel.balanceAsAttributedString
-        
-        switch viewModel.accountType {
-            case .Banking:
-                underlineView.backgroundColor = appColor
-                balanceLabel.text = "Current balance"
-            case .CreditCard:
-            underlineView.backgroundColor = .systemOrange
-                balanceLabel.text = "Balance"
-            case .Investment:
-            underlineView.backgroundColor = .systemPurple
-                balanceLabel.text = "Value"
-            
-        }
+    func configure(with cell: SocialMediaCell) {  // with viewModel: ViewModel
+        typeLabel.text = cell.title
+        nameLabel.text = cell.detailText
+        balanceLabel.text = "Sentiment Value:"
+        balanceAmountLabel.text = String(cell.cellValue)
+        underlineView.backgroundColor = cell.color
     }
     
     private func setup() {
