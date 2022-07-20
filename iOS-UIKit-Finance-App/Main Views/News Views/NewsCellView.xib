@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewsTableViewCell" customModule="iOS_UIKit_Finance_App" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -47,8 +47,14 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0oz-oN-sbw">
                             <rect key="frame" x="0.0" y="83" width="394" height="20"/>
                             <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:31am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="cv0-wh-kDf">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/26/22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnP-AE-UMx">
-                                    <rect key="frame" x="0.0" y="0.0" width="75" height="20"/>
+                                    <rect key="frame" x="58" y="0.0" width="75" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="75" id="5rJ-hV-iLi"/>
                                     </constraints>
@@ -57,18 +63,12 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaC-mz-8eo">
-                                    <rect key="frame" x="85" y="0.0" width="251" height="20"/>
+                                    <rect key="frame" x="143" y="0.0" width="251" height="20"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="lmd-9P-5bA"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:31am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="cv0-wh-kDf">
-                                    <rect key="frame" x="346" y="0.0" width="48" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                         </stackView>
                     </subviews>
@@ -78,6 +78,13 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dateLabel" destination="hnP-AE-UMx" id="imy-Yy-bl8"/>
+                <outlet property="headlineLabel" destination="fYy-gZ-ZzX" id="8FI-nH-hOC"/>
+                <outlet property="sourceLabel" destination="oUB-Kh-7pV" id="HyV-Na-Wfg"/>
+                <outlet property="tickerLabel" destination="qUw-aR-vYx" id="UdZ-kg-orj"/>
+                <outlet property="timeLabel" destination="cv0-wh-kDf" id="Xrt-Nf-JgS"/>
+            </connections>
             <point key="canvasLocation" x="131.8840579710145" y="157.03125"/>
         </view>
     </objects>

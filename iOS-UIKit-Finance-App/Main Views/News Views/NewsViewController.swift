@@ -65,8 +65,8 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseID)
-        tableView.rowHeight = NewsCell.rowHeight
+        tableView.register(UINib(nibName: "NewsCellView", bundle: nil), forCellReuseIdentifier: "NewsCellView")
+        tableView.rowHeight = 140
         tableView.clipsToBounds = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
@@ -213,44 +213,34 @@ extension NewsViewController {
 }
 
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 300
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if loading {
-            return 0
+            return 1
         } else {
             return newsArray.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCellView", for: indexPath) as! NewsTableViewCell
         cell.selectionStyle = .none
         
         if loading {
-            cell.textLabel?.text = "Loading news..."
+            cell.headlineLabel.text = "Loading news..."
         } else {
-            
-            
             let news = newsArray[indexPath.row]
-            //cell.configure(with: news)
-            // print(news)
-            
-            // News data points: Ticker, Date, Time, Title, Source, Link
-            
-            
-            cell.textLabel?.text = news[0] + "       " + news[3]
-            cell.detailTextLabel?.text = news[2] + " " + news[1] + " " + news[4]
-            //cell.detailTextLabel?.text = news.
+            // ["TSLA", "Jul-19-22", "12:16PM", "Chevy Blazer EV SUV coming at the right time, GM exec says", "Yahoo Finance", "https://finance.yahoo.com/news/chevy-blazer-ev-suv-coming-at-the-right-time-gm-exec-says-161636097.html"]
+            cell.tickerLabel.text = news[0]
+            cell.sourceLabel.text = news[4]
+            cell.headlineLabel.text = news[3]
+            cell.dateLabel.text = news[2]
+            cell.timeLabel.text = news[1]
         }
         
         return cell
         
     }
-    
-    
 }
 
 
