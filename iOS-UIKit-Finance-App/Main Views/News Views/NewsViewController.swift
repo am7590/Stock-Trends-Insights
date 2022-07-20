@@ -126,6 +126,7 @@ class NewsViewController: UIViewController, ChartViewDelegate {
 
 extension NewsViewController {
     // MARK: Get API data
+    // TODO: Make a ViewModel for this crap
     func getNews(ticker: String) {
         let component : URLComponents = parser.getNewsRequest(ticker: ticker)
         // var returnJSON : [String : Int] = [:]
@@ -253,11 +254,4 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-class NewsCell: UITableViewCell {
-    static let reuseID = "NewsCell"
-    static let rowHeight: CGFloat = 112
-    
-    func configure(with news: [String]) {
-        
-    }
-}
+

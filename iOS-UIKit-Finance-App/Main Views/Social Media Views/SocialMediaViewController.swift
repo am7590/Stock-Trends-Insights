@@ -61,6 +61,8 @@ extension SocialMediaViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        // TODO: Add nice SwiftUI chart to header
+        // Inspiration: https://www.youtube.com/watch?v=ovxLr3HITVY
         return 300
     }
 
