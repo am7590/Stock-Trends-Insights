@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SocialMediaViewController: UIViewController {
    
@@ -24,6 +25,15 @@ class SocialMediaViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(SocialMediaSummaryCell.self, forCellReuseIdentifier: SocialMediaSummaryCell.reuseID)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let headerView = UIHostingController(rootView: SentimentDial()).view
+        var size = headerView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size?.width = UIScreen.main.bounds.width
+        size?.height = 300
+        headerView?.frame.size = size!
+        tableView.tableHeaderView = headerView
+//        HostingTableViewCell<>.self
+        
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -63,7 +73,10 @@ extension SocialMediaViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // TODO: Add nice SwiftUI chart to header
         // Inspiration: https://www.youtube.com/watch?v=ovxLr3HITVY
-        return 300
+        return 0
     }
-
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Social Media Sentiment"
+    }
 }
