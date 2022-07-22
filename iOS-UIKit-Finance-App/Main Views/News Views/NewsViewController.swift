@@ -90,8 +90,8 @@ class NewsViewController: UIViewController, ChartViewDelegate {
 
         barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
         barChart.invalidateIntrinsicContentSize()
-        //barChart.center = view.center
-        //view.addSubview(barChart)
+        barChart.center = view.center
+        view.addSubview(barChart)
         
 
     }
@@ -111,10 +111,10 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         do {
             self.listOfSecurities = try context.fetch(Stock.fetchRequest()) // Get all items
             
-            for item in self.listOfSecurities! {
-                getNews(ticker: item.name ?? "")
-                getSentiment(ticker: item.name ?? "")
-            }
+            //for item in self.listOfSecurities! {
+                getNews(ticker: "AAPL")
+                getSentiment(ticker: "AAPL")
+            //}
             newsDataNotLoaded = false
             
         } catch {
@@ -139,10 +139,11 @@ extension NewsViewController {
     
                 // let json = String(data: data, encoding: .utf8)
                 let jsonDecoder = JSONDecoder()
-                
+                print("qqq: \(String(data: data, encoding: .utf8))")
                 do {
                     let parsedJSON = try jsonDecoder.decode(NewsStruct.self, from: data)
-                           
+                   
+                    
                     self.newsArray += (parsedJSON.content)
                     
                     
@@ -204,7 +205,7 @@ extension NewsViewController {
                     
                     
                 } catch {
-                    print("Error parsing JSON")
+                    print("Error parsing JSON: \(error.localizedDescription)")
                 }
             }
             

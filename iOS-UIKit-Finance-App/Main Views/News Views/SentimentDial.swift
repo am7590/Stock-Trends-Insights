@@ -25,12 +25,15 @@ struct ContentView_Previews: PreviewProvider {
 struct Home: View {
     let colors = [Color(UIColor.red), Color(UIColor.green)]
     @State var progress: CGFloat = 0
+    let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack {
             
             
-            Meter(progress: self.$progress)
+            Meter(progress: self.$progress).onReceive(timer) { _ in
+                increaseDial()
+            }
             
 //            HStack(spacing: 25) {
 //                Button(action: {
@@ -55,7 +58,7 @@ struct Home: View {
     
     func increaseDial() {
         withAnimation(Animation.default.speed(0.55)) {
-            self.progress += (self.progress != 100 ? 10 : 0)
+            self.progress += (self.progress <= 80 ? 3 : 0)
         }
     }
     

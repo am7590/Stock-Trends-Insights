@@ -29,10 +29,9 @@ class SocialMediaViewController: UIViewController {
         let headerView = UIHostingController(rootView: SentimentDial()).view
         var size = headerView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size?.width = UIScreen.main.bounds.width
-        size?.height = 300
+        size?.height = 200
         headerView?.frame.size = size!
         tableView.tableHeaderView = headerView
-//        HostingTableViewCell<>.self
         
         view.addSubview(tableView)
         
