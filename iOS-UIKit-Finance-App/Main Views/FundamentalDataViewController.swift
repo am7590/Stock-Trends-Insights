@@ -26,8 +26,9 @@ extension FundamentalDataViewController {
         // stackView
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 20
-        stackView.distribution = .fillProportionally
+        //stackView.distribution = .fillProportionally
+        stackView.spacing = 0
+        stackView.backgroundColor = .secondarySystemBackground
     }
     
     func layout() {
@@ -59,8 +60,7 @@ extension FundamentalDataViewController {
         ])
         
         stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-        stackView.spacing = 5
-        stackView.backgroundColor = .secondarySystemBackground
+
         
     }
 }

@@ -66,35 +66,21 @@ struct AnalystRatingFront: View {
     
     var body: some View {
         
-        Form {
-            HStack {
-                Text("Price Target")
-                    .font(.headline)
+        FundamentalDataView(systemImage: "info", title: "Price Target", content: {
+            switch viewModel.state {
+            case .loaded:
+                AnalystRatingDataView(analystRating: viewModel.analystRatings![0])
                 
-                Spacer()
-                
-                Image(systemName: "info.circle")
-                    .imageScale(.large)
-            }.listRowBackground(Color(UIColor.green))
-            VStack(alignment: .leading) {
-                
-                switch viewModel.state {
-                case .loaded:
-                    if let rating = viewModel.analystRatings?[0] {
-                        AnalystRatingDataView(analystRating: rating)
-                    }
-                    
-                case .error(let error):
-                    Text(error)
-                case .empty(let empty):
-                    Text(empty)
-                default:
-                    Text("Loading...")
-                }
-                
-            }.onAppear(perform: { viewModel.load() })
-            .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
-        }.rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
+            case .error(let error):
+                Text(error)
+            case .empty(let empty):
+                Text(empty)
+            default:
+                Text("Loading...")
+            }
+        })
+        .onAppear(perform: { viewModel.load() })
+        .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
     }
 }
 

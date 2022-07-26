@@ -54,45 +54,33 @@ struct DividendsForcastView: View {
 }
 
 struct DividendsForcastFront: View {
-//    var title: String
-//    var iconSystemName: String
-//    var DataView: AnyView
-//    var viewModel: AnyClass
+    //    var title: String
+    //    var iconSystemName: String
+    //    var DataView: AnyView
+    //    var viewModel: AnyClass
     
     @StateObject var viewModel = DividendsForcastViewModel()
     @Binding var degree: Double
     
     var body: some View {
         
-        Form {
-            HStack {
-                Text("Dividends Forcast")
-                    .font(.headline)
-                
-                Spacer()
-                
-                Image(systemName: "info.circle")
-                    .imageScale(.large)
-            }.listRowBackground(Color(UIColor.green))
-            VStack(alignment: .leading) {
-                
-                switch viewModel.state {
-                case .loaded:
-                    if let forcast = viewModel.dividendsForcast?[0] {
-                        DividendsForcastDataView(dividendsForcast: forcast)
-                    }
-                    
-                case .error(let error):
-                    Text(error)
-                case .empty(let empty):
-                    Text(empty)
-                default:
-                    Text("Loading...")
+        FundamentalDataView(systemImage: "info", title: "Dividends Forcast", content: {
+            switch viewModel.state {
+            case .loaded:
+                if let forcast = viewModel.dividendsForcast?[0] {
+                    DividendsForcastDataView(dividendsForcast: forcast)
                 }
                 
-            }.onAppear(perform: { viewModel.load() })
-            .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
-        }.rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
+            case .error(let error):
+                Text(error)
+            case .empty(let empty):
+                Text(empty)
+            default:
+                Text("Loading...")
+            }
+        })
+            .onAppear(perform: { viewModel.load() })
+            .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
     }
 }
 
@@ -140,7 +128,7 @@ struct DividendsForcastBack: View {
             Text("Employing an algorithm/analyst approach, our data provider Woodseer provides dividend forecast data for 8,500+ equities. This approach enables broad coverage and strong accuracy.")
             Button(action: {}, label:{ Link("Learn more", destination: URL(string: "https://www.woodseerglobal.com/")!)})
         }
-
+        
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
     }
 }

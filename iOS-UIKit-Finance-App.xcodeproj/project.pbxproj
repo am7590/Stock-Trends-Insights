@@ -221,8 +221,8 @@
 		294920FD286D55A200E2653B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				294920FE286D55B600E2653B /* CompanyHeaderView.swift */,
 				2938FC7D288F7E6300137BBB /* FundamentalDataView.swift */,
+				294920FE286D55B600E2653B /* CompanyHeaderView.swift */,
 				29492108286D57D300E2653B /* CEODataView.swift */,
 				29492104286D576A00E2653B /* AnalystRatingView.swift */,
 				29492100286D55F200E2653B /* FirstTechnicalView.swift */,
