@@ -12,6 +12,8 @@ class FirstViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: Add segmented controller to header to select different stocks from portfolio
+        
         setTopColor()
         setupViews()
         setupTabBar()

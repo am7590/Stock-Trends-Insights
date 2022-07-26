@@ -70,21 +70,8 @@ struct CompanyHeaderFront: View {
     
     var body: some View {
         
-        Form {
-            HStack {
-                if let companyName = viewModel.companyInfo?.companyName {
-                    Text(companyName + " Fundamental Data")
-                        .font(.headline)
-                }
-                
-                
-                Spacer()
-                
-                Image(systemName: "info.circle")
-                    .imageScale(.large)
-            }.listRowBackground(Color(UIColor.green))
-            VStack(alignment: .leading) {
-                
+        //if let companyName = viewModel.companyInfo?.companyName {
+            FundamentalDataView(systemImage: "info", title: "Fundamentals", content: {
                 switch viewModel.state {
                 case .loaded:
                     if let companyInfo = viewModel.companyInfo, let logo = viewModel.logo {
@@ -98,12 +85,11 @@ struct CompanyHeaderFront: View {
                 default:
                     Text("Loading...")
                 }
-                
-            }.onAppear(perform: { viewModel.load() })
-            .listRowBackground(Color(UIColor(red: 0.4, green: 0.8, blue: 0.5, alpha: 1)))
-        }
-        .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
-            
+            })
+        
+            .onAppear(perform: { viewModel.load() })
+            .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
+        //}
     }
 }
 
@@ -159,7 +145,6 @@ struct CompanyHeaderBack: View {
     @StateObject var viewModel = CompanyHeaderViewModel()
     
     var body: some View {
-        
         
             Form {
                 if let symbol = viewModel.companyInfo?.symbol {

@@ -27,6 +27,7 @@ extension FundamentalDataViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
+        stackView.distribution = .fillProportionally
     }
     
     func layout() {
