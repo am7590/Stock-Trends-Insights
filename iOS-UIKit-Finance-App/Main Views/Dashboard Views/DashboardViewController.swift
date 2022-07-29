@@ -57,6 +57,7 @@ extension DashboardViewController {
     
     func layout() {
         scrollView.addSubview(stackView)
+        stackView.spacing = .leastNonzeroMagnitude
         
         // stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(UIHostingController(rootView: GreetingView()).view)
