@@ -9,23 +9,28 @@ import SwiftUI
 
 struct GreetingView: View {
     var body: some View {
-        ZStack {
-            Color.red
+        
+        VStack(alignment: .leading) {
+            Text("Good Morning, Aleksander")
+                .font(.title)
+            Group {
+                Text("The market opens in ") +
+                Text("30 minutes")
+                    .foregroundColor(.green)
+                    .bold()
+            }.font(.title2)
             
-            VStack {
-                Text("This is GreetingView")
-                Text("This is GreetingView")
-                Text("This is GreetingView")
-                Text("This is GreetingView")
-                Text("This is GreetingView")
-                Text("This is GreetingView")
-                Text("This is GreetingView")
+            Group {
+                Text("Your account is up ") +
+                Text("0.25% ")
+                    .foregroundColor(.green)
+                    .bold() +
+                Text("{premarket)")
+                    .foregroundColor(.gray)
             }
-            
-            
-        }.cornerRadius(16)
-            
-            
+            .font(.title3)
+        }.padding(8)
+        
     }
 }
 
