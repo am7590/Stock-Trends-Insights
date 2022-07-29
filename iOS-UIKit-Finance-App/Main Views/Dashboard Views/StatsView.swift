@@ -9,12 +9,23 @@ import SwiftUI
 
 struct StatsView: View {
     var body: some View {
-        ZStack {
-            Color.green
-            Text("This is StatsView")
-        }.frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .center)
-            .cornerRadius(16)
-            .padding(.horizontal)
+        
+        FundamentalDataView(systemImage: "list.dash", title: "My watchlist") {
+            let stocks = ["TSLA", "GME", "AAPL"]
+            
+            VStack {
+                    ForEach(stocks, id: \.self) { stock in
+                        Section {
+                            Text(stock)
+                                .font(.headline)
+                        }
+                        
+                    }
+                
+            }
+            
+        }
+        
     }
     
 }
