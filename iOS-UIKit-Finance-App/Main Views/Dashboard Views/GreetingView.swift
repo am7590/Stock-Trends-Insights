@@ -29,7 +29,7 @@ struct GreetingView: View {
                     .foregroundColor(.gray)
             }
             .font(.title3)
-        }.padding(8)
+        }.padding(.leading, -16)
         
     }
 }
