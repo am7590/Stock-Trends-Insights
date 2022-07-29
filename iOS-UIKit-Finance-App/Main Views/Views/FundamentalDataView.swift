@@ -25,7 +25,7 @@ struct FundamentalDataView<Content: View>: View {
                 Image(systemName: systemImage)
                     .padding(.leading, 15)
                 Text(title)
-                    .font(.title2)
+                    .font(.title)
                 Spacer()
                 
             }.frame(height: 50)

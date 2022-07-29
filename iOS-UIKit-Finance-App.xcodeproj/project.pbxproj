@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2919F0E02884AF9E00E9E2FD /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 2919F0DF2884AF9E00E9E2FD /* Introspect */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -18,6 +17,7 @@
 		292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */; };
 		29293C42288786B6006D7EF8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29293C41288786B6006D7EF8 /* NewsTableViewCell.swift */; };
 		2938FC7E288F7E6300137BBB /* FundamentalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938FC7D288F7E6300137BBB /* FundamentalDataView.swift */; };
+		2938FC8128921B5C00137BBB /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2938FC8028921B5C00137BBB /* Charts */; };
 		293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C42860D85200BE90B9 /* Endpoint.swift */; };
 		293B69C72860D9BB00BE90B9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C62860D9BB00BE90B9 /* HTTPClient.swift */; };
 		293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C82860D9DB00BE90B9 /* RequestError.swift */; };
@@ -28,7 +28,6 @@
 		293B8F28288772640057AEBE /* SocialMediaSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */; };
 		293B8F2A288774B40057AEBE /* SocialMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B8F29288774B40057AEBE /* SocialMediaCell.swift */; };
 		293B8F31288782C90057AEBE /* NewsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 293B8F30288782C90057AEBE /* NewsCellView.xib */; };
-		2942A6F5283ABEED008DC092 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2942A6F4283ABEED008DC092 /* Charts */; };
 		294920F3286D4BCF00E2653B /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F2286D4BCF00E2653B /* DashboardViewController.swift */; };
 		294920F6286D4C5700E2653B /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F5286D4C5700E2653B /* GreetingView.swift */; };
 		294920F8286D4CF500E2653B /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294920F7286D4CF500E2653B /* StatsView.swift */; };
@@ -125,8 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2942A6F5283ABEED008DC092 /* Charts in Frameworks */,
-				2919F0E02884AF9E00E9E2FD /* Introspect in Frameworks */,
+				2938FC8128921B5C00137BBB /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,8 +320,7 @@
 			);
 			name = "iOS-UIKit-Finance-App";
 			packageProductDependencies = (
-				2942A6F4283ABEED008DC092 /* Charts */,
-				2919F0DF2884AF9E00E9E2FD /* Introspect */,
+				2938FC8028921B5C00137BBB /* Charts */,
 			);
 			productName = "iOS-UIKit-Finance-App";
 			productReference = 29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */;
@@ -354,8 +351,7 @@
 			);
 			mainGroup = 29954FB3283971430086949E;
 			packageReferences = (
-				2942A6F3283ABEED008DC092 /* XCRemoteSwiftPackageReference "Charts" */,
-				2919F0DE2884AF9E00E9E2FD /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				2938FC7F28921B5C00137BBB /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 29954FBD283971430086949E /* Products */;
 			projectDirPath = "";
@@ -644,15 +640,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2919F0DE2884AF9E00E9E2FD /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.4;
-			};
-		};
-		2942A6F3283ABEED008DC092 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		2938FC7F28921B5C00137BBB /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts";
 			requirement = {
@@ -663,14 +651,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2919F0DF2884AF9E00E9E2FD /* Introspect */ = {
+		2938FC8028921B5C00137BBB /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2919F0DE2884AF9E00E9E2FD /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
-		};
-		2942A6F4283ABEED008DC092 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2942A6F3283ABEED008DC092 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 2938FC7F28921B5C00137BBB /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */

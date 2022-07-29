@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Introspect
 
 struct CompanyHeaderFlippingView: View {
     @State var backDegree = 0.0
@@ -52,9 +51,7 @@ struct CompanyHeaderView: View {
     
     var body: some View {
         Section(content: { CompanyHeaderFlippingView().foregroundColor(Color.black) })
-            .introspectScrollView { scrollView in
-                scrollView.showsVerticalScrollIndicator = false
-         }
+            
             .frame(width: UIScreen.main.bounds.size.width, height: 350, alignment: .leading)
     }
 }

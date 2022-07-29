@@ -13,22 +13,36 @@ class FirstViewController: UITabBarController {
         super.viewDidLoad()
         
         // TODO: Add segmented controller to header to select different stocks from portfolio
-        
+
         setTopColor()
         setupViews()
         setupTabBar()
-   
+        
+//        self.navigationController!.navigationBar.barStyle = .black
+//        self.navigationController!.navigationBar.isTranslucent = false
+//        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+//
+//        let items = ["TSLA", "GME", "AAPL"]
+//        let segmentedControl = UISegmentedControl(items: items)
+//                segmentedControl.tintColor = .white
+//                segmentedControl.selectedSegmentIndex = 0
+//
+//        let segmentBarItem = UIBarButtonItem(customView: segmentedControl)
+//        navigationItem.rightBarButtonItem = segmentBarItem
     }
     
     private func setTopColor() {
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .systemGreen
-        
-        UINavigationBar.appearance().standardAppearance = appearance // for scrolling bg color
-        UINavigationBar.appearance().compactAppearance = appearance // not sure why it's here, but u can remove it and still works
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance // for large title bg color
-        
+//        let appearance = UINavigationBarAppearance()
+//        // appearance.backgroundColor = .systemGreen
+//
+//        UINavigationBar.appearance().standardAppearance = appearance // for scrolling bg color
+//        UINavigationBar.appearance().scrollEdgeAppearance = appearance // for large title bg color
+//
     }
+    @objc func selectorName() {
+        print("")
+    }
+    
     
     private func setupViews() {
         //view.backgroundColor = .systemGreen
