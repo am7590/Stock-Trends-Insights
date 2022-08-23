@@ -16,10 +16,10 @@ struct DividendsView: View {
             Row(ticker: "GME", values: ["-0.45", "1.34", "1.14", "0.03"])
             Row(ticker: "AAPL", values: ["-0.71", "3.35", "0.01", "-1.54"])
         }.padding()
-        .overlay(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(UIColor.green), lineWidth: 3)
-        )
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 20)
+//                .stroke(Color(UIColor.green), lineWidth: 3)
+//        )
         .frame(width: UIScreen.main.bounds.size.width, height: 215, alignment: .center)
             .cornerRadius(16)
             

@@ -9,8 +9,8 @@ import Foundation
 
 class APIParser {
 
-    var newsComponent = URLComponents(string: "http://0.0.0.0:5000/news/")
-    var sentimentComponent = URLComponents(string: "http://0.0.0.0:5000/sentiment/")
+    var newsComponent = URLComponents(string: "http://0.0.0.0:6969/news/")
+    var sentimentComponent = URLComponents(string: "http://0.0.0.0:6969/sentiment/")
 
     
     func getNewsRequest(ticker : String) -> URLComponents {

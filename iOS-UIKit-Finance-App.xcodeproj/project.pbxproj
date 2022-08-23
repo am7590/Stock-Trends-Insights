@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290BA36028B5784B008123B4 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 290BA35F28B5784B008123B4 /* Charts */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -18,7 +19,6 @@
 		29293C42288786B6006D7EF8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29293C41288786B6006D7EF8 /* NewsTableViewCell.swift */; };
 		292BFA1C28938030009F4F05 /* DashboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BFA1B28938030009F4F05 /* DashboardContainerView.swift */; };
 		2938FC7E288F7E6300137BBB /* FundamentalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938FC7D288F7E6300137BBB /* FundamentalDataView.swift */; };
-		2938FC8128921B5C00137BBB /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 2938FC8028921B5C00137BBB /* Charts */; };
 		293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C42860D85200BE90B9 /* Endpoint.swift */; };
 		293B69C72860D9BB00BE90B9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C62860D9BB00BE90B9 /* HTTPClient.swift */; };
 		293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C82860D9DB00BE90B9 /* RequestError.swift */; };
@@ -126,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2938FC8128921B5C00137BBB /* Charts in Frameworks */,
+				290BA36028B5784B008123B4 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +323,7 @@
 			);
 			name = "iOS-UIKit-Finance-App";
 			packageProductDependencies = (
-				2938FC8028921B5C00137BBB /* Charts */,
+				290BA35F28B5784B008123B4 /* Charts */,
 			);
 			productName = "iOS-UIKit-Finance-App";
 			productReference = 29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */;
@@ -354,7 +354,7 @@
 			);
 			mainGroup = 29954FB3283971430086949E;
 			packageReferences = (
-				2938FC7F28921B5C00137BBB /* XCRemoteSwiftPackageReference "Charts" */,
+				290BA35E28B5784B008123B4 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 29954FBD283971430086949E /* Products */;
 			projectDirPath = "";
@@ -644,7 +644,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2938FC7F28921B5C00137BBB /* XCRemoteSwiftPackageReference "Charts" */ = {
+		290BA35E28B5784B008123B4 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts";
 			requirement = {
@@ -655,9 +655,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2938FC8028921B5C00137BBB /* Charts */ = {
+		290BA35F28B5784B008123B4 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2938FC7F28921B5C00137BBB /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 290BA35E28B5784B008123B4 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */

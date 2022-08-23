@@ -22,14 +22,14 @@ struct FundamentalDataView<Content: View>: View {
         VStack {
             HStack {
                 
-                Image(systemName: systemImage)
-                    .padding(.leading, 15)
+//                Image(systemName: systemImage)
+//                    .padding(.leading, 15)
                 Text(title)
                     .font(.title)
                 Spacer()
                 
             }.frame(height: 50)
-                .background(Color(UIColor.green))
+                //.background(Color(UIColor.green))
             
             VStack {
                 
@@ -37,10 +37,10 @@ struct FundamentalDataView<Content: View>: View {
                 
             }.padding([.leading, .trailing, .bottom])
             
-        }.overlay(
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(Color(UIColor.green), lineWidth: 3)
-        )
+        }//.overlay(
+//            RoundedRectangle(cornerRadius: 20)
+//                .stroke(Color(UIColor.green), lineWidth: 3)
+//        )
             .cornerRadius(15)
             .padding()
             .frame(width: UIScreen.main.bounds.size.width, alignment: .leading)

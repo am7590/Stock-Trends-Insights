@@ -106,14 +106,18 @@ struct CompanyHeaderDataView: View {
                 .frame(width: 50, height: 50)
             }
             
-            if let exchange = companyInfo.exchange, let industry = companyInfo.industry {
-                Text(String(describing: "Exchange: \(exchange), Industry: \(industry)"))
+//            if let exchange = companyInfo.exchange, let industry = companyInfo.industry {
+//                Text(String(describing: "Exchange: \(exchange), Industry: \(industry)"))
+//            }
+        }
+            
+        VStack(alignment: .leading) {
+            if let securityName = companyInfo.securityName{
+                Text(String(describing: "\(securityName)"))
             }
         }
         
-        if let securityName = companyInfo.securityName, let issueType = companyInfo.issueType {
-            Text(String(describing: "securityName: \(securityName), issueType: \(issueType)"))
-        }
+       
         
         if let sector = companyInfo.sector, let employees = companyInfo.employees {
             Text(String(describing: "sector: \(sector), employees: \(employees)"))
