@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import CoreData
 import Charts
 
@@ -24,7 +25,7 @@ class NewsViewController: UIViewController, ChartViewDelegate {
     
     // Chart
     var barChart = BarChartView()
-    let tableView = UITableView()
+    let tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
     
     override func viewDidLoad() {
         // view.backgroundColor = .systemCyan
@@ -32,27 +33,51 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         // fetchSecurities()
         //setupBarChart()
         setupTableView()
-   
+        makeSegmentedControl()
+    }
+    
+    private func makeSegmentedControl() {
+//        let items = ["TSLA", "GME", "AAPL", "GE"]
+//
+//        let segmentedControl = UISegmentedControl(items: items)
+//        segmentedControl.tintColor = .white
+//        segmentedControl.selectedSegmentIndex = 0
+//        let segmentBarItem = UIBarButtonItem(customView: segmentedControl)
+//
+//        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width-24, height: 32))
+//        titleLabel.text = String("Title")
+//
+//        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width-24, height: 28))
+//        titleView.frame = CGRect(x: 0, y: 0, width: titleView.bounds.width, height: titleView.bounds.height + titleLabel.bounds.height)
+//
+//        titleView.addSubview(segmentedControl)
+//        titleView.addSubview(titleLabel)
+//
+//        self.navigationItem.titleView = titleView
     }
     
     func setupHeader() {
-        let header = barChart //AccountSummaryHeaderView(frame: .zero)
+//        let header = barChart //AccountSummaryHeaderView(frame: .zero)
+//
+//        // Layout header is smallest size possible, keep width size of screen
+//        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+//        size.width = UIScreen.main.bounds.width
+//        header.frame.size = size
+//
+//         tableView.tableHeaderView = header
         
-        // Layout header is smallest size possible, keep width size of screen
-        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        let headerView = barChart
+        var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
-        header.frame.size = size
+        size.height = 300
+        headerView.frame.size = size
         
-        
-        tableView.tableHeaderView = header
-        
+        tableView.tableHeaderView = headerView
     }
     
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupBarChart()
-       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,30 +95,24 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         tableView.clipsToBounds = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        
-        
-        
+                
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
     }
     
 
     // MARK: Populate Charts
     func setupBarChart() {
-        
         barChart.delegate = self
-
+        barChart.translatesAutoresizingMaskIntoConstraints = false
         barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
-        barChart.invalidateIntrinsicContentSize()
-        barChart.center = view.center
-        view.addSubview(barChart)
-        
-
+        //barChart.invalidateIntrinsicContentSize()
+        //barChart.center = view.center
+        //view.addSubview(barChart)
     }
 
     func loadChartData() {
