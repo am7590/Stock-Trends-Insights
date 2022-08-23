@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		290BA36028B5784B008123B4 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 290BA35F28B5784B008123B4 /* Charts */; };
+		290BA36328B58474008123B4 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA36228B58474008123B4 /* Logo.swift */; };
+		290BA36528B5847B008123B4 /* CompanyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA36428B5847B008123B4 /* CompanyInfo.swift */; };
+		290BA36728B58483008123B4 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA36628B58483008123B4 /* Stats.swift */; };
+		290BA36928B5848D008123B4 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA36828B5848D008123B4 /* News.swift */; };
+		290BA36B28B58494008123B4 /* Dividends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA36A28B58494008123B4 /* Dividends.swift */; };
+		290BA36D28B5849D008123B4 /* InstitutionalOwnership.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA36C28B5849D008123B4 /* InstitutionalOwnership.swift */; };
+		290BA36F28B584A4008123B4 /* InsiderTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA36E28B584A4008123B4 /* InsiderTransactions.swift */; };
+		290BA37128B584AA008123B4 /* CeoCompensation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37028B584AA008123B4 /* CeoCompensation.swift */; };
+		290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37228B584B2008123B4 /* DividendsForcast.swift */; };
+		290BA37528B584BD008123B4 /* AnalystRatings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37428B584BD008123B4 /* AnalystRatings.swift */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -24,7 +34,6 @@
 		293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69C82860D9DB00BE90B9 /* RequestError.swift */; };
 		293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CA2860DC2D00BE90B9 /* IEXApiService.swift */; };
 		293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */; };
-		293B69CF2861096500BE90B9 /* IEXModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69CE2861096500BE90B9 /* IEXModels.swift */; };
 		293B69D22861263400BE90B9 /* NewsSentimentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B69D12861263400BE90B9 /* NewsSentimentModels.swift */; };
 		293B8F28288772640057AEBE /* SocialMediaSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */; };
 		293B8F2A288774B40057AEBE /* SocialMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B8F29288774B40057AEBE /* SocialMediaCell.swift */; };
@@ -64,6 +73,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		290BA36228B58474008123B4 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		290BA36428B5847B008123B4 /* CompanyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfo.swift; sourceTree = "<group>"; };
+		290BA36628B58483008123B4 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		290BA36828B5848D008123B4 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		290BA36A28B58494008123B4 /* Dividends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dividends.swift; sourceTree = "<group>"; };
+		290BA36C28B5849D008123B4 /* InstitutionalOwnership.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstitutionalOwnership.swift; sourceTree = "<group>"; };
+		290BA36E28B584A4008123B4 /* InsiderTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsiderTransactions.swift; sourceTree = "<group>"; };
+		290BA37028B584AA008123B4 /* CeoCompensation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeoCompensation.swift; sourceTree = "<group>"; };
+		290BA37228B584B2008123B4 /* DividendsForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsForcast.swift; sourceTree = "<group>"; };
+		290BA37428B584BD008123B4 /* AnalystRatings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatings.swift; sourceTree = "<group>"; };
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -80,7 +99,6 @@
 		293B69C82860D9DB00BE90B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		293B69CA2860DC2D00BE90B9 /* IEXApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXApiService.swift; sourceTree = "<group>"; };
 		293B69CC2860DCDE00BE90B9 /* IEXEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXEndpoint.swift; sourceTree = "<group>"; };
-		293B69CE2861096500BE90B9 /* IEXModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IEXModels.swift; sourceTree = "<group>"; };
 		293B69D12861263400BE90B9 /* NewsSentimentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSentimentModels.swift; sourceTree = "<group>"; };
 		293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaSummaryCell.swift; sourceTree = "<group>"; };
 		293B8F29288774B40057AEBE /* SocialMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCell.swift; sourceTree = "<group>"; };
@@ -133,6 +151,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290BA36128B5846A008123B4 /* IEX Models */ = {
+			isa = PBXGroup;
+			children = (
+				290BA36228B58474008123B4 /* Logo.swift */,
+				290BA36428B5847B008123B4 /* CompanyInfo.swift */,
+				290BA36628B58483008123B4 /* Stats.swift */,
+				290BA36828B5848D008123B4 /* News.swift */,
+				290BA36A28B58494008123B4 /* Dividends.swift */,
+				290BA36C28B5849D008123B4 /* InstitutionalOwnership.swift */,
+				290BA36E28B584A4008123B4 /* InsiderTransactions.swift */,
+				290BA37028B584AA008123B4 /* CeoCompensation.swift */,
+				290BA37228B584B2008123B4 /* DividendsForcast.swift */,
+				290BA37428B584BD008123B4 /* AnalystRatings.swift */,
+			);
+			path = "IEX Models";
+			sourceTree = "<group>";
+		};
 		292317D028397D5600460F81 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				292317DE28398E6500460F81 /* SearchResults.swift */,
-				293B69CE2861096500BE90B9 /* IEXModels.swift */,
+				290BA36128B5846A008123B4 /* IEX Models */,
 				293B69D12861263400BE90B9 /* NewsSentimentModels.swift */,
 				293B8F29288774B40057AEBE /* SocialMediaCell.swift */,
 			);
@@ -391,8 +426,10 @@
 				29954FC4283971430086949E /* FirstViewController.swift in Sources */,
 				29492101286D55F200E2653B /* FirstTechnicalView.swift in Sources */,
 				29492103286D561000E2653B /* SecondTechnicalView.swift in Sources */,
+				290BA36F28B584A4008123B4 /* InsiderTransactions.swift in Sources */,
 				294920FC286D550600E2653B /* DividendsView.swift in Sources */,
 				29F1B3A628723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift in Sources */,
+				290BA37128B584AA008123B4 /* CeoCompensation.swift in Sources */,
 				29F1B3AC28723EEB002BCA20 /* DividendsForcastViewModel.swift in Sources */,
 				29F1B3AE28723EF3002BCA20 /* CEODataViewModel.swift in Sources */,
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
@@ -400,11 +437,14 @@
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
 				29D1B505288A15EB0000C15B /* SentimentDial.swift in Sources */,
 				292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */,
+				290BA37528B584BD008123B4 /* AnalystRatings.swift in Sources */,
 				2959FF58285033C800B5E9F1 /* HomeHeaderView.swift in Sources */,
+				290BA36728B58483008123B4 /* Stats.swift in Sources */,
 				29BF0944283AB6C3004FBB29 /* FundamentalDataViewController.swift in Sources */,
 				29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */,
 				29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */,
 				293B8F2A288774B40057AEBE /* SocialMediaCell.swift in Sources */,
+				290BA36328B58474008123B4 /* Logo.swift in Sources */,
 				29F1B3A428723E10002BCA20 /* CompanyHeaderViewModel.swift in Sources */,
 				293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */,
 				29293C42288786B6006D7EF8 /* NewsTableViewCell.swift in Sources */,
@@ -414,23 +454,27 @@
 				293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
 				294920F3286D4BCF00E2653B /* DashboardViewController.swift in Sources */,
-				293B69CF2861096500BE90B9 /* IEXModels.swift in Sources */,
 				29492109286D57D300E2653B /* CEODataView.swift in Sources */,
 				2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */,
 				29492105286D576A00E2653B /* AnalystRatingView.swift in Sources */,
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
 				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
+				290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */,
+				290BA36528B5847B008123B4 /* CompanyInfo.swift in Sources */,
 				294920F6286D4C5700E2653B /* GreetingView.swift in Sources */,
+				290BA36B28B58494008123B4 /* Dividends.swift in Sources */,
 				2938FC7E288F7E6300137BBB /* FundamentalDataView.swift in Sources */,
 				29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */,
 				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
 				293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */,
 				294920FF286D55B600E2653B /* CompanyHeaderView.swift in Sources */,
 				293B8F28288772640057AEBE /* SocialMediaSummaryCell.swift in Sources */,
+				290BA36928B5848D008123B4 /* News.swift in Sources */,
 				293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */,
 				294920F8286D4CF500E2653B /* StatsView.swift in Sources */,
 				293B69D22861263400BE90B9 /* NewsSentimentModels.swift in Sources */,
+				290BA36D28B5849D008123B4 /* InstitutionalOwnership.swift in Sources */,
 				29BF0942283AB6A6004FBB29 /* SocialMediaViewController.swift in Sources */,
 				292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */,
 			);

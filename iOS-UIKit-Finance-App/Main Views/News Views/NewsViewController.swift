@@ -110,9 +110,6 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         barChart.delegate = self
         barChart.translatesAutoresizingMaskIntoConstraints = false
         barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
-        //barChart.invalidateIntrinsicContentSize()
-        //barChart.center = view.center
-        //view.addSubview(barChart)
     }
 
     func loadChartData() {
@@ -140,7 +137,6 @@ class NewsViewController: UIViewController, ChartViewDelegate {
             
         }
     }
-
 }
 
 extension NewsViewController {
@@ -161,11 +157,7 @@ extension NewsViewController {
                 print("qqq: \(String(data: data, encoding: .utf8))")
                 do {
                     let parsedJSON = try jsonDecoder.decode(NewsStruct.self, from: data)
-                   
-                    
                     self.newsArray += (parsedJSON.content)
-                    
-                    
                     self.newsArray = self.newsArray.sorted(by: {
                         ($0[1], $0[2]) > ($1[1], $1[2])
                     })
@@ -179,13 +171,10 @@ extension NewsViewController {
             
             self.loading = false
             
-            
             // Reload tableview
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
-            
         }).resume()
     }
 
@@ -221,7 +210,6 @@ extension NewsViewController {
                     DispatchQueue.main.async {
                         self.loadChartData()
                     }
-                    
                     
                 } catch {
                     print("Error parsing JSON: \(error.localizedDescription)")
@@ -259,9 +247,5 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
-        
     }
 }
-
-
-
