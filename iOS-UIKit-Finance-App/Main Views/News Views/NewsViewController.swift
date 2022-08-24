@@ -242,8 +242,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.tickerLabel.text = news[0]
             cell.sourceLabel.text = news[4]
             cell.headlineLabel.text = news[3]
-            cell.dateLabel.text = news[2]
-            cell.timeLabel.text = news[1]
+            // cell.dateLabel.text = news[2]  // Got rid of this
+            cell.timeLabel.text = news[2]
+            
+            // TODO: Set cell image here
         }
         
         return cell
