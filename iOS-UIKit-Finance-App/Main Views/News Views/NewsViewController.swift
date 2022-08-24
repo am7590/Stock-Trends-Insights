@@ -8,15 +8,13 @@
 import UIKit
 import SwiftUI
 import CoreData
-import Charts
 
-class NewsViewController: UIViewController, ChartViewDelegate {
+class NewsViewController: UIViewController {
 
     lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @Published private var listOfSecurities:[Stock]?
    
     var sentimentArray = [String:Double]()
-    var dataEntries: [BarChartDataEntry] = []
     var parser = APIParser()
     var newsArray = [[String]]()
     var newsDataNotLoaded = true
@@ -24,7 +22,6 @@ class NewsViewController: UIViewController, ChartViewDelegate {
     let array = ["News", "Array"]
     
     // Chart
-    var barChart = BarChartView()
     let tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
     
     override func viewDidLoad() {
@@ -57,27 +54,16 @@ class NewsViewController: UIViewController, ChartViewDelegate {
     }
     
     func setupHeader() {
-//        let header = barChart //AccountSummaryHeaderView(frame: .zero)
-//
-//        // Layout header is smallest size possible, keep width size of screen
-//        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-//        size.width = UIScreen.main.bounds.width
-//        header.frame.size = size
-//
-//         tableView.tableHeaderView = header
-        
-        let headerView = barChart
-        var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-        size.width = UIScreen.main.bounds.width
-        size.height = 300
-        headerView.frame.size = size
-        
+        let headerView = UIHostingController(rootView: NewsHeaderView()).view
+        var size = headerView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size?.width = UIScreen.main.bounds.width
+        size?.height = 200
+        headerView?.frame.size = size!
         tableView.tableHeaderView = headerView
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupBarChart()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,24 +90,6 @@ class NewsViewController: UIViewController, ChartViewDelegate {
         ])
     }
     
-
-    // MARK: Populate Charts
-    func setupBarChart() {
-        barChart.delegate = self
-        barChart.translatesAutoresizingMaskIntoConstraints = false
-        barChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 300)
-    }
-
-    func loadChartData() {
-        print("xxx: \(dataEntries)")
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Sentimenet")
-        let chartData = BarChartData(dataSet: chartDataSet)
-        print("zzz: \(chartDataSet)")
-        chartDataSet.colors = ChartColorTemplates.colorful()
-
-       barChart.data = chartData
-    }
-
     // MARK: Get stock data from CoreData
     func fetchSecurities() {
         do {
@@ -129,7 +97,7 @@ class NewsViewController: UIViewController, ChartViewDelegate {
             
             //for item in self.listOfSecurities! {
                 getNews(ticker: "AAPL")
-                getSentiment(ticker: "AAPL")
+                // getSentiment(ticker: "AAPL")
             //}
             newsDataNotLoaded = false
             
@@ -175,47 +143,6 @@ extension NewsViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        }).resume()
-    }
-
-    
-    func getSentiment(ticker: String) {
-        let component : URLComponents = parser.getSentimentRequest(ticker: ticker)
-        // var returnJSON : [String : Int] = [:]
-
-        let urlRequest = URLRequest(url: component.url!)
-        print(urlRequest.url ?? "Failed to load URL")
-        
-        URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
-            if let data = data {
-    
-                // let json = String(data: data, encoding: .utf8)
-                let jsonDecoder = JSONDecoder()
-                
-                do {
-                    let parsedJSON = try jsonDecoder.decode(SentimentStruct.self, from: data)
-                    //print(parsedJSON.content)
-                    self.sentimentArray = parsedJSON.content
-                    
-                    //print(self.sentimentArray )
-                    
-                    var count: Int = 0
-                    for item in self.sentimentArray {
-                        print(item.value)
-                        self.dataEntries.append( BarChartDataEntry(x: Double(count), y: Double(item.value) ))
-                        count += 1
-                    }
-                    
-                    print("iii: \(self.sentimentArray)")
-                    DispatchQueue.main.async {
-                        self.loadChartData()
-                    }
-                    
-                } catch {
-                    print("Error parsing JSON: \(error.localizedDescription)")
-                }
-            }
-            
         }).resume()
     }
 }
