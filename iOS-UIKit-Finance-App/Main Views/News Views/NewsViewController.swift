@@ -57,8 +57,9 @@ class NewsViewController: UIViewController {
         let headerView = UIHostingController(rootView: NewsHeaderView()).view
         var size = headerView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size?.width = UIScreen.main.bounds.width
-        size?.height = 200
+        size?.height = 300
         headerView?.frame.size = size!
+        headerView?.clipsToBounds = true
         tableView.tableHeaderView = headerView
     }
     
@@ -77,7 +78,7 @@ class NewsViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "NewsCellView", bundle: nil), forCellReuseIdentifier: "NewsCellView")
-        tableView.rowHeight = 140
+        tableView.rowHeight = 110
         tableView.clipsToBounds = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)

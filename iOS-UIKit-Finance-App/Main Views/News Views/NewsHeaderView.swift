@@ -23,7 +23,9 @@ struct NewsHeaderView: View {
                     )
                 }
         }.onAppear {
-            getSentiment(ticker: "SPY")
+            if data.isEmpty {
+                getSentiment(ticker: "SPY")
+            }
         }
     }
     
