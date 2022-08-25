@@ -30,7 +30,7 @@ func CardView(coin: CryptoModel)->some View{
                 .font(.caption)
                 .foregroundColor(.gray)
         }
-        .frame(width: 80,alignment: .leading)
+        .frame(width: 110,alignment: .leading)
         
         LineGraph(data: coin.last_7days_price,profit: coin.price_change > 0)
             //.padding(.horizontal,10)
@@ -115,8 +115,8 @@ struct LineGraph: View {
                     // Gradient
                     LinearGradient(colors: [
                     
-                        profit ? Color.mint : Color.red,
-                        profit ? Color.mint : Color.red,
+                        profit ? Color.green : Color.red,
+                        profit ? Color.green : Color.red,
                     ], startPoint: .leading, endPoint: .trailing)
                 )
                 
@@ -160,7 +160,7 @@ struct LineGraph: View {
     
     @ViewBuilder
     func FillBG()->some View{
-        let color = profit ? Color.mint : Color.red
+        let color = profit ? Color.green : Color.red
         LinearGradient(colors: [
         
             color
