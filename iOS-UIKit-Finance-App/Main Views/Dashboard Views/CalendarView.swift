@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarView: View {
     var body: some View {
         VStack {
+        
             HStack {
                 Spacer()
                 
@@ -17,22 +18,26 @@ struct CalendarView: View {
                 VStack {
                     Text("Friday")
                     Text("29")
-                }
+                }.foregroundColor(.black)
+                    .font(.largeTitle.bold())
+                    .scaleEffect(0.8)
                 
                 Spacer()
                 // Divider
                 HStack {
                     Divider()
+                        .background(.black)
                 }.frame(height: 100)
                 
                 Spacer()
                 Spacer()
+                
                 // Events
                 HStack {
                     Circle()
                         .frame(width: 12, height: 12)
-                        .foregroundColor(.green)
-                   
+                        .foregroundColor(.red)
+                    
                     VStack {
                         Text("TSLA Earnings Call")
                         Text("2:30 PM - 3:00 PM")
@@ -41,19 +46,15 @@ struct CalendarView: View {
                 }
                 
                 Spacer()
-            }.overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color(UIColor.green), lineWidth: 3)
-            )
-                .cornerRadius(15)
-                .padding()
-                .frame(width: UIScreen.main.bounds.size.width, alignment: .leading)
-            
-            
-        }.padding(8)
-        .frame(width: UIScreen.main.bounds.size.width, alignment: .center)
-            .cornerRadius(16)
-                
+            }.foregroundColor(.black)
+                .padding(15)
+                .background(
+                    
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.clear)
+                )
+        }
+        .padding(.top, 20)
     }
 }
 
