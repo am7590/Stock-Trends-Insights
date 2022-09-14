@@ -34,6 +34,8 @@
 		2912A65128D25A9400062361 /* StockDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65028D25A9400062361 /* StockDataPoint.swift */; };
 		2912A65428D271BC00062361 /* FundamentalStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65328D271BC00062361 /* FundamentalStatsView.swift */; };
 		2912A65628D2724F00062361 /* FundamentalFlippingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65528D2724F00062361 /* FundamentalFlippingViews.swift */; };
+		2912A65928D2728E00062361 /* DividendsFlippingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65828D2728E00062361 /* DividendsFlippingViews.swift */; };
+		2912A65B28D272BD00062361 /* DividendsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65A28D272BD00062361 /* DividendsData.swift */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -120,6 +122,8 @@
 		2912A65028D25A9400062361 /* StockDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataPoint.swift; sourceTree = "<group>"; };
 		2912A65328D271BC00062361 /* FundamentalStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalStatsView.swift; sourceTree = "<group>"; };
 		2912A65528D2724F00062361 /* FundamentalFlippingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalFlippingViews.swift; sourceTree = "<group>"; };
+		2912A65828D2728E00062361 /* DividendsFlippingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsFlippingViews.swift; sourceTree = "<group>"; };
+		2912A65A28D272BD00062361 /* DividendsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsData.swift; sourceTree = "<group>"; };
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -296,6 +300,16 @@
 			path = "Technical Data";
 			sourceTree = "<group>";
 		};
+		2912A65728D2728000062361 /* Dividends */ = {
+			isa = PBXGroup;
+			children = (
+				29492106286D579700E2653B /* DividendsForcastView.swift */,
+				2912A65A28D272BD00062361 /* DividendsData.swift */,
+				2912A65828D2728E00062361 /* DividendsFlippingViews.swift */,
+			);
+			path = Dividends;
+			sourceTree = "<group>";
+		};
 		292317D028397D5600460F81 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,7 +407,7 @@
 				2912A64028D256BF00062361 /* CEO Data */,
 				2912A64928D2599E00062361 /* AnalystRatings */,
 				2912A65228D270EC00062361 /* Technical Data */,
-				29492106286D579700E2653B /* DividendsForcastView.swift */,
+				2912A65728D2728000062361 /* Dividends */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -557,6 +571,7 @@
 				294920FC286D550600E2653B /* GridView.swift in Sources */,
 				29F1B3A628723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift in Sources */,
 				290BA37128B584AA008123B4 /* CeoCompensation.swift in Sources */,
+				2912A65928D2728E00062361 /* DividendsFlippingViews.swift in Sources */,
 				29F1B3AC28723EEB002BCA20 /* DividendsForcastViewModel.swift in Sources */,
 				29F1B3AE28723EF3002BCA20 /* CEODataViewModel.swift in Sources */,
 				2912A64B28D259BA00062361 /* AnalystFlipViews.swift in Sources */,
@@ -608,6 +623,7 @@
 				29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */,
 				2912A64628D2577500062361 /* CEOHeaderView.swift in Sources */,
 				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
+				2912A65B28D272BD00062361 /* DividendsData.swift in Sources */,
 				293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */,
 				294920FF286D55B600E2653B /* CompanyHeaderView.swift in Sources */,
 				2912A63A28D2507300062361 /* Double+StringFormat.swift in Sources */,
