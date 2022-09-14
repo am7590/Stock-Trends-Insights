@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 let width: CGFloat = UIScreen.main.bounds.size.width
 
@@ -67,7 +68,7 @@ struct CEOCompensationFront: View {
     
     var body: some View {
         
-        FundamentalDataView(systemImage: "info", title: "Ceo Compensation", content: {
+        Group {
             switch viewModel.state {
             case .loaded:
                 CEOCompensationView(viewModel: viewModel)
@@ -79,7 +80,7 @@ struct CEOCompensationFront: View {
             default:
                 Text("Loading...")
             }
-        })
+        }
         .onAppear(perform: { viewModel.load() })
         .rotation3DEffect(Angle(degrees: degree), axis: (x: 1, y: 0, z: 0))
         
@@ -90,27 +91,54 @@ struct CEOCompensationView: View {
     let viewModel: CEODataViewModel
     
     var body: some View {
-        Text(String(describing: "Name: \(viewModel.ceoCompensation?.name ?? "")"))
-        
-        if let compensation = viewModel.ceoCompensation?.salary {
-            Text(String(describing: "Salary: \(compensation)"))
-        }
-        
-        if let bonus = viewModel.ceoCompensation?.bonus {
-            Text(String(describing: "Bonus: \(bonus)"))
-        }
-        
-        if let stockAwards = viewModel.ceoCompensation?.stockAwards {
-            Text(String(describing: "Stock Awards: \(stockAwards)"))
-        }
+        VStack(spacing: 0) {
+            CEOHeaderView()
+              
+            
+            Group {
+                Text("Tesla CEO")
+                    .font(.title)
 
-        if let optionAwards = viewModel.ceoCompensation?.optionAwards {
-            Text(String(describing: "Option Awards: \(optionAwards)"))
-        }
+                + Text(" Elon Musk")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.red)
+                
+                + Text(" earned")
+                    .font(.title)
 
-        if let total = viewModel.ceoCompensation?.total {
-            Text(String(describing: "Total Compensation: \(total)"))
+                + Text(" $15,682,219")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.red)
+                
+                + Text(" last year:")
+                    .font(.title)
+                    
+            }.padding(.horizontal, 16)
+            
+            HStack {
+                SalaryInfoView(title: "Salary", info: "82,219")
+                SalaryInfoView(title: "Stocks & Options", info: "15,500,000")
+                SalaryInfoView(title: "Other", info: "100,000", divider: false)
+            }
+            .frame(height: 80)
+            
+            
+//
+//                Text("Stock & Options: ")
+//                + Text("$15,500,000")
+//
+
+            
+            
+            
         }
+        .padding(-15)
+        .background {
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill((Color.white).shadow(.drop(radius: 2)))
+        }.padding(.horizontal)
     }
 }
 
@@ -135,5 +163,70 @@ struct CEOCompensationBack: View {
 struct CEODataView_Previews: PreviewProvider {
     static var previews: some View {
         CEODataView()
+    }
+}
+
+
+
+struct SalaryInfoView: View {
+    let title: String
+    let info: String
+    var divider: Bool = true
+    
+    var body: some View {
+        VStack {
+            Text("\(title): \n")
+            + Text("$\(info)")
+                .font(.title3.bold())
+        }
+        
+        if divider {
+            Divider()
+                .padding(.vertical)
+        }
+        
+    }
+}
+
+struct CEOHeaderView: View {
+    
+    let geocoder = CLGeocoder()
+    
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 30.222296,
+            longitude: -97.617134),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01)
+    )
+    
+    var body: some View {
+        
+        VStack {
+            ZStack {
+                
+                Map(coordinateRegion: $region)
+                    .background {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill((Color.white).shadow(.drop(radius: 2)))
+                    }.frame(height: 150)
+                
+                HStack {
+                    
+                    Image("elon")
+                        .resizable()
+                        .frame(width: 125, height: 125)
+                        .clipShape(Circle())
+                        .shadow(radius: 15)
+                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                    
+                    Spacer()
+                }.padding(.leading, 10)
+                    .padding(.bottom, 15)
+            }
+            
+        }.padding()
+        
     }
 }
