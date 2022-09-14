@@ -5,17 +5,7 @@
 //  Created by Alek Michelson on 7/3/22.
 //
 
-import Foundation
-
-class StockAppViewModel: ObservableObject {
-   
-    enum State {
-        case loading
-        case loaded
-        case empty(String)
-        case error(String)
-    }
-}
+import SwiftUI
 
 @MainActor class CompanyHeaderViewModel: StockAppViewModel {
     let service = IEXApiService()

@@ -11,7 +11,6 @@ struct SearchResults: Decodable {
     
     let items: [SearchResult]
  
-    // Map JSON values from API to variables with a different name
     enum CodingKeys: String, CodingKey {
         case items = "bestMatches"
     }
@@ -25,7 +24,6 @@ struct SearchResult: Decodable {
     let type: StringLiteralType
     let currency: String
     
-    // Map JSON values from API to variables with a different name
     enum CodingKeys: String, CodingKey {
         case symbol = "1. symbol"
         case name = "2. name"
