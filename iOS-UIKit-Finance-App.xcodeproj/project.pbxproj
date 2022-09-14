@@ -24,6 +24,14 @@
 		2912A63728D24FB500062361 /* CompanyHeaderDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A63628D24FB500062361 /* CompanyHeaderDataView.swift */; };
 		2912A63A28D2507300062361 /* Double+StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A63928D2507300062361 /* Double+StringFormat.swift */; };
 		2912A63D28D250B600062361 /* Date+UpdateHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A63C28D250B600062361 /* Date+UpdateHour.swift */; };
+		2912A63F28D2528100062361 /* ChartDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A63E28D2528100062361 /* ChartDataPoint.swift */; };
+		2912A64228D256DE00062361 /* SalaryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A64128D256DE00062361 /* SalaryInfoView.swift */; };
+		2912A64428D2570F00062361 /* CEOFlipViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A64328D2570F00062361 /* CEOFlipViews.swift */; };
+		2912A64628D2577500062361 /* CEOHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A64528D2577500062361 /* CEOHeaderView.swift */; };
+		2912A64828D2579D00062361 /* CEOCompensationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A64728D2579D00062361 /* CEOCompensationView.swift */; };
+		2912A64B28D259BA00062361 /* AnalystFlipViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A64A28D259BA00062361 /* AnalystFlipViews.swift */; };
+		2912A64F28D25A0E00062361 /* BarGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A64E28D25A0E00062361 /* BarGraph.swift */; };
+		2912A65128D25A9400062361 /* StockDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65028D25A9400062361 /* StockDataPoint.swift */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -101,6 +109,14 @@
 		2912A63628D24FB500062361 /* CompanyHeaderDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderDataView.swift; sourceTree = "<group>"; };
 		2912A63928D2507300062361 /* Double+StringFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+StringFormat.swift"; sourceTree = "<group>"; };
 		2912A63C28D250B600062361 /* Date+UpdateHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+UpdateHour.swift"; sourceTree = "<group>"; };
+		2912A63E28D2528100062361 /* ChartDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDataPoint.swift; sourceTree = "<group>"; };
+		2912A64128D256DE00062361 /* SalaryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalaryInfoView.swift; sourceTree = "<group>"; };
+		2912A64328D2570F00062361 /* CEOFlipViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEOFlipViews.swift; sourceTree = "<group>"; };
+		2912A64528D2577500062361 /* CEOHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEOHeaderView.swift; sourceTree = "<group>"; };
+		2912A64728D2579D00062361 /* CEOCompensationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEOCompensationView.swift; sourceTree = "<group>"; };
+		2912A64A28D259BA00062361 /* AnalystFlipViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystFlipViews.swift; sourceTree = "<group>"; };
+		2912A64E28D25A0E00062361 /* BarGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarGraph.swift; sourceTree = "<group>"; };
+		2912A65028D25A9400062361 /* StockDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataPoint.swift; sourceTree = "<group>"; };
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -227,6 +243,7 @@
 		2912A63828D24FF400062361 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				2912A63E28D2528100062361 /* ChartDataPoint.swift */,
 				2912A62D28D1550200062361 /* ChartView.swift */,
 			);
 			path = Chart;
@@ -242,6 +259,29 @@
 				2912A63C28D250B600062361 /* Date+UpdateHour.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2912A64028D256BF00062361 /* CEO Data */ = {
+			isa = PBXGroup;
+			children = (
+				29492108286D57D300E2653B /* CEODataView.swift */,
+				2912A64728D2579D00062361 /* CEOCompensationView.swift */,
+				2912A64528D2577500062361 /* CEOHeaderView.swift */,
+				2912A64328D2570F00062361 /* CEOFlipViews.swift */,
+				2912A64128D256DE00062361 /* SalaryInfoView.swift */,
+			);
+			path = "CEO Data";
+			sourceTree = "<group>";
+		};
+		2912A64928D2599E00062361 /* AnalystRatings */ = {
+			isa = PBXGroup;
+			children = (
+				29492104286D576A00E2653B /* AnalystRatingView.swift */,
+				2912A65028D25A9400062361 /* StockDataPoint.swift */,
+				2912A64E28D25A0E00062361 /* BarGraph.swift */,
+				2912A64A28D259BA00062361 /* AnalystFlipViews.swift */,
+			);
+			path = AnalystRatings;
 			sourceTree = "<group>";
 		};
 		292317D028397D5600460F81 /* Onboarding */ = {
@@ -338,8 +378,8 @@
 				2938FC7D288F7E6300137BBB /* FundamentalDataView.swift */,
 				2912A63128D24F1B00062361 /* Header */,
 				2912A63828D24FF400062361 /* Chart */,
-				29492108286D57D300E2653B /* CEODataView.swift */,
-				29492104286D576A00E2653B /* AnalystRatingView.swift */,
+				2912A64028D256BF00062361 /* CEO Data */,
+				2912A64928D2599E00062361 /* AnalystRatings */,
 				29492100286D55F200E2653B /* FirstTechnicalView.swift */,
 				29492102286D561000E2653B /* SecondTechnicalView.swift */,
 				29492106286D579700E2653B /* DividendsForcastView.swift */,
@@ -492,7 +532,9 @@
 			files = (
 				29F1B3AA28723EDB002BCA20 /* AnalystRatingViewModel.swift in Sources */,
 				29F1B3A828723ED1002BCA20 /* CompanyPriceDataViewModel.swift in Sources */,
+				2912A64828D2579D00062361 /* CEOCompensationView.swift in Sources */,
 				292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */,
+				2912A65128D25A9400062361 /* StockDataPoint.swift in Sources */,
 				2951BD7A28B81FE50083C10A /* DummyData.swift in Sources */,
 				2912A63328D24F4700062361 /* HeaderFlipViews.swift in Sources */,
 				292BFA1C28938030009F4F05 /* DashboardContainerView.swift in Sources */,
@@ -507,6 +549,7 @@
 				290BA37128B584AA008123B4 /* CeoCompensation.swift in Sources */,
 				29F1B3AC28723EEB002BCA20 /* DividendsForcastViewModel.swift in Sources */,
 				29F1B3AE28723EF3002BCA20 /* CEODataViewModel.swift in Sources */,
+				2912A64B28D259BA00062361 /* AnalystFlipViews.swift in Sources */,
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
@@ -527,14 +570,17 @@
 				294920FA286D529C00E2653B /* CalendarView.swift in Sources */,
 				2951BD7828B81FA70083C10A /* WatchlistView.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
+				2912A63F28D2528100062361 /* ChartDataPoint.swift in Sources */,
 				29262B0A28D1464200BA3E1F /* View+ReadSize.swift in Sources */,
 				293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */,
+				2912A64F28D25A0E00062361 /* BarGraph.swift in Sources */,
 				2951BD7628B81F7C0083C10A /* WatchlistCellView.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
 				294920F3286D4BCF00E2653B /* DashboardViewController.swift in Sources */,
 				29492109286D57D300E2653B /* CEODataView.swift in Sources */,
 				2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */,
 				29492105286D576A00E2653B /* AnalystRatingView.swift in Sources */,
+				2912A64228D256DE00062361 /* SalaryInfoView.swift in Sources */,
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
 				2951BD7328B6D1250083C10A /* NewsHeaderView.swift in Sources */,
 				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
@@ -548,11 +594,13 @@
 				290BA36B28B58494008123B4 /* Dividends.swift in Sources */,
 				2938FC7E288F7E6300137BBB /* FundamentalDataView.swift in Sources */,
 				29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */,
+				2912A64628D2577500062361 /* CEOHeaderView.swift in Sources */,
 				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
 				293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */,
 				294920FF286D55B600E2653B /* CompanyHeaderView.swift in Sources */,
 				2912A63A28D2507300062361 /* Double+StringFormat.swift in Sources */,
 				2912A63728D24FB500062361 /* CompanyHeaderDataView.swift in Sources */,
+				2912A64428D2570F00062361 /* CEOFlipViews.swift in Sources */,
 				293B8F28288772640057AEBE /* SocialMediaSummaryCell.swift in Sources */,
 				290BA36928B5848D008123B4 /* News.swift in Sources */,
 				293B69C92860D9DB00BE90B9 /* RequestError.swift in Sources */,

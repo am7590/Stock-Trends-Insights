@@ -13,19 +13,19 @@ struct ChartView: View {
     
     // TODO: Fill with real data
     @State var sampleAnalytics: [ChartDataPoint] = [
-        ChartDataPoint(hour: Date().updateHour(value: 8), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 9), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 10), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 11), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 12), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 13), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 14), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 15), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 16), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 17), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 18), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 19), views: .random(in: 150...1000)),
-        ChartDataPoint(hour: Date().updateHour(value: 20), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 8), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 9), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 10), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 11), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 12), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 13), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 14), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 15), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 16), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 17), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 18), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 19), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 20), views: .random(in: 150...1000)),
     ]
     
     @State var currentTab: String = "Day"
@@ -37,7 +37,6 @@ struct ChartView: View {
         GeometryReader{ proxy in
             VStack{
                 VStack(alignment: .leading, spacing: 12){
-                    
                     let totalValue = sampleAnalytics.reduce(0.0) { partialResult, item in
                         item.views + partialResult
                     }
@@ -101,14 +100,14 @@ struct ChartView: View {
             ForEach(sampleAnalytics){item in
                 if isLineGraph{
                     LineMark(
-                        x: .value("Hour", item.hour,unit: .hour),
+                        x: .value("Hour", item.date, unit: .hour),
                         y: .value("Views", item.animate ? item.views : 0)
                     )
                     .foregroundStyle(Color("Blue").gradient)
                     .interpolationMethod(.catmullRom)
                 }else{
                     BarMark(
-                        x: .value("Hour", item.hour,unit: .hour),
+                        x: .value("Hour", item.date, unit: .hour),
                         y: .value("Views", item.animate ? item.views : 0)
                     )
                     .foregroundStyle(Color("Blue").gradient)
@@ -116,19 +115,17 @@ struct ChartView: View {
                 
                 if isLineGraph{
                     AreaMark(
-                        x: .value("Hour", item.hour,unit: .hour),
+                        x: .value("Hour", item.date, unit: .hour),
                         y: .value("Views", item.animate ? item.views : 0)
                     )
                     .foregroundStyle(Color("Blue").opacity(0.1).gradient)
                     .interpolationMethod(.catmullRom)
                 }
                 
-                // Dragging line
+                // Drag line
                 if let currentActiveItem,currentActiveItem.id == item.id{
-                    RuleMark(x: .value("Hour", currentActiveItem.hour))
-                    // Dotted Style
+                    RuleMark(x: .value("Hour", currentActiveItem.date))
                         .lineStyle(.init(lineWidth: 2, miterLimit: 2, dash: [2], dashPhase: 5))
-                    // Middle Of each bar
                         .offset(x: (plotWidth / CGFloat(sampleAnalytics.count)) / 2)
                         .annotation(position: .top){
                             VStack(alignment: .leading, spacing: 6){
@@ -165,9 +162,9 @@ struct ChartView: View {
                                 if let date: Date = proxy.value(atX: location.x){
                                     // Hour
                                     let calendar = Calendar.current
-                                    let hour = calendar.component(.hour, from: date)
+                                    let date = calendar.component(.hour, from: date)
                                     if let currentItem = sampleAnalytics.first(where: { item in
-                                        calendar.component(.hour, from: item.hour) == hour
+                                        calendar.component(.hour, from: item.date) == date
                                     }){
                                         self.currentActiveItem = currentItem
                                         self.plotWidth = proxy.plotAreaSize.width
@@ -176,7 +173,6 @@ struct ChartView: View {
                             }.onEnded{value in
                                 self.currentActiveItem = nil
                             }
-                        
                     )
             }
         })
@@ -203,12 +199,3 @@ struct ChartView: View {
 //        ChartView_Previews()
 //    }
 //}
-
-
-
-struct ChartDataPoint: Identifiable{
-    var id = UUID().uuidString
-    var hour: Date
-    var views: Double
-    var animate: Bool = false
-}
