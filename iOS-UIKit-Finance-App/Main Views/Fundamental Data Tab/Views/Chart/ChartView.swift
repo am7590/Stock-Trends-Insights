@@ -10,7 +10,8 @@ import Charts
 
 struct ChartView: View {
     @Environment(\.colorScheme) var scheme
-
+    
+    // TODO: Fill with real data
     @State var sampleAnalytics: [ChartDataPoint] = [
         ChartDataPoint(hour: Date().updateHour(value: 8), views: .random(in: 150...1000)),
         ChartDataPoint(hour: Date().updateHour(value: 9), views: .random(in: 150...1000)),
@@ -26,9 +27,8 @@ struct ChartView: View {
         ChartDataPoint(hour: Date().updateHour(value: 19), views: .random(in: 150...1000)),
         ChartDataPoint(hour: Date().updateHour(value: 20), views: .random(in: 150...1000)),
     ]
-    // View Properties
+    
     @State var currentTab: String = "Day"
-    // Gesture Properties
     @State var currentActiveItem: ChartDataPoint?
     @State var plotWidth: CGFloat = 0
     
@@ -43,10 +43,7 @@ struct ChartView: View {
                     }
                     
                     ZStack {
-                        
-                        
                         VStack {
-                            
                             ZStack {
                                 AnimatedChart()
                                 
@@ -56,10 +53,7 @@ struct ChartView: View {
                                         .offset(y: -90)
                                     Spacer()
                                 }
-                                
                             }
-                            
-                            
                             
                             Picker("", selection: $currentTab) {
                                 Text("Day")
@@ -74,18 +68,16 @@ struct ChartView: View {
                             .frame(width: proxy.size.width-64)
                             .pickerStyle(.segmented)
                         }
-                                            
-                            .padding()
-                            .background {
-                                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .fill((scheme == .dark ? Color.black : Color.white).shadow(.drop(radius: 2)))
-                            }
+                        
+                        .padding()
+                        .background {
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill((scheme == .dark ? Color.black : Color.white).shadow(.drop(radius: 2)))
+                        }
                     }
-                               }
+                }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 .padding()
-                
-                
                 .onChange(of: currentTab) { newValue in
                     sampleAnalytics = sampleAnalytics
                     if newValue != "7 Days"{
@@ -93,7 +85,6 @@ struct ChartView: View {
                             sampleAnalytics[index].views = .random(in: 150...1000)
                         }
                     }
-                    
                     animateGraph(fromChange: true)
                 }
             }
@@ -170,7 +161,7 @@ struct ChartView: View {
                             .onChanged{value in
                                 // Current Location
                                 let location = value.location
-    
+                                
                                 if let date: Date = proxy.value(atX: location.x){
                                     // Hour
                                     let calendar = Calendar.current
@@ -213,18 +204,6 @@ struct ChartView: View {
 //    }
 //}
 
-extension Double{
-    var stringFormat: String{
-        if self >= 10000 && self < 999999{
-            return String(format: "%.1fK",locale: Locale.current, self / 1000).replacingOccurrences(of: ".0", with: "")
-        }
-        if self > 999999{
-            return String(format: "%.1fM",locale: Locale.current, self / 1000000).replacingOccurrences(of: ".0", with: "")
-        }
-        
-        return String(format: "%.0f",locale: Locale.current, self)
-    }
-}
 
 
 struct ChartDataPoint: Identifiable{
@@ -232,10 +211,4 @@ struct ChartDataPoint: Identifiable{
     var hour: Date
     var views: Double
     var animate: Bool = false
-}
-extension Date{
-    func updateHour(value: Int)->Date{
-        let calendar = Calendar.current
-        return calendar.date(bySettingHour: value, minute: 0, second: 0, of: self) ?? .now
-    }
 }

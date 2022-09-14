@@ -44,15 +44,16 @@ import SwiftUI
         }
         
         // TODO: REMOVE THIS
-        Task(priority: .medium) {
-            let result = await service.getNews(stock: stock)
-            switch result {
-            case .success(let response):
-                print(response)
-                
-            case .failure(let error):
-                print("could not fetch company news")
-            }
-        }
+        /// Just testing news data 
+//        Task(priority: .medium) {
+//            let result = await service.getNews(stock: stock)
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//
+//            case .failure(let error):
+//                print("could not fetch company news")
+//            }
+//        }
     }
 }
