@@ -17,6 +17,7 @@
 		290BA37128B584AA008123B4 /* CeoCompensation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37028B584AA008123B4 /* CeoCompensation.swift */; };
 		290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37228B584B2008123B4 /* DividendsForcast.swift */; };
 		290BA37528B584BD008123B4 /* AnalystRatings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37428B584BD008123B4 /* AnalystRatings.swift */; };
+		2912A62C28D14EDC00062361 /* FundamentalViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A62B28D14EDC00062361 /* FundamentalViewContainer.swift */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -25,6 +26,8 @@
 		292317DF28398E6500460F81 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317DE28398E6500460F81 /* SearchResults.swift */; };
 		292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */; };
 		292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */; };
+		29262AE428D000D900BA3E1F /* ViewModelStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29262AE328D000D900BA3E1F /* ViewModelStates.swift */; };
+		29262B0A28D1464200BA3E1F /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29262B0928D1464200BA3E1F /* View+ReadSize.swift */; };
 		29293C42288786B6006D7EF8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29293C41288786B6006D7EF8 /* NewsTableViewCell.swift */; };
 		292BFA1C28938030009F4F05 /* DashboardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292BFA1B28938030009F4F05 /* DashboardContainerView.swift */; };
 		2938FC7E288F7E6300137BBB /* FundamentalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2938FC7D288F7E6300137BBB /* FundamentalDataView.swift */; };
@@ -86,6 +89,7 @@
 		290BA37028B584AA008123B4 /* CeoCompensation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeoCompensation.swift; sourceTree = "<group>"; };
 		290BA37228B584B2008123B4 /* DividendsForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsForcast.swift; sourceTree = "<group>"; };
 		290BA37428B584BD008123B4 /* AnalystRatings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatings.swift; sourceTree = "<group>"; };
+		2912A62B28D14EDC00062361 /* FundamentalViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalViewContainer.swift; sourceTree = "<group>"; };
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 		292317DE28398E6500460F81 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		292317E42839A1DD00460F81 /* Stock+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataClass.swift"; sourceTree = "<group>"; };
 		292317E52839A1DD00460F81 /* Stock+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stock+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		29262AE328D000D900BA3E1F /* ViewModelStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStates.swift; sourceTree = "<group>"; };
+		29262B0928D1464200BA3E1F /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
 		29293C41288786B6006D7EF8 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		292BFA1B28938030009F4F05 /* DashboardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardContainerView.swift; sourceTree = "<group>"; };
 		2938FC7D288F7E6300137BBB /* FundamentalDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalDataView.swift; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 				292317D628397F2600460F81 /* LocalState.swift */,
 				29BF093A283AB3EA004FBB29 /* UIViewController+Utils.swift */,
 				29D61D9C284524CD00E602D7 /* URLSession+Request.swift */,
+				29262B0928D1464200BA3E1F /* View+ReadSize.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -339,6 +346,7 @@
 				2959FF59285039D100B5E9F1 /* HomeViews */,
 				293B8F2B28877E210057AEBE /* News Views */,
 				29BF0943283AB6C3004FBB29 /* FundamentalDataViewController.swift */,
+				2912A62B28D14EDC00062361 /* FundamentalViewContainer.swift */,
 				293B8F262887724D0057AEBE /* Social Media Views */,
 				29F1B3A2286E88F2002BCA20 /* View Models */,
 				294920FD286D55A200E2653B /* Views */,
@@ -349,6 +357,7 @@
 		29F1B3A2286E88F2002BCA20 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				29262AE328D000D900BA3E1F /* ViewModelStates.swift */,
 				29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */,
 				29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */,
 				29F1B3A728723ED1002BCA20 /* CompanyPriceDataViewModel.swift */,
@@ -466,9 +475,11 @@
 				293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */,
 				29293C42288786B6006D7EF8 /* NewsTableViewCell.swift in Sources */,
 				29492107286D579700E2653B /* DividendsForcastView.swift in Sources */,
+				2912A62C28D14EDC00062361 /* FundamentalViewContainer.swift in Sources */,
 				294920FA286D529C00E2653B /* CalendarView.swift in Sources */,
 				2951BD7828B81FA70083C10A /* WatchlistView.swift in Sources */,
 				292317E72839A1DD00460F81 /* Stock+CoreDataProperties.swift in Sources */,
+				29262B0A28D1464200BA3E1F /* View+ReadSize.swift in Sources */,
 				293B69CB2860DC2D00BE90B9 /* IEXApiService.swift in Sources */,
 				2951BD7628B81F7C0083C10A /* WatchlistCellView.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
@@ -482,6 +493,7 @@
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
 				290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */,
 				290BA36528B5847B008123B4 /* CompanyInfo.swift in Sources */,
+				29262AE428D000D900BA3E1F /* ViewModelStates.swift in Sources */,
 				294920F6286D4C5700E2653B /* GreetingView.swift in Sources */,
 				290BA36B28B58494008123B4 /* Dividends.swift in Sources */,
 				2938FC7E288F7E6300137BBB /* FundamentalDataView.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class FirstViewController: UITabBarController {
 
@@ -50,7 +51,8 @@ class FirstViewController: UITabBarController {
         let homeViewController = DashboardViewController()//HomeViewController(service: IEXApiService())
         let newsViewController = NewsViewController()
         let socialMediaViewController = SocialMediaViewController()
-        let fundamentalDataViewController = FundamentalDataViewController()
+        let fundamentalDataViewController = UIHostingController(rootView: FundamentalViewContainer())
+
         
         homeViewController.setTabBarImage(imageName: "house", title: "Home")
         newsViewController.setTabBarImage(imageName: "newspaper", title: "News")
