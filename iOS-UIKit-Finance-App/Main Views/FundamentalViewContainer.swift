@@ -18,12 +18,20 @@ struct FundamentalViewContainer: View {
         ScrollView {
             VStack {
                 CompanyHeaderView()
+                Section(content: { ChartView().foregroundColor(Color.black) })
+                    .frame(width: UIScreen.main.bounds.size.width, height: 375, alignment: .leading)
+                
+                AnalystRatingView()
                 CEODataView()
-                AnalystRatingView()
-                AnalystRatingView()
-                FirstTechnicalView()
-                SecondTechnicalView()
+                    .padding(.top, 70)
+//                AnalystRatingView()
+//                SecondTechnicalView()
                 DividendsForcastView()
+                    .padding()
+                    .padding(.top, 40)
+                
+                FirstTechnicalView()
+                    .padding(.top, 40)
             }
         }
     }

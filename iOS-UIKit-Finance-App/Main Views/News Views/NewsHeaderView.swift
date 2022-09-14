@@ -12,7 +12,7 @@ struct NewsHeaderView: View {
     
     var parser = APIParser()
     var sentimentArray = [String:Double]()
-    @State var data: [ChartData] = []
+    @State var data: [PriceData] = []
     
     var body: some View {
         Chart {
@@ -76,7 +76,7 @@ struct NewsHeaderView_Previews: PreviewProvider {
     }
 }
 
-struct ChartData: Identifiable {
+struct PriceData: Identifiable {
     var day: String
     var value: Double
     var id = UUID()
