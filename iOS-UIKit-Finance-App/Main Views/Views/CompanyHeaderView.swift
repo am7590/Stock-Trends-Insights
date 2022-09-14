@@ -35,7 +35,7 @@ struct CompanyHeaderFlippingView: View {
     
     var body: some View {
         ZStack {
-            Color(UIColor.secondarySystemBackground)
+            // Color(UIColor.secondarySystemBackground)
             CompanyHeaderBack(degree: $frontDegree)
             CompanyHeaderFront(degree: $backDegree)
                 .padding()

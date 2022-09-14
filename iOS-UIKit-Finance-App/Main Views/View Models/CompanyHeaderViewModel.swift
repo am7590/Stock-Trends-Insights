@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor class CompanyHeaderViewModel: StockAppViewModel {
     let service = IEXApiService()
-    let stock: String = "AAPL"
+    let stock: String = "TSLA"
     
     @Published var logo: Logo?
     @Published var companyInfo: CompanyInfo?

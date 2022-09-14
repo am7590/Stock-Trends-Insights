@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor class DividendsForcastViewModel: StockAppViewModel {
     let service = IEXApiService()
-    let stock: String = "AAPL"
+    let stock: String = "TSLA"
     
     @Published var dividendsForcast: [DividendsForcast]?
     @Published var state: State = .loading

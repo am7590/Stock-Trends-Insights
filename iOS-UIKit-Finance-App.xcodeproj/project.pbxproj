@@ -18,6 +18,7 @@
 		290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37228B584B2008123B4 /* DividendsForcast.swift */; };
 		290BA37528B584BD008123B4 /* AnalystRatings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290BA37428B584BD008123B4 /* AnalystRatings.swift */; };
 		2912A62C28D14EDC00062361 /* FundamentalViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A62B28D14EDC00062361 /* FundamentalViewContainer.swift */; };
+		2912A62E28D1550200062361 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A62D28D1550200062361 /* ChartView.swift */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -90,6 +91,7 @@
 		290BA37228B584B2008123B4 /* DividendsForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsForcast.swift; sourceTree = "<group>"; };
 		290BA37428B584BD008123B4 /* AnalystRatings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatings.swift; sourceTree = "<group>"; };
 		2912A62B28D14EDC00062361 /* FundamentalViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalViewContainer.swift; sourceTree = "<group>"; };
+		2912A62D28D1550200062361 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				2938FC7D288F7E6300137BBB /* FundamentalDataView.swift */,
 				294920FE286D55B600E2653B /* CompanyHeaderView.swift */,
+				2912A62D28D1550200062361 /* ChartView.swift */,
 				29492108286D57D300E2653B /* CEODataView.swift */,
 				29492104286D576A00E2653B /* AnalystRatingView.swift */,
 				29492100286D55F200E2653B /* FirstTechnicalView.swift */,
@@ -493,6 +496,7 @@
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
 				290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */,
 				290BA36528B5847B008123B4 /* CompanyInfo.swift in Sources */,
+				2912A62E28D1550200062361 /* ChartView.swift in Sources */,
 				29262AE428D000D900BA3E1F /* ViewModelStates.swift in Sources */,
 				294920F6286D4C5700E2653B /* GreetingView.swift in Sources */,
 				290BA36B28B58494008123B4 /* Dividends.swift in Sources */,
