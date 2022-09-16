@@ -36,6 +36,8 @@
 		2912A65628D2724F00062361 /* FundamentalFlippingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65528D2724F00062361 /* FundamentalFlippingViews.swift */; };
 		2912A65928D2728E00062361 /* DividendsFlippingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65828D2728E00062361 /* DividendsFlippingViews.swift */; };
 		2912A65B28D272BD00062361 /* DividendsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65A28D272BD00062361 /* DividendsData.swift */; };
+		2912A65D28D3EB2900062361 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65C28D3EB2900062361 /* Sentiment.swift */; };
+		2912A66128D3F5B500062361 /* SocialMediaCellSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A66028D3F5B500062361 /* SocialMediaCellSubView.swift */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -124,6 +126,8 @@
 		2912A65528D2724F00062361 /* FundamentalFlippingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundamentalFlippingViews.swift; sourceTree = "<group>"; };
 		2912A65828D2728E00062361 /* DividendsFlippingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsFlippingViews.swift; sourceTree = "<group>"; };
 		2912A65A28D272BD00062361 /* DividendsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsData.swift; sourceTree = "<group>"; };
+		2912A65C28D3EB2900062361 /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
+		2912A66028D3F5B500062361 /* SocialMediaCellSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCellSubView.swift; sourceTree = "<group>"; };
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				290BA37028B584AA008123B4 /* CeoCompensation.swift */,
 				290BA37228B584B2008123B4 /* DividendsForcast.swift */,
 				290BA37428B584BD008123B4 /* AnalystRatings.swift */,
+				2912A65C28D3EB2900062361 /* Sentiment.swift */,
 			);
 			path = "IEX Models";
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 			children = (
 				29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */,
 				293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */,
+				2912A66028D3F5B500062361 /* SocialMediaCellSubView.swift */,
 			);
 			path = "Social Media Sentiment Tab";
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				2912A64F28D25A0E00062361 /* BarGraph.swift in Sources */,
 				2951BD7628B81F7C0083C10A /* WatchlistCellView.swift in Sources */,
 				29954FC0283971430086949E /* AppDelegate.swift in Sources */,
+				2912A66128D3F5B500062361 /* SocialMediaCellSubView.swift in Sources */,
 				294920F3286D4BCF00E2653B /* DashboardViewController.swift in Sources */,
 				2912A65628D2724F00062361 /* FundamentalFlippingViews.swift in Sources */,
 				29492109286D57D300E2653B /* CEODataView.swift in Sources */,
@@ -622,6 +629,7 @@
 				2938FC7E288F7E6300137BBB /* FundamentalDataView.swift in Sources */,
 				29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */,
 				2912A64628D2577500062361 /* CEOHeaderView.swift in Sources */,
+				2912A65D28D3EB2900062361 /* Sentiment.swift in Sources */,
 				29BF093E283AB67F004FBB29 /* HomeViewController.swift in Sources */,
 				2912A65B28D272BD00062361 /* DividendsData.swift in Sources */,
 				293B69CD2860DCDE00BE90B9 /* IEXEndpoint.swift in Sources */,
