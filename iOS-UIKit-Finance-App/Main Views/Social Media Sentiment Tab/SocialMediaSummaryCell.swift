@@ -24,7 +24,7 @@ class SocialMediaSummaryCell: UITableViewCell {
     let underlineView = UIView()
     let nameLabel = UILabel()
     
-    let cellSubView = UIHostingController(rootView: SocialMediaCellSubView())
+    var cellSubView = UIHostingController(rootView: SocialMediaCellSubView(viewModel: SocialMediaCellViewModel(ticker: "TSLA", socialMedia: "Twitter")))
     
     let balanceStackView = UIStackView()
     let balanceLabel = UILabel()
@@ -51,6 +51,7 @@ class SocialMediaSummaryCell: UITableViewCell {
         balanceLabel.text = "Sentiment Value:"
         balanceAmountLabel.text = String(cell.cellValue)
         underlineView.backgroundColor = cell.color
+        cellSubView = UIHostingController(rootView: SocialMediaCellSubView(viewModel: SocialMediaCellViewModel(ticker: cell.title, socialMedia: cell.type.rawValue)))
     }
     
     private func setup() {
@@ -107,6 +108,7 @@ class SocialMediaSummaryCell: UITableViewCell {
     
     private func layout() {
         
+        // Constrains for embedded SwiftUI view
         NSLayoutConstraint.activate([
             cellSubView.view.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1.0),
             cellSubView.view.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5),
@@ -114,6 +116,7 @@ class SocialMediaSummaryCell: UITableViewCell {
             cellSubView.view.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
         
+        // Constraints for programmatic view
         NSLayoutConstraint.activate([
             typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
             typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),

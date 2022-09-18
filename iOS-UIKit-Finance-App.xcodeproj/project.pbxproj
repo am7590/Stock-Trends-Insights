@@ -38,6 +38,7 @@
 		2912A65B28D272BD00062361 /* DividendsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65A28D272BD00062361 /* DividendsData.swift */; };
 		2912A65D28D3EB2900062361 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A65C28D3EB2900062361 /* Sentiment.swift */; };
 		2912A66128D3F5B500062361 /* SocialMediaCellSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A66028D3F5B500062361 /* SocialMediaCellSubView.swift */; };
+		2912A67F28D7964100062361 /* SocialMediaCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912A67E28D7964100062361 /* SocialMediaCellViewModel.swift */; };
 		292317D228397DD300460F81 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D128397DD300460F81 /* OnboardingContainerViewController.swift */; };
 		292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D328397DEE00460F81 /* OnboardingViewController.swift */; };
 		292317D728397F2600460F81 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292317D628397F2600460F81 /* LocalState.swift */; };
@@ -128,6 +129,7 @@
 		2912A65A28D272BD00062361 /* DividendsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendsData.swift; sourceTree = "<group>"; };
 		2912A65C28D3EB2900062361 /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
 		2912A66028D3F5B500062361 /* SocialMediaCellSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCellSubView.swift; sourceTree = "<group>"; };
+		2912A67E28D7964100062361 /* SocialMediaCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaCellViewModel.swift; sourceTree = "<group>"; };
 		292317D128397DD300460F81 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		292317D328397DEE00460F81 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		292317D628397F2600460F81 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */,
 				293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */,
 				2912A66028D3F5B500062361 /* SocialMediaCellSubView.swift */,
+				2912A67E28D7964100062361 /* SocialMediaCellViewModel.swift */,
 			);
 			path = "Social Media Sentiment Tab";
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				2951BD7328B6D1250083C10A /* NewsHeaderView.swift in Sources */,
 				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
 				2912A63D28D250B600062361 /* Date+UpdateHour.swift in Sources */,
+				2912A67F28D7964100062361 /* SocialMediaCellViewModel.swift in Sources */,
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
 				290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */,
 				290BA36528B5847B008123B4 /* CompanyInfo.swift in Sources */,
