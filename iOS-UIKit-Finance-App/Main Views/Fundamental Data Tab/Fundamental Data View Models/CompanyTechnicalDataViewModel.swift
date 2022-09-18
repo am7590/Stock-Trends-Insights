@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor class CompanyTechnicalDataViewModel: StockAppViewModel {
     let service = IEXApiService()
-    let stock: String = "TSLA"
+    let stock: String = "AAPL"
     
     @Published var stats: Stats?
     // @Published var companyInfo: CompanyInfo?

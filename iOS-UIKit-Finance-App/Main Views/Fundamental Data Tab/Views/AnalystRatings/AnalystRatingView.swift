@@ -81,7 +81,7 @@ struct AnalystRatingDataView: View {
 
 
 @ViewBuilder
-func DownloadStats()->some View{
+func DownloadStats() -> some View {
     
     VStack(spacing: 15){
         

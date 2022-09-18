@@ -11,7 +11,7 @@ import Charts
 struct ChartView: View {
     @Environment(\.colorScheme) var scheme
     
-    // TODO: Fill with real data
+    // TODO: Fill with real data and move it out of here
     @State var sampleAnalytics: [ChartDataPoint] = [
         ChartDataPoint(date: Date().updateHour(value: 8), views: .random(in: 150...1000)),
         ChartDataPoint(date: Date().updateHour(value: 9), views: .random(in: 150...1000)),
@@ -79,8 +79,8 @@ struct ChartView: View {
                 .padding()
                 .onChange(of: currentTab) { newValue in
                     sampleAnalytics = sampleAnalytics
-                    if newValue != "7 Days"{
-                        for (index,_) in sampleAnalytics.enumerated(){
+                    if newValue != "7 Days" {
+                        for (index,_) in sampleAnalytics.enumerated() {
                             sampleAnalytics[index].views = .random(in: 150...1000)
                         }
                     }

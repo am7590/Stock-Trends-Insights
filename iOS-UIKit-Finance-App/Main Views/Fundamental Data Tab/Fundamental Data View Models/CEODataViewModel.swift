@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor class CEODataViewModel: StockAppViewModel {
     let service = IEXApiService()
-    let stock: String = "TSLA"
+    let stock: String = "AAPL"
     
     @Published var ceoCompensation: CeoCompensation?
     @Published var state: State = .loading

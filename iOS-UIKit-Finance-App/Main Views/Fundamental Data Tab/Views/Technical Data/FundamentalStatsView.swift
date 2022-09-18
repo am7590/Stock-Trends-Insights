@@ -94,8 +94,16 @@ struct StatView: View {
         .padding(.vertical,22)
         .padding(.horizontal,18)
         .frame(maxWidth: .infinity,alignment: .leading)
-        .background(Color.red)
-        .cornerRadius(15)
+        .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                
+                    .stroke(.gray, lineWidth: 1)
+                    // .shadow(.drop(radius: 2))
+                    
+        )
+        // .background(Color.red)
+        //.cornerRadius(15)
+        
     }
 }
 
