@@ -1,5 +1,5 @@
 //
-//  SentimentDial.swift
+//  SentimentDialView.swift
 //  iOS-UIKit-Finance-App
 //
 //  Created by Alek Michelson on 7/21/22.
@@ -7,58 +7,84 @@
 
 import SwiftUI
 
-struct SentimentDial: View {
+struct SentimentDialView: View {
+    let ticker: String
+    @State var averageScore: Double = 0.0
+    
     var body: some View {
+        
+        
         ZStack {
-            Home()
+            VStack {
+                Spacer()
+                DialView(maxProgress: averageScore/5)
+                
+                VStack(spacing: 0) {
+                    Text("Social Media is ")
+                        .font(.title)
+                    + Text(averageScore/5 < 33.3 ? "bearish" : (averageScore/5 < 66.6 ? "neutral" : "bearish"))
+                        .font(.title.bold())
+                        .foregroundColor(averageScore/5 < 33.3 ? .red : (averageScore/5 < 66.6 ? .gray : .green))
+                    Text(" on \(ticker)")
+                        .font(.title)
+                    + Text("(" + String(round((averageScore/5) * 10) / 10.0) + ")%")
+                        .font(.title)
+                        .foregroundColor(averageScore/5 < 33.3 ? .red : (averageScore/5 < 66.6 ? .gray : .green))
+                }
+                .padding(.top, 16)
+                
+                
+            }
+            .padding(.top, 48)
+            
+        }.onReceive(NotificationCenter.default.publisher(for: NSNotification.SentimentScore)) { score in
+            guard let userInfo = score.userInfo, let sentimentScore = userInfo["score"] else {
+                return
+            }
+            print(sentimentScore)
+            DispatchQueue.main.async {
+                averageScore += (sentimentScore as! Double)
+            }
+        
+            
         }
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SentimentDialView_Previews: PreviewProvider {
     static var previews: some View {
-        SentimentDial()
+        SentimentDialView(ticker: "TSLA")
     }
 }
 
-struct Home: View {
+struct DialView: View {
     let colors = [Color(UIColor.red), Color(UIColor.green)]
     @State var progress: CGFloat = 0
+    @State var maxProgress: CGFloat = 0
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack {
-            
-            
             Meter(progress: self.$progress).onReceive(timer) { _ in
                 increaseDial()
             }
-            
-//            HStack(spacing: 25) {
-//                Button(action: {
-//                    increaseDial()
-//                }) {
-//                    Text("Update")
-//                        .padding(.vertical)
-//                        .frame(width: (UIScreen.main.bounds.width-50)/2)
-//                }.background(Capsule().stroke(LinearGradient(gradient: .init(colors: self.colors), startPoint: .leading, endPoint: .trailing), lineWidth: 2))
-//
-//                Button(action: {
-//                    resetDial()
-//                }) {
-//                    Text("Reset")
-//                        .padding(.vertical)
-//                        .frame(width: (UIScreen.main.bounds.width-50)/2)
-//                }.background(Capsule().stroke(LinearGradient(gradient: .init(colors: self.colors), startPoint: .leading, endPoint: .trailing), lineWidth: 2))
-//            }.padding(.top, 15)
+        }.onReceive(NotificationCenter.default.publisher(for: NSNotification.SentimentScore)) { score in
+            guard let userInfo = score.userInfo, let sentimentScore = userInfo["score"] else {
+                return
+            }
+            DispatchQueue.main.async {
+                maxProgress += (sentimentScore as! Double)/5
+            }
+        
             
         }
     }
     
     func increaseDial() {
         withAnimation(Animation.default.speed(0.55)) {
-            self.progress += (self.progress <= 80 ? 3 : 0)
+            print("maxprogress: \(maxProgress)")
+            self.progress += (self.progress <= maxProgress ? 3 : 0)
         }
     }
     
@@ -72,7 +98,7 @@ struct Home: View {
 
 struct Meter: View {
     let colors = [Color(UIColor.red), Color(UIColor.green)]
-    let colorRange = [Color(UIColor.green), Color(UIColor.yellow), Color(UIColor.red)]
+    let colorRange = [Color(UIColor.green), Color(UIColor.gray), Color(UIColor.red)]
     @Binding var progress: CGFloat
     
     var body: some View {
@@ -82,7 +108,7 @@ struct Meter: View {
                     
                     Circle()
                         .trim(from: 0, to: 1/6)
-                        .stroke(colorRange[0].opacity(0.8), lineWidth: 55)
+                        .stroke(colorRange[2].opacity(0.8), lineWidth: 55)
                         .frame(width: 250, height: 250)
                     Circle()
                         .trim(from: 1/6, to: 2/6)
@@ -90,14 +116,14 @@ struct Meter: View {
                         .frame(width: 250, height: 250)
                     Circle()
                         .trim(from: 2/6, to: 3/6)
-                        .stroke(colorRange[2].opacity(0.8), lineWidth: 55)
+                        .stroke(colorRange[0].opacity(0.8), lineWidth: 55)
                         .frame(width: 250, height: 250)
                     
                 }
             }.rotationEffect(.init(degrees: 180))
             
             ZStack(alignment: .bottom) {
-                let color: Color = progress < 33 ? colorRange[0] : progress < 66 ? colorRange[1] : colorRange[2]
+                let color: Color = progress < 33 ? colorRange[2] : progress < 66 ? colorRange[1] : colorRange[0]
                 
                 ZStack {
                     Color.black
