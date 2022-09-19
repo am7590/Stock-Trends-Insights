@@ -55,9 +55,9 @@ class SocialMediaSummaryCell: UITableViewCell {
     }
     
     private func setup() {
-        
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
-        typeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        typeLabel.font = UIFont.boldSystemFont(ofSize: 12.0)
+        
         typeLabel.adjustsFontForContentSizeCategory = true
         //typeLabel.text = "Account type"
         
@@ -118,10 +118,10 @@ class SocialMediaSummaryCell: UITableViewCell {
         
         // Constraints for programmatic view
         NSLayoutConstraint.activate([
-            typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
+            typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 0.5),
             typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             
-            underlineView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
+            underlineView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 0.5),
             underlineView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             underlineView.widthAnchor.constraint(equalToConstant: 60),
             underlineView.heightAnchor.constraint(equalToConstant: 4),

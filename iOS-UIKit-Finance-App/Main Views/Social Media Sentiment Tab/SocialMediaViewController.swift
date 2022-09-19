@@ -14,11 +14,15 @@ class SocialMediaViewController: UIViewController {
     
     // TODO: Refactor
     var fakeCells: [SocialMediaCell] {
-        return [SocialMediaCell(type: .Twitter, title: "Twitter", color: .blue, detailText: "1123 tweets were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Reddit, title: "Reddit", color: .red, detailText: "237 reddit posts were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Facebook, title: "Facebook", color: .systemBlue, detailText: "124 facebook posts were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Stocktwits, title: "Stocktwits", color: .green, detailText: "1123 tweets were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Wikipedia, title: "Wikipedia", color: .darkGray, detailText: "1 wikipedia post was analyzed and its sentiment score is", cellValue: 40.0)]
+        return [SocialMediaCell(type: .Twitter, title: "Twitter", color: .blue, detailText: "1123 tweets were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Reddit, title: "Reddit", color: .red, detailText: "237 reddit posts were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Facebook, title: "Facebook", color: .systemBlue, detailText: "124 facebook posts were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Stocktwits, title: "Stocktwits", color: .green, detailText: "1123 tweets were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0)]
     }
     
     override func viewDidLoad() {
         setupTableView()
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     private func setupTableView() {
@@ -30,7 +34,7 @@ class SocialMediaViewController: UIViewController {
         let headerView = UIHostingController(rootView: SentimentDialView(ticker: ticker)).view
         var size = headerView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size?.width = UIScreen.main.bounds.width
-        size?.height = 200
+        size?.height = 216
         headerView?.frame.size = size!
         tableView.tableHeaderView = headerView
         
@@ -62,7 +66,7 @@ extension SocialMediaViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 224
+        return 130
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

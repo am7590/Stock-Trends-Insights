@@ -17,19 +17,19 @@ struct SentimentDialView: View {
         ZStack {
             VStack {
                 Spacer()
-                DialView(maxProgress: averageScore/5)
+                DialView(maxProgress: averageScore/3)
                 
                 VStack(spacing: 0) {
                     Text("Social Media is ")
                         .font(.title)
-                    + Text(averageScore/5 < 33.3 ? "bearish" : (averageScore/5 < 66.6 ? "neutral" : "bearish"))
+                    + Text(averageScore/3 < 33.3 ? "bearish" : (averageScore/4 < 66.6 ? "neutral" : "bearish"))
                         .font(.title.bold())
-                        .foregroundColor(averageScore/5 < 33.3 ? .red : (averageScore/5 < 66.6 ? .gray : .green))
+                        .foregroundColor(averageScore/3 < 33.3 ? .red : (averageScore/3 < 66.6 ? .gray : .green))
                     Text(" on \(ticker)")
                         .font(.title)
-                    + Text("(" + String(round((averageScore/5) * 10) / 10.0) + ")%")
+                    + Text("(" + String(round((averageScore/4) * 10) / 10.0) + ")%")
                         .font(.title)
-                        .foregroundColor(averageScore/5 < 33.3 ? .red : (averageScore/5 < 66.6 ? .gray : .green))
+                        .foregroundColor(averageScore/4 < 33.3 ? .red : (averageScore/3 < 66.6 ? .gray : .green))
                 }
                 .padding(.top, 16)
                 
@@ -84,7 +84,12 @@ struct DialView: View {
     func increaseDial() {
         withAnimation(Animation.default.speed(0.55)) {
             print("maxprogress: \(maxProgress)")
-            self.progress += (self.progress <= maxProgress ? 3 : 0)
+            if self.progress <= maxProgress {
+                self.progress += 3
+            } else {
+                // Stop the timer
+                self.timer.upstream.connect().cancel()
+            }
         }
     }
     
