@@ -69,7 +69,7 @@ struct LoadedCellView: View {
                     // TODO: This is dummy data and will be deleted...
                     let dummyData: [(text: String, value: Int)] = [
                         (text: "Bearish", value: Int(sentimentScore < 33.33 ? 100-sentimentScore : sentimentScore/2)),
-                        (text: "Neutral", value: Int(sentimentScore > 33.33 || sentimentScore < 66.66 ? sentimentScore : sentimentScore/2.5)),
+                        (text: "Neutral", value: Int(sentimentScore > 33.33 && sentimentScore < 66.66 ? sentimentScore : sentimentScore/2.5)),
                         (text: "Bullish", value: Int(sentimentScore > 66.66 ? sentimentScore : sentimentScore/3)),
                     ]
                     
