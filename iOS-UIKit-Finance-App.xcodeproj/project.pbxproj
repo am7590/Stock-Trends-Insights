@@ -77,6 +77,7 @@
 		2951BD7A28B81FE50083C10A /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951BD7928B81FE50083C10A /* DummyData.swift */; };
 		2959FF58285033C800B5E9F1 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */; };
 		2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */; };
+		2981E2A128D80933008185FC /* NSNotification+SentimentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981E2A028D80933008185FC /* NSNotification+SentimentScore.swift */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
 		29954FC4283971430086949E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* FirstViewController.swift */; };
 		29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */; };
@@ -87,7 +88,7 @@
 		29BF0940283AB699004FBB29 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF093F283AB699004FBB29 /* NewsViewController.swift */; };
 		29BF0942283AB6A6004FBB29 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */; };
 		29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0947283ABAA6004FBB29 /* APIParser.swift */; };
-		29D1B505288A15EB0000C15B /* SentimentDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1B504288A15EB0000C15B /* SentimentDial.swift */; };
+		29D1B505288A15EB0000C15B /* SentimentDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1B504288A15EB0000C15B /* SentimentDialView.swift */; };
 		29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D61D9C284524CD00E602D7 /* URLSession+Request.swift */; };
 		29F1B3A428723E10002BCA20 /* CompanyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */; };
 		29F1B3A628723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */; };
@@ -168,6 +169,7 @@
 		2951BD7928B81FE50083C10A /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingsView.swift; sourceTree = "<group>"; };
+		2981E2A028D80933008185FC /* NSNotification+SentimentScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+SentimentScore.swift"; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29954FBF283971430086949E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29954FC3283971430086949E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +182,7 @@
 		29BF093F283AB699004FBB29 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
 		29BF0947283ABAA6004FBB29 /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
-		29D1B504288A15EB0000C15B /* SentimentDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentDial.swift; sourceTree = "<group>"; };
+		29D1B504288A15EB0000C15B /* SentimentDialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentDialView.swift; sourceTree = "<group>"; };
 		29D61D9C284524CD00E602D7 /* URLSession+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Request.swift"; sourceTree = "<group>"; };
 		29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderViewModel.swift; sourceTree = "<group>"; };
 		29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTechnicalDataViewModel.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				29262B0928D1464200BA3E1F /* View+ReadSize.swift */,
 				2912A63928D2507300062361 /* Double+StringFormat.swift */,
 				2912A63C28D250B600062361 /* Date+UpdateHour.swift */,
+				2981E2A028D80933008185FC /* NSNotification+SentimentScore.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 		293B8F262887724D0057AEBE /* Social Media Sentiment Tab */ = {
 			isa = PBXGroup;
 			children = (
+				29D1B504288A15EB0000C15B /* SentimentDialView.swift */,
 				29BF0941283AB6A6004FBB29 /* SocialMediaViewController.swift */,
 				293B8F27288772640057AEBE /* SocialMediaSummaryCell.swift */,
 				2912A66028D3F5B500062361 /* SocialMediaCellSubView.swift */,
@@ -386,7 +390,6 @@
 			children = (
 				29BF093F283AB699004FBB29 /* NewsViewController.swift */,
 				2951BD7228B6D1250083C10A /* NewsHeaderView.swift */,
-				29D1B504288A15EB0000C15B /* SentimentDial.swift */,
 				29293C41288786B6006D7EF8 /* NewsTableViewCell.swift */,
 				293B8F30288782C90057AEBE /* NewsCellView.xib */,
 			);
@@ -568,6 +571,7 @@
 				29F1B3A828723ED1002BCA20 /* CompanyPriceDataViewModel.swift in Sources */,
 				2912A64828D2579D00062361 /* CEOCompensationView.swift in Sources */,
 				292317E62839A1DD00460F81 /* Stock+CoreDataClass.swift in Sources */,
+				2981E2A128D80933008185FC /* NSNotification+SentimentScore.swift in Sources */,
 				2912A65128D25A9400062361 /* StockDataPoint.swift in Sources */,
 				2951BD7A28B81FE50083C10A /* DummyData.swift in Sources */,
 				2912A63328D24F4700062361 /* HeaderFlipViews.swift in Sources */,
@@ -587,7 +591,7 @@
 				292317D728397F2600460F81 /* LocalState.swift in Sources */,
 				29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */,
 				292317D428397DEE00460F81 /* OnboardingViewController.swift in Sources */,
-				29D1B505288A15EB0000C15B /* SentimentDial.swift in Sources */,
+				29D1B505288A15EB0000C15B /* SentimentDialView.swift in Sources */,
 				292317D9283981E900460F81 /* RequestWatchlistViewController.swift in Sources */,
 				290BA37528B584BD008123B4 /* AnalystRatings.swift in Sources */,
 				2959FF58285033C800B5E9F1 /* HomeHeaderView.swift in Sources */,

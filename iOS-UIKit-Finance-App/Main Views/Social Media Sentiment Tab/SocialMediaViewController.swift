@@ -9,9 +9,10 @@ import UIKit
 import SwiftUI
 
 class SocialMediaViewController: UIViewController {
-   
+    let ticker = "TSLA"
     var tableView = UITableView()
     
+    // TODO: Refactor
     var fakeCells: [SocialMediaCell] {
         return [SocialMediaCell(type: .Twitter, title: "Twitter", color: .blue, detailText: "1123 tweets were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Reddit, title: "Reddit", color: .red, detailText: "237 reddit posts were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Facebook, title: "Facebook", color: .systemBlue, detailText: "124 facebook posts were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Stocktwits, title: "Stocktwits", color: .green, detailText: "1123 tweets were analyzed from the last 24 hours and have a combined sentiment score of", cellValue: 40.0), SocialMediaCell(type: .Wikipedia, title: "Wikipedia", color: .darkGray, detailText: "1 wikipedia post was analyzed and its sentiment score is", cellValue: 40.0)]
     }
@@ -26,7 +27,7 @@ class SocialMediaViewController: UIViewController {
         tableView.register(SocialMediaSummaryCell.self, forCellReuseIdentifier: SocialMediaSummaryCell.reuseID)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        let headerView = UIHostingController(rootView: SentimentDial()).view
+        let headerView = UIHostingController(rootView: SentimentDialView(ticker: ticker)).view
         var size = headerView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size?.width = UIScreen.main.bounds.width
         size?.height = 200

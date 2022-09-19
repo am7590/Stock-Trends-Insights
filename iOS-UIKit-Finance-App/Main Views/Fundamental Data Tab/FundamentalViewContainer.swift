@@ -9,12 +9,7 @@ import SwiftUI
 
 struct FundamentalViewContainer: View {
     var body: some View {
-//        stackView.addArrangedSubview(UIHostingController(rootView: CompanyHeaderView()).view)
-//        stackView.addArrangedSubview(UIHostingController(rootView: CEODataView()).view)
-//        stackView.addArrangedSubview(UIHostingController(rootView: AnalystRatingView()).view)
-//        stackView.addArrangedSubview(UIHostingController(rootView: FirstTechnicalView()).view)
-//        stackView.addArrangedSubview(UIHostingController(rootView: SecondTechnicalView()).view)
-//        stackView.addArrangedSubview(UIHostingController(rootView: DividendsForcastView()).view)
+
         ScrollView {
             VStack {
                 CompanyHeaderView()
@@ -24,8 +19,7 @@ struct FundamentalViewContainer: View {
                 AnalystRatingView()
                 CEODataView()
                     .padding(.top, 70)
-//                AnalystRatingView()
-//                SecondTechnicalView()
+
                 DividendsForcastView()
                     .padding()
                     .padding(.top, 40)
