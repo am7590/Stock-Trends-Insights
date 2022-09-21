@@ -91,6 +91,7 @@
 		29BF0948283ABAA6004FBB29 /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BF0947283ABAA6004FBB29 /* APIParser.swift */; };
 		29D1B505288A15EB0000C15B /* SentimentDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1B504288A15EB0000C15B /* SentimentDialView.swift */; };
 		29D61D9D284524CD00E602D7 /* URLSession+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D61D9C284524CD00E602D7 /* URLSession+Request.swift */; };
+		29E02D1628DABA7900791F0B /* NewsCellSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E02D1528DABA7900791F0B /* NewsCellSubView.swift */; };
 		29F1B3A428723E10002BCA20 /* CompanyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */; };
 		29F1B3A628723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */; };
 		29F1B3A828723ED1002BCA20 /* CompanyPriceDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F1B3A728723ED1002BCA20 /* CompanyPriceDataViewModel.swift */; };
@@ -186,6 +187,7 @@
 		29BF0947283ABAA6004FBB29 /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 		29D1B504288A15EB0000C15B /* SentimentDialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentDialView.swift; sourceTree = "<group>"; };
 		29D61D9C284524CD00E602D7 /* URLSession+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Request.swift"; sourceTree = "<group>"; };
+		29E02D1528DABA7900791F0B /* NewsCellSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellSubView.swift; sourceTree = "<group>"; };
 		29F1B3A328723E10002BCA20 /* CompanyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHeaderViewModel.swift; sourceTree = "<group>"; };
 		29F1B3A528723EAC002BCA20 /* CompanyTechnicalDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTechnicalDataViewModel.swift; sourceTree = "<group>"; };
 		29F1B3A728723ED1002BCA20 /* CompanyPriceDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPriceDataViewModel.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				29BF093F283AB699004FBB29 /* NewsViewController.swift */,
 				2981E2A228D93D87008185FC /* HostingTableViewCell.swift */,
 				2951BD7228B6D1250083C10A /* NewsHeaderView.swift */,
+				29E02D1528DABA7900791F0B /* NewsCellSubView.swift */,
 				29293C41288786B6006D7EF8 /* NewsTableViewCell.swift */,
 				293B8F30288782C90057AEBE /* NewsCellView.xib */,
 			);
@@ -628,6 +631,7 @@
 				29BF093B283AB3EA004FBB29 /* UIViewController+Utils.swift in Sources */,
 				2951BD7328B6D1250083C10A /* NewsHeaderView.swift in Sources */,
 				292317DC28398E3A00460F81 /* APIService.swift in Sources */,
+				29E02D1628DABA7900791F0B /* NewsCellSubView.swift in Sources */,
 				2912A63D28D250B600062361 /* Date+UpdateHour.swift in Sources */,
 				2912A67F28D7964100062361 /* SocialMediaCellViewModel.swift in Sources */,
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
