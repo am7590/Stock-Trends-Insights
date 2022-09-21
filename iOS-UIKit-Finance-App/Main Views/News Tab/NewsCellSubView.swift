@@ -8,22 +8,14 @@
 import SwiftUI
 
 struct NewsCellSubView: View {
-    let newsItem: NewsItem 
+    @StateObject var viewModel: NewsViewModel
     
     var body: some View {
-        GeometryReader { proxy in
             VStack {
-                Text("Hello, World!")
-                Text("Hello, World!")
-                Text("Hello, World!")
-                Text("Hello, World!")
-                Text("Hello, World!")
-                Text("Hello, World!")
-                Text("Hello, World!")
+                Text(viewModel.news?.headline ?? "loading")
             }
-        }
         .background(.red)
-        .frame(width: UIScreen.main.bounds.size.width, height: 150)
+        .frame(width: UIScreen.main.bounds.size.width, height: 112)
     }
 }
 
