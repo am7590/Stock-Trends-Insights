@@ -61,6 +61,7 @@ extension SocialMediaViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = tableView.dequeueReusableCell(withIdentifier: SocialMediaSummaryCell.reuseID, for: indexPath) as! SocialMediaSummaryCell
         let data = fakeCells[indexPath.row]
         cell.configure(with: data)
+        cell.selectionStyle = .none 
         
         return cell
     }

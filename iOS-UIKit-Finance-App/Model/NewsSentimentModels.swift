@@ -7,14 +7,17 @@
 
 import Foundation
 
-struct NewsStruct: Decodable {
-    var ticker: String
-    var content: [[String]]
-    var time_called: String
+struct NewsItem: Codable {
+    let datetime: Int64
+    let headline: String
+    let source: String
+    let url: String
+    let summary: String
+    let image: String
+    let hasPaywall: Bool
 }
 
 struct SentimentStruct: Decodable {
-    var ticker: String
     var content: [String:Double]
-    var time_called: String
+    var type: String
 }

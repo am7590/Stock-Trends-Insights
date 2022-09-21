@@ -15,18 +15,28 @@ struct NewsHeaderView: View {
     @State var data: [PriceData] = []
     
     var body: some View {
-        Chart {
-            ForEach(data) { shape in
-                    BarMark(
-                        x: .value("Shape Type", shape.day),
-                        y: .value("Total Count", shape.value)
-                    )
-                }
-        }.onAppear {
-            if data.isEmpty {
-                getSentiment(ticker: "SPY")
+        VStack {
+            
+            Text("TSLA News Sentiment over the last 5 days")
+            
+            Chart {
+                ForEach(data.suffix(5)) { shape in
+                        BarMark(
+                            x: .value("Shape Type", shape.day),
+                            y: .value("Total Count", shape.value)
+                        )
+                    }
             }
+            .onAppear {
+                //if data.isEmpty {
+                    getSentiment(ticker: "SPY")
+               // }
+            }
+            .frame(height: 250)
+            
         }
+        .padding()
+        
     }
     
     func getSentiment(ticker: String) {
@@ -44,17 +54,17 @@ struct NewsHeaderView: View {
                 
                 do {
                     let parsedJSON = try jsonDecoder.decode(SentimentStruct.self, from: data)
-                    print("zz: \(parsedJSON.content)")
+                    print("qq sentiment: \(parsedJSON.content)")
                                         
-                    var count: Int = 0
-                    for item in parsedJSON.content {
-                        print("zz: \(item.value)")
-                        if count > 10 {
-                            break
-                        }
-                        self.data.append( .init(day: item.key, value: item.value)  )
-                        count += 1
-                    }
+//                    var count: Int = 0
+//                    for item in parsedJSON.content {
+//                        print("zz: \(item.value)")
+//                        if count > 10 {
+//                            break
+//                        }
+//                        self.data.append( .init(day: item.key, value: item.value)  )
+//                        count += 1
+//                    }
     //
     //                print("iii: \(self.sentimentArray)")
     //                DispatchQueue.main.async {

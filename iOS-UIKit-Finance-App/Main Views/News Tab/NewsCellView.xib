@@ -28,16 +28,16 @@
                             <rect key="frame" x="105" y="0.0" width="309" height="103"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="TrO-KA-Fzm">
-                                    <rect key="frame" x="0.0" y="0.0" width="309" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="309" height="48.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bloomberg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="oUB-Kh-7pV">
-                                            <rect key="frame" x="0.0" y="0.0" width="163" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="163" height="48.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:31am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="cv0-wh-kDf">
-                                            <rect key="frame" x="164" y="0.0" width="75" height="20.5"/>
+                                            <rect key="frame" x="164" y="0.0" width="75" height="48.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="75" id="JoB-yb-ng6"/>
                                             </constraints>
@@ -46,7 +46,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h23-9h-BW2">
-                                            <rect key="frame" x="240" y="0.0" width="8" height="20.5"/>
+                                            <rect key="frame" x="240" y="0.0" width="8" height="48.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="8" id="fJ3-x8-owW"/>
                                             </constraints>
@@ -55,7 +55,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TSLA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUw-aR-vYx">
-                                            <rect key="frame" x="249" y="0.0" width="60" height="20.5"/>
+                                            <rect key="frame" x="249" y="0.0" width="60" height="48.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="xsS-iO-l76"/>
                                             </constraints>
@@ -65,21 +65,20 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News headline for TSLA- Very interesting" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="314" translatesAutoresizingMaskIntoConstraints="NO" id="fYy-gZ-ZzX">
-                                    <rect key="frame" x="0.0" y="20.5" width="309" height="82.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="256" text="News headline for TSLA- Very interesting" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="314" translatesAutoresizingMaskIntoConstraints="NO" id="fYy-gZ-ZzX">
+                                    <rect key="frame" x="0.0" y="48.5" width="309" height="54.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <constraints>
-                                <constraint firstItem="fYy-gZ-ZzX" firstAttribute="top" secondItem="TrO-KA-Fzm" secondAttribute="bottom" id="ETl-35-pxO"/>
-                                <constraint firstItem="fYy-gZ-ZzX" firstAttribute="leading" secondItem="fmg-oK-0xp" secondAttribute="leading" id="qen-87-yEn"/>
-                                <constraint firstAttribute="bottom" secondItem="fYy-gZ-ZzX" secondAttribute="bottom" id="ttx-wf-Sq1"/>
-                            </constraints>
                         </stackView>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="IAh-KX-Phq"/>
+                    <constraints>
+                        <constraint firstItem="fmg-oK-0xp" firstAttribute="top" secondItem="BFS-nZ-5GQ" secondAttribute="top" id="Io8-PO-DWo"/>
+                        <constraint firstItem="fmg-oK-0xp" firstAttribute="bottom" secondItem="IAh-KX-Phq" secondAttribute="bottom" id="k8r-yf-HFD"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

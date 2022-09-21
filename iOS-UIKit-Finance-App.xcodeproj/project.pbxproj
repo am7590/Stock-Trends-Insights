@@ -78,6 +78,7 @@
 		2959FF58285033C800B5E9F1 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */; };
 		2959FF5B285039ED00B5E9F1 /* AnalystRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */; };
 		2981E2A128D80933008185FC /* NSNotification+SentimentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981E2A028D80933008185FC /* NSNotification+SentimentScore.swift */; };
+		2981E2A328D93D87008185FC /* HostingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981E2A228D93D87008185FC /* HostingTableViewCell.swift */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
 		29954FC4283971430086949E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* FirstViewController.swift */; };
 		29954FCA283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC8283971430086949E /* iOS_UIKit_Finance_App.xcdatamodeld */; };
@@ -170,6 +171,7 @@
 		2959FF57285033C800B5E9F1 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		2959FF5A285039ED00B5E9F1 /* AnalystRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalystRatingsView.swift; sourceTree = "<group>"; };
 		2981E2A028D80933008185FC /* NSNotification+SentimentScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+SentimentScore.swift"; sourceTree = "<group>"; };
+		2981E2A228D93D87008185FC /* HostingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingTableViewCell.swift; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29954FBF283971430086949E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29954FC3283971430086949E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				29BF093F283AB699004FBB29 /* NewsViewController.swift */,
+				2981E2A228D93D87008185FC /* HostingTableViewCell.swift */,
 				2951BD7228B6D1250083C10A /* NewsHeaderView.swift */,
 				29293C41288786B6006D7EF8 /* NewsTableViewCell.swift */,
 				293B8F30288782C90057AEBE /* NewsCellView.xib */,
@@ -630,6 +633,7 @@
 				292317DF28398E6500460F81 /* SearchResults.swift in Sources */,
 				290BA37328B584B2008123B4 /* DividendsForcast.swift in Sources */,
 				290BA36528B5847B008123B4 /* CompanyInfo.swift in Sources */,
+				2981E2A328D93D87008185FC /* HostingTableViewCell.swift in Sources */,
 				2912A62E28D1550200062361 /* ChartView.swift in Sources */,
 				29262AE428D000D900BA3E1F /* ViewModelStates.swift in Sources */,
 				294920F6286D4C5700E2653B /* GreetingView.swift in Sources */,
