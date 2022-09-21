@@ -51,7 +51,7 @@ class NewsViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.reuseID)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.reuseID)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -97,7 +97,11 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         let data = NewsViewModel(ticker: "AAPL", news: newsArray[indexPath.row])
         cell.contentConfiguration = UIHostingConfiguration {
             HStack {
-                Text(data.ticker)
+                VStack {
+                    Text(data.news?.headline ?? "")
+                    Text(data.news?.source ?? "")
+                }
+                
             }
         }
         
