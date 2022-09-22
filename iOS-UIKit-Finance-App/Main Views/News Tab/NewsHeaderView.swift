@@ -12,15 +12,16 @@ struct NewsHeaderView: View {
     
     var parser = APIParser()
     var sentimentArray = [String:Double]()
-    @State var data: [PriceData] = []
+    @State var priceData: [PriceData] = []
+    @State var datePeriod: String = "days"
     
     var body: some View {
         VStack {
             
-            Text("TSLA News Sentiment over the last 5 days")
+            Text("TSLA News Sentiment over the last 5 \(datePeriod)")
             
             Chart {
-                ForEach(data.suffix(5)) { shape in
+                ForEach(priceData.suffix(5)) { shape in
                         BarMark(
                             x: .value("Shape Type", shape.day),
                             y: .value("Total Count", shape.value)
@@ -54,8 +55,17 @@ struct NewsHeaderView: View {
                 
                 do {
                     let parsedJSON = try jsonDecoder.decode(SentimentStruct.self, from: data)
-                    print("qq sentiment: \(parsedJSON.content)")
-                                        
+                    
+                    for item in parsedJSON.content {
+                        priceData.append(PriceData(day: item.key, value: item.value))
+                    }
+                    
+                    datePeriod = parsedJSON.type
+                    
+                    
+                    // print("qq sentiment: \(parsedJSON.content)")
+                    
+                    
 //                    var count: Int = 0
 //                    for item in parsedJSON.content {
 //                        print("zz: \(item.value)")
