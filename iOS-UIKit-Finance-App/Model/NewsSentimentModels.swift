@@ -8,7 +8,7 @@
 import Foundation
 
 struct NewsItem: Codable {
-    let datetime: Int64
+    let datetime: Double
     let headline: String
     let source: String
     let url: String

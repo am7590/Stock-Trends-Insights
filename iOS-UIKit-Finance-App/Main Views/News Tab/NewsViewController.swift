@@ -94,18 +94,73 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         guard !newsArray.isEmpty else { return UITableViewCell() }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseID, for: indexPath)
-        let data = NewsViewModel(ticker: "AAPL", news: newsArray[indexPath.row])
-        cell.contentConfiguration = UIHostingConfiguration {
-            HStack {
-                VStack {
-                    Text(data.news?.headline ?? "")
-                    Text(data.news?.source ?? "")
+        let newsData = NewsViewModel(ticker: "AAPL", news: newsArray[indexPath.row]).news
+        let dateString = Date(timeIntervalSince1970: (newsData?.datetime ?? 0.0)/1000).timeAgoDisplay()
+        let image = newsData?.image ?? ""
+        
+        DispatchQueue.main.async {
+            cell.contentConfiguration = UIHostingConfiguration { 
+                HStack {
+                    VStack {
+                        
+                        Spacer()
+                        
+                        
+                        if let logo = data {
+                            Group {
+                                if image == "https://storage.googleapis.com/iexcloud-hl37opg/images/iex_cloud_image.png" {
+                                    Image("apple")
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 110, height: 110)
+                                        .cornerRadius(15)
+                                } else {
+                                    AsyncImage(url: URL(string: image)) { [weak self] image in
+                                        image
+                                            .resizable()
+                                            .scaledToFill()
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+                                    .frame(width: 110, height: 110)
+                                    .cornerRadius(15)
+                                }
+                            }
+                            
+                        }
+                        
+                        Spacer()
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text(newsData?.source ?? ".")
+                            .font(.title3)
+                            .foregroundColor(.gray)
+                        Text(newsData?.headline ?? ".")
+                            .font(.title2.bold())
+                        Text(dateString)
+                            .font(.callout)
+                            .foregroundColor(.gray)
+                        Spacer()
+                    }
+                    
+                    
+                    
                 }
                 
             }
         }
         
+        
         return cell
+    }
+}
+
+extension Date {
+    func timeAgoDisplay() -> String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter.localizedString(for: self, relativeTo: Date())
     }
 }
 
