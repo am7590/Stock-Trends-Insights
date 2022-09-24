@@ -18,7 +18,18 @@ struct NewsHeaderView: View {
     var body: some View {
         VStack {
             
-            Text("TSLA News Sentiment over the last 5 \(datePeriod)")
+            HStack {
+                Text("AAPL ")
+                    .font(.title2.bold())
+                + Text("News Sentiment over the last")
+                    .font(.title2)
+                + Text(" 5 \(datePeriod)")
+                    .font(.title2.bold())
+                    .foregroundColor(.green)
+            }.multilineTextAlignment(.center)
+            
+            
+            Spacer()
             
             Chart {
                 ForEach(priceData.suffix(5)) { shape in
@@ -30,10 +41,10 @@ struct NewsHeaderView: View {
             }
             .onAppear {
                 //if data.isEmpty {
-                    getSentiment(ticker: "SPY")
+                    getSentiment(ticker: "AAPL")
                // }
             }
-            .frame(height: 250)
+            .frame(height: 190)
             
         }
         .padding()
@@ -59,6 +70,8 @@ struct NewsHeaderView: View {
                     for item in parsedJSON.content {
                         priceData.append(PriceData(day: item.key, value: item.value))
                     }
+                    
+                    print(parsedJSON)
                     
                     datePeriod = parsedJSON.type
                     

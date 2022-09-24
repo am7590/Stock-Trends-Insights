@@ -7,11 +7,9 @@
 
 import UIKit
 
-// Protocol with signal methods sent to anyone who registers this
 protocol OnboardingContainerViewControllerDelegate: AnyObject {
     func didFinishOnboarding()
 }
-
 
 class OnboardingContainerViewController: UIViewController {
 
@@ -67,7 +65,6 @@ class OnboardingContainerViewController: UIViewController {
         
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
         
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),

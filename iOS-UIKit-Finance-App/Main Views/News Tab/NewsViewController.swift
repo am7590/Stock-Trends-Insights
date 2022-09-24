@@ -134,10 +134,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
                     
                     VStack(alignment: .leading) {
                         Text(newsData?.source ?? ".")
-                            .font(.title3)
+                            .font(.subheadline)
                             .foregroundColor(.gray)
                         Text(newsData?.headline ?? ".")
-                            .font(.title2.bold())
+                            .font(.title3.bold())
                         Text(dateString)
                             .font(.callout)
                             .foregroundColor(.gray)

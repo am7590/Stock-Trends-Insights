@@ -114,31 +114,24 @@ class RequestWatchlistViewController: UIViewController {
                     }
                     searchQueryTextOccupied = false
                     
-                    // Loading animation
+                    // TODO: Loading animation
                     // showLoadingAnimation()
                     
-                    
                     self.apiService.fetchSymbolePublisher(ticker: searchQuery).sink { (completion) in
-                        // If error
-                        
-                        // Hide animation upon callback
                         // hideLoadingAnimation()
      
                         switch completion {
                         case .failure(let error):
                             print(error.localizedDescription)
                         case .finished: break
-            
                         }
                         
                     } receiveValue: { (searchResults) in
-                        // If success
                         //print(searchResults)
                         self.searchResults = searchResults
      
                         // Reload tableview data
                         self.tableView.reloadData()
-                        
                         self.tableView.isScrollEnabled = true  // Enable scrolling w/ results
                         
                     }.store(in: &self.subscribers)
@@ -204,7 +197,7 @@ extension RequestWatchlistViewController {
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
         ])
-//
+
 //        NSLayoutConstraint.activate([
 //            stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 4),
 //            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -284,7 +277,6 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
             let searchResult = searchResults.items[indexPath.item]
             let symbol = searchResult.symbol
             
-            
             // MARK: didSelectRowat
             
             //print(orignalSearchQuery)
@@ -311,18 +303,12 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
         
         // Prevent cells from being selected
         tableView.deselectRow(at: indexPath, animated: true)
-        
     }
     
     // Called when the user types on the table view cell
     private func handleSelection(for symbol: String, searchResult: SearchResult) {
         
         if mode == .search {
-            
-            
-            
-            
-
             searchController.isActive = false
             self.canceledSearchController = true
             DispatchQueue.main.async {
@@ -330,33 +316,20 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
             }
         }
         
-        // Loading animation
+        // TODO: Loading animation
         // showLoadingAnimation()
-        
     }
 }
 
 extension RequestWatchlistViewController: UISearchResultsUpdating, UISearchControllerDelegate{
     func updateSearchResults(for searchController: UISearchController) {
-        
-        
         searchQueryTextOccupied = searchController.searchBar.text == ""
         // let scopeButton = searchController.searchBar.scopeButtonTitles![searchController.searchBar.selectedScopeButtonImage]
-        
         guard let searchQuery = searchController.searchBar.text,
-              !searchQuery.isEmpty else {
+              !searchQuery.isEmpty else { return }
             
-            return
-            
-        }
-        
         //filterTableView(searchText: searchController.searchBar.text ?? "")  // and scopebutton when enabled
-        
         self.searchQuery = searchQuery
         tableView.reloadData()
     }
-    
-    
 }
-
-

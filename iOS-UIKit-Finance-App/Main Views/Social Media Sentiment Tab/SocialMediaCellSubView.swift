@@ -52,12 +52,12 @@ struct LoadedCellView: View {
                     + Text("  (\(String(sentimentScore))%)")
                         .font(.title2)
                     
-                    Group {
-                        Text("From ")
-                        + Text(postsAnalyzed)
-                            .bold()
-                        + Text(" analyzed posts")
-                    }.font(.title3)
+//                    Group {
+//                        Text("From ")
+//                        + Text(postsAnalyzed)
+//                            .bold()
+//                        + Text(" analyzed posts")
+//                    }.font(.title3)
                     
                 }
                 .padding(.top, 50)

@@ -56,7 +56,7 @@ class SocialMediaSummaryCell: UITableViewCell {
     
     private func setup() {
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
-        typeLabel.font = UIFont.boldSystemFont(ofSize: 12.0)
+        typeLabel.font = UIFont.boldSystemFont(ofSize: 24)
         
         typeLabel.adjustsFontForContentSizeCategory = true
         //typeLabel.text = "Account type"
