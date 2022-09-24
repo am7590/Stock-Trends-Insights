@@ -48,7 +48,7 @@ extension DashboardViewController {
         stackView.spacing = .leastNonzeroMagnitude
         
         // stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(UIHostingController(rootView: GreetingView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: GreetingView(viewModel: GreetingViewModel())).view)
         stackView.addArrangedSubview(UIHostingController(rootView: CalendarView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: StatsView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: GridView()).view)

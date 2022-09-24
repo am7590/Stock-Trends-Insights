@@ -45,4 +45,39 @@ extension HTTPClient {
             return .failure(.unknown)
         }
     }
+    
+    func sendRequest<T: Decodable>(url: String, responseModel: T.Type) async -> Result<T, RequestError> {
+        print(url)
+        
+        guard let url = URL(string: url) else {
+            return .failure(.invalidURL)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
+                        
+            guard let response = response as? HTTPURLResponse else {
+                return .failure(.noResponse)
+            }
+            
+            switch response.statusCode {
+            case 200...299:
+                guard let decodedResponse = try?
+                        JSONDecoder().decode(responseModel, from: data) else {
+                            print("Failed to decode \(T.Type.self)")
+                    return .failure(.decode)
+                }
+                return .success(decodedResponse)
+            case 401:
+                return .failure(.unauthorized)
+            default:
+                return .failure(.unexpectedStatusCode)
+            }
+        } catch {
+            return .failure(.unknown)
+        }
+    }
 }
