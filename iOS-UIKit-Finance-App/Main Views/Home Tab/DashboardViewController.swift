@@ -28,13 +28,6 @@ extension DashboardViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
-        
-        // label
-        //        label.translatesAutoresizingMaskIntoConstraints = false
-        //        label.text = "Title"
-        //        label.font = UIFont.preferredFont(forTextStyle: .title1)
-
-        
     }
     
 
@@ -49,9 +42,9 @@ extension DashboardViewController {
         
         // stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(UIHostingController(rootView: GreetingView(viewModel: GreetingViewModel())).view)
-        stackView.addArrangedSubview(UIHostingController(rootView: CalendarView()).view)
-        stackView.addArrangedSubview(UIHostingController(rootView: StatsView()).view)
-        stackView.addArrangedSubview(UIHostingController(rootView: GridView()).view)
+//        stackView.addArrangedSubview(UIHostingController(rootView: CalendarView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: WatchlistView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: SectorsView()).view)
         
         view.addSubview(scrollView)
         

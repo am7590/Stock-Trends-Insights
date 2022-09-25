@@ -16,6 +16,7 @@ struct CalendarView: View {
                 
                 // Date
                 VStack {
+                    Text("Market Opens")
                     Text("Friday")
                     Text("29")
                 }.foregroundColor(.black)
@@ -54,7 +55,6 @@ struct CalendarView: View {
                         .fill(Color.clear)
                 )
         }
-        .padding(.top, 20)
     }
 }
 

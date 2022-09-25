@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WatchlistView: View {
     var body: some View  {
-        VStack(spacing: 15){
+        VStack(spacing: 15) {
             HStack{
                 
                 Text("My Watchlist")
@@ -26,36 +26,21 @@ struct WatchlistView: View {
             ]
             
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 10){
-//                    ForEach(coins){ coin in
-//                        VStack(spacing: 8){
-//                            CardView(coin: coin)
-//                            Divider()
-//                                .background(.black)
-//                        }
-//                        // .padding(.horizontal)
-//                        .padding(.vertical,8)
-//                    }
-                    
-                    VStack(spacing: 8){
-                        CardView(coin: coins[0])
-                        Divider()
-                            .background(.black)
-                        CardView(coin: coins[1])
-                        Divider()
-                            .background(.black)
-                    }
+                
+                
+                VStack(spacing: 8){
+                    CardView(coin: coins[0])
+                    Divider()
+                        .background(.black)
+                    CardView(coin: coins[1])
+                    Divider()
+                        .background(.black)
                 }
+                
             }
         }
-        .padding(15)
-        .background(
-            
-            // RoundedRectangle(cornerRadius: 20)
-            //.fill(Color.black)
-        )
-        .padding(.vertical,5)
-        
+        .frame(height: 300)
+        .padding(.horizontal)
         
     }
 }

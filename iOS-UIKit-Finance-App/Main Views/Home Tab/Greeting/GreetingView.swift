@@ -92,7 +92,7 @@ struct GreetingView: View {
         }.onAppear {
             viewModel.load()
         }
-        .frame(height: 300)
+        .frame(height: 200)
         
         
     }
