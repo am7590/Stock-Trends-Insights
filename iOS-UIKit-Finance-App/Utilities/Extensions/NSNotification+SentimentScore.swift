@@ -9,4 +9,6 @@ import Foundation
 
 extension NSNotification {
     static let SentimentScore = Notification.Name.init("SentimentScore")
+    static let NextPage = Notification.Name.init("NextPage")
+    static let FinishOnboarding = Notification.Name.init("FinishOnboarding")
 }

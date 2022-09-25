@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol OnboardingContainerViewControllerDelegate: AnyObject {
     func didFinishOnboarding()
@@ -14,27 +15,21 @@ protocol OnboardingContainerViewControllerDelegate: AnyObject {
 class OnboardingContainerViewController: UIViewController {
 
     let pageViewController: UIPageViewController
+    let page1 = UIHostingController(rootView: FirstSplashView())
+    let page2 = UIHostingController(rootView: StockSelectionSplashView())
     var pages = [UIViewController]()
     let closeButton = UIButton(type: .system)
-    var currentVC: UIViewController {
-        didSet {
-        }
-    }
+    var currentVC: UIViewController
     
     weak var delegate: OnboardingContainerViewControllerDelegate?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        
-        let page1 = OnboardingViewController(heroImageName: "placeholder", titleText: "Splash screen 1")
-        let page2 = OnboardingViewController(heroImageName: "placeholder", titleText: "Splash screen 2")
-        let page3 = OnboardingViewController(heroImageName: "placeholder", titleText: "Splash screen 3")
-        let page4 = RequestWatchlistViewController(titleText: "Enter your watchlist below:")
-                
+
         pages.append(page1)
         pages.append(page2)
-        pages.append(page3)
-        pages.append(page4)
+//        pages.append(page3)
+//        pages.append(page4)
         
         currentVC = pages.first!
         
@@ -51,6 +46,10 @@ class OnboardingContainerViewController: UIViewController {
         setup()
         style()
         layout()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nextPage), name: NSNotification.NextPage, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(closeTapped), name: NSNotification.FinishOnboarding, object: nil)
     }
     
     
@@ -81,18 +80,18 @@ class OnboardingContainerViewController: UIViewController {
         pageViewController
         
         // closeButton
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.setTitle("Close", for: [])
-        closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
-        view.addSubview(closeButton)
+        // closeButton.translatesAutoresizingMaskIntoConstraints = false
+        // closeButton.setTitle("Close", for: [])
+        // closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
+        // view.addSubview(closeButton)
     }
     
     private func layout() {
         // closeButton
-        NSLayoutConstraint.activate([
-            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
-            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
-        ])
+//        NSLayoutConstraint.activate([
+//            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+//            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
+//        ])
     }
 }
 
@@ -120,7 +119,7 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     }
 
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return pages.count
+        return 0 // pages.count
     }
 
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
@@ -133,5 +132,9 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
 extension OnboardingContainerViewController {
     @objc func closeTapped(_ sender: UIButton) {
         delegate?.didFinishOnboarding()
+    }
+    
+    @objc func nextPage() {
+        pageViewController.setViewControllers([page2], direction: .forward, animated: true, completion: nil)
     }
 }
