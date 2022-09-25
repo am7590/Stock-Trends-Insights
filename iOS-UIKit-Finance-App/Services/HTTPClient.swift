@@ -27,6 +27,7 @@ extension HTTPClient {
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)
             }
+            print("zz \(response)")
             
             switch response.statusCode {
             case 200...299:
@@ -63,6 +64,8 @@ extension HTTPClient {
                 return .failure(.noResponse)
             }
             
+            print("zz \(response)")
+            
             switch response.statusCode {
             case 200...299:
                 guard let decodedResponse = try?
@@ -70,7 +73,9 @@ extension HTTPClient {
                             print("Failed to decode \(T.Type.self)")
                     return .failure(.decode)
                 }
+                print(decodedResponse)
                 return .success(decodedResponse)
+                
             case 401:
                 return .failure(.unauthorized)
             default:
