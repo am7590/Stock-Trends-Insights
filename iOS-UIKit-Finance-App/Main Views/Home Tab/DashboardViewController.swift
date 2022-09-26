@@ -42,9 +42,9 @@ extension DashboardViewController {
         
         // stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(UIHostingController(rootView: GreetingView(viewModel: GreetingViewModel())).view)
-//        stackView.addArrangedSubview(UIHostingController(rootView: CalendarView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: WatchlistView()).view)
         stackView.addArrangedSubview(UIHostingController(rootView: SectorsView()).view)
+        stackView.addArrangedSubview(UIHostingController(rootView: CurrencyView()).view)
         
         view.addSubview(scrollView)
         
