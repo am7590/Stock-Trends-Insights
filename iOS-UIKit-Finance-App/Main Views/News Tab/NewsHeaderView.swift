@@ -31,18 +31,24 @@ struct NewsHeaderView: View {
             
             Spacer()
             
-            Chart {
-                ForEach(priceData.suffix(5)) { shape in
-                        BarMark(
-                            x: .value("Shape Type", shape.day),
-                            y: .value("Total Count", shape.value)
-                        )
+            Group {
+                if priceData.isEmpty {
+                    ProgressView()
+                } else {
+                    Chart {
+                        ForEach(priceData.suffix(5)) { shape in
+                            BarMark(
+                                x: .value("Shape Type", shape.day),
+                                y: .value("Total Count", shape.value)
+                            )
+                        }
                     }
+                }
             }
             .onAppear {
                 //if data.isEmpty {
-                    getSentiment(ticker: "AAPL")
-               // }
+                getSentiment(ticker: "AAPL")
+                // }
             }
             .frame(height: 190)
             
@@ -54,13 +60,13 @@ struct NewsHeaderView: View {
     func getSentiment(ticker: String) {
         let component : URLComponents = parser.getSentimentRequest(ticker: ticker)
         // var returnJSON : [String : Int] = [:]
-
+        
         let urlRequest = URLRequest(url: component.url!)
         print(urlRequest.url ?? "Failed to load URL")
         
         URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             if let data = data {
-
+                
                 // let json = String(data: data, encoding: .utf8)
                 let jsonDecoder = JSONDecoder()
                 
@@ -79,20 +85,20 @@ struct NewsHeaderView: View {
                     // print("qq sentiment: \(parsedJSON.content)")
                     
                     
-//                    var count: Int = 0
-//                    for item in parsedJSON.content {
-//                        print("zz: \(item.value)")
-//                        if count > 10 {
-//                            break
-//                        }
-//                        self.data.append( .init(day: item.key, value: item.value)  )
-//                        count += 1
-//                    }
-    //
-    //                print("iii: \(self.sentimentArray)")
-    //                DispatchQueue.main.async {
-    //                    self.loadChartData()
-    //                }
+                    //                    var count: Int = 0
+                    //                    for item in parsedJSON.content {
+                    //                        print("zz: \(item.value)")
+                    //                        if count > 10 {
+                    //                            break
+                    //                        }
+                    //                        self.data.append( .init(day: item.key, value: item.value)  )
+                    //                        count += 1
+                    //                    }
+                    //
+                    //                print("iii: \(self.sentimentArray)")
+                    //                DispatchQueue.main.async {
+                    //                    self.loadChartData()
+                    //                }
                     
                 } catch {
                     print("Error parsing JSON: \(error.localizedDescription)")
