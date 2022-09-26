@@ -57,6 +57,10 @@ struct AnalystRatingFront: View {
             switch viewModel.state {
             case .loaded:
                 AnalystRatingDataView(analystRating: viewModel.analystRatings![0])
+                    .background {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(Color.white.shadow(.drop(radius: 2)))
+                    }
                 
             case .error(let error):
                 Text(error)

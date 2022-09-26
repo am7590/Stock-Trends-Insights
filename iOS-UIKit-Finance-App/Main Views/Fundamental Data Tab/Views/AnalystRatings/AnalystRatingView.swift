@@ -18,8 +18,9 @@ var weekDownloads: [StockDataPoint] = [
 struct AnalystRatingView: View {
     
     var body: some View {
-        Section(content: { AnalystRatingFlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 250, alignment: .leading)
+        Section(content: { AnalystRatingFlippingView()        
+            .foregroundColor(Color.black) })
+            .frame(width: UIScreen.main.bounds.size.width, height: 400, alignment: .leading)
     }
 }
 
@@ -72,10 +73,11 @@ struct AnalystRatingDataView: View {
                     .bold()
                     .foregroundColor(.green)
             }
-            .frame(height: 100)
+            .frame(height: 150)
             
             Spacer()
         }
+        .padding()
     }
 }
 
@@ -83,11 +85,9 @@ struct AnalystRatingDataView: View {
 @ViewBuilder
 func DownloadStats() -> some View {
     
-    VStack(spacing: 15){
         
         BarGraph(downloads: weekDownloads)
             .padding(.top, 5)
-    }
     .padding(.vertical,20)
 }
 

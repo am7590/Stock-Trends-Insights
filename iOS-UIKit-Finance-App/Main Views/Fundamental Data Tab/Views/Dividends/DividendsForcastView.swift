@@ -11,7 +11,7 @@ import Charts
 struct DividendsForcastView: View {
     var body: some View {
         Section(content: { DividendsForcastFlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 275, alignment: .leading)
+            .frame(width: UIScreen.main.bounds.size.width, height: 350, alignment: .leading)
     }
 }
 
@@ -60,6 +60,7 @@ struct DividendsForcastDataView: View {
                     //.position(by: .value("month", product.month))
                 }
             }
+            .frame(height: 150)
         }
     }
 }

@@ -10,11 +10,7 @@ import SwiftUI
 struct FirstTechnicalView: View {
     
     var body: some View {
-        Section(content: {
-            FirstTechnicalViewFlippingView().foregroundColor(Color.black)
-            
-        })
-        .frame(width: UIScreen.main.bounds.size.width, height: 300, alignment: .leading)
+        FirstTechnicalViewFlippingView().foregroundColor(Color.black)
     }
 }
 

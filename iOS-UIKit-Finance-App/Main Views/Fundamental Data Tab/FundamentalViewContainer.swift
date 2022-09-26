@@ -9,23 +9,30 @@ import SwiftUI
 
 struct FundamentalViewContainer: View {
     var body: some View {
-
+        
         ScrollView {
             VStack {
                 CompanyHeaderView()
-                Section(content: { ChartView().foregroundColor(Color.black) })
-                    .frame(width: UIScreen.main.bounds.size.width, height: 375, alignment: .leading)
                 
-                AnalystRatingView()
-                CEODataView()
-                    .padding(.top, 70)
-
+                Section(content: {
+                    ChartView()
+                        .foregroundColor(Color.black)
+                })
+                    .frame(width: UIScreen.main.bounds.size.width, height: 275, alignment: .leading)
+                
                 DividendsForcastView()
                     .padding()
-                    .padding(.top, 40)
+//                    .padding(.top, 40)
+                
+                // This will be in the next beta version
+                // TODO: Make new API endpoint to retrieve CEO png
+                //                CEODataView()
+                //                    .padding(.top, 70)
+                
+                AnalystRatingView()
                 
                 FirstTechnicalView()
-                    .padding(.top, 40)
+                    .padding()
             }
         }
     }

@@ -13,7 +13,7 @@ struct FundamentalStatsView: View {
     var body: some View {
         VStack{
             
-            HStack(){
+            HStack{
                 
                 Text("Fundamentals")
                     .foregroundColor(.black)
@@ -51,18 +51,15 @@ struct FundamentalStatsView: View {
                     //                        StatView(title: "Data 1", count: "87.57K", image: "newspaper", color: "Green")
                     //                        StatView(title: "Data 2", count: "27.57K", image: "paperclip", color: "Purple")
                     //                    }
-                }
+                }.padding(.top, -30)
             }
+                
+            
+            Spacer()
             
             
         }
-        .frame(maxWidth: .infinity)
-        .padding(15)
-        
-        .background {
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(Color.white.shadow(.drop(radius: 2)))
-        }
+        .padding(.horizontal)
     }
     
 }
@@ -75,23 +72,14 @@ struct StatView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 25) {
-            
-            HStack{
-                Image(systemName: image)
-                    .font(.caption.bold())
-                    .foregroundColor(Color.white)
-                    .padding(6)
-                    .background(Color.black)
-                    .cornerRadius(8)
-                
-                Text(title)
-            }
+            Text(title)
             
             Text(count)
                 .font(.title.bold())
+                .foregroundColor(.green)
         }
         .foregroundColor(Color.black)
-        .padding(.vertical,22)
+        .padding(.vertical,18)
         .padding(.horizontal,18)
         .frame(maxWidth: .infinity,alignment: .leading)
         .overlay(
