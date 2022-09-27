@@ -10,6 +10,6 @@ import Foundation
 struct ChartDataPoint: Identifiable {
     var id = UUID().uuidString
     var date: Date
-    var views: Double
+    var value: Double
     var animate: Bool = false
 }

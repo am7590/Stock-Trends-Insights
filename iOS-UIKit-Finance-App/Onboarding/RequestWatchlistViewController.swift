@@ -17,10 +17,6 @@ class RequestWatchlistViewController: UIViewController {
         case search
     }
     
-    lazy var coreDataContext: NSManagedObjectContext = {
-        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-    }() as! NSManagedObjectContext
-    
     // Stock search
     @Published private var searchQueryTextOccupied = false
     @Published private var mode: Mode = .selected
@@ -33,6 +29,9 @@ class RequestWatchlistViewController: UIViewController {
     var canceledSearchController = false
     weak var delegate: OnboardingContainerViewControllerDelegate?
     
+    lazy var coreDataContext: NSManagedObjectContext = {
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    }() as! NSManagedObjectContext
     
     let label = UILabel()
     let tableView = UITableView()
@@ -82,7 +81,7 @@ class RequestWatchlistViewController: UIViewController {
     // Second table view
     @Published private var orignalSearchQuery: [Stock]?
     
-    @Published private var listOfSecurities:[Stock]?
+    @Published private var listOfSecurities: [Stock]?
     
     
     func fetchSecurities() {
@@ -319,6 +318,7 @@ extension RequestWatchlistViewController: UITableViewDelegate, UITableViewDataSo
         // TODO: Loading animation
         // showLoadingAnimation()
     }
+
 }
 
 extension RequestWatchlistViewController: UISearchResultsUpdating, UISearchControllerDelegate{

@@ -39,11 +39,7 @@ class FirstViewController: UITabBarController {
     ///         UINavigationBar.appearance().standardAppearance = appearance // for scrolling background color
     ///         UINavigationBar.appearance().scrollEdgeAppearance = appearance // for large title background color
     ///
-    ///       }
-    @objc func selectorName() {
-        print("")
-    }
-    
+    ///       }    
     
     private func setupViews() {
         let homeViewController = DashboardViewController()//HomeViewController(service: IEXApiService())

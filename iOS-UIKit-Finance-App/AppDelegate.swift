@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let onboardingContainerViewController = OnboardingContainerViewController()
     let viewController = FirstViewController()
     
+    lazy var coreDataContext: NSManagedObjectContext = {
+        (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    }() as! NSManagedObjectContext
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -39,6 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func prepMainView() {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = .systemBackground
+        
+        DispatchQueue.main.async {
+            self.fetchTicker()
+        }
+        
     }
 
     // MARK: - Core Data stack
@@ -80,6 +89,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    
+    func fetchTicker() {
+        do {
+            let tickers = try coreDataContext.fetch(Stock.fetchRequest())
+            print("zzz:jj \(tickers[0].name!)")
+            DispatchQueue.main.async {
+                WatchlistManager.shared.tickerSelected = tickers[0].name!
+                WatchlistManager.shared.fetchStockData()
+            }
+        } catch {
+            // TODO: Error handling
         }
     }
 }

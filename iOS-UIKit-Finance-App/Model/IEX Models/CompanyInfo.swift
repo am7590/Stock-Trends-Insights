@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CompanyInfo: Codable {
+public struct CompanyInfo: Codable {
     let symbol: String?
     let companyName: String?
     let exchange: String?

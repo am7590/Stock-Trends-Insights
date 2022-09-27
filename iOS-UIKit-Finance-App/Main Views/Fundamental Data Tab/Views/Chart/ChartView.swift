@@ -13,19 +13,19 @@ struct ChartView: View {
     
     // TODO: Fill with real data and move it out of here
     @State var sampleAnalytics: [ChartDataPoint] = [
-        ChartDataPoint(date: Date().updateHour(value: 8), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 9), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 10), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 11), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 12), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 13), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 14), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 15), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 16), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 17), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 18), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 19), views: .random(in: 150...1000)),
-        ChartDataPoint(date: Date().updateHour(value: 20), views: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 8), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 9), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 10), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 11), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 12), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 13), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 14), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 15), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 16), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 17), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 18), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 19), value: .random(in: 150...1000)),
+        ChartDataPoint(date: Date().updateHour(value: 20), value: .random(in: 150...1000)),
     ]
     
     @State var currentTab: String = "Day"
@@ -38,7 +38,7 @@ struct ChartView: View {
             VStack{
                 VStack(alignment: .leading, spacing: 12){
                     let totalValue = sampleAnalytics.reduce(0.0) { partialResult, item in
-                        item.views + partialResult
+                        item.value + partialResult
                     }
                     
                     ZStack {
@@ -81,7 +81,7 @@ struct ChartView: View {
                     sampleAnalytics = sampleAnalytics
                     if newValue != "7 Days" {
                         for (index,_) in sampleAnalytics.enumerated() {
-                            sampleAnalytics[index].views = .random(in: 150...1000)
+                            sampleAnalytics[index].value = .random(in: 150...1000)
                         }
                     }
                     animateGraph(fromChange: true)
@@ -93,22 +93,22 @@ struct ChartView: View {
     @ViewBuilder
     func AnimatedChart()->some View{
         let max = sampleAnalytics.max { item1, item2 in
-            return item2.views > item1.views
-        }?.views ?? 0
+            return item2.value > item1.value
+        }?.value ?? 0
         
         Chart{
             ForEach(sampleAnalytics){item in
                 if isLineGraph{
                     LineMark(
                         x: .value("Hour", item.date, unit: .hour),
-                        y: .value("Views", item.animate ? item.views : 0)
+                        y: .value("Views", item.animate ? item.value : 0)
                     )
                     .foregroundStyle(Color("Blue").gradient)
                     .interpolationMethod(.catmullRom)
                 }else{
                     BarMark(
                         x: .value("Hour", item.date, unit: .hour),
-                        y: .value("Views", item.animate ? item.views : 0)
+                        y: .value("Views", item.animate ? item.value : 0)
                     )
                     .foregroundStyle(Color("Blue").gradient)
                 }
@@ -116,7 +116,7 @@ struct ChartView: View {
                 if isLineGraph{
                     AreaMark(
                         x: .value("Hour", item.date, unit: .hour),
-                        y: .value("Views", item.animate ? item.views : 0)
+                        y: .value("Views", item.animate ? item.value : 0)
                     )
                     .foregroundStyle(Color("Blue").opacity(0.1).gradient)
                     .interpolationMethod(.catmullRom)
@@ -133,7 +133,7 @@ struct ChartView: View {
                                     .font(.caption)
                                     .foregroundColor(.gray)
                                 
-                                Text(currentActiveItem.views.stringFormat)
+                                Text(currentActiveItem.value.stringFormat)
                                     .font(.title3.bold())
                             }
                             .padding(.horizontal,10)
