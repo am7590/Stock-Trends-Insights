@@ -8,55 +8,36 @@
 import SwiftUI
 
 struct BarGraph: View {
-    var downloads: [StockDataPoint]
+    var trend: [StockDataPoint]
     
-    // Gesture Properties...
     @GestureState var isDragging: Bool = false
     @State var offset: CGFloat = 0
-    
-    // Current download to highlight while dragging...
     @State var currentDownloadID: String = ""
     
     var body: some View {
         
         HStack(spacing: 10){
             
-            ForEach(downloads){download in
-                CardView(download: download)
+            ForEach(trend) { item in
+                CardView(download: item)
             }
         }
         .frame(height: 150)
         .animation(.easeOut, value: isDragging)
-        // Gesutre...
         .gesture(
-        
             DragGesture()
                 .updating($isDragging, body: { _, out, _ in
                     out = true
                 })
                 .onChanged({ value in
-                    // Only updating if dragging...
                     offset = isDragging ? value.location.x : 0
-                    
-                    // dragging space removing the padding added to the view...
-                    // total padding = 60
-                    // 2 * 15 Horizontal
-                    let draggingSpace = UIScreen.main.bounds.width - 60
-                    
-                    // Each block...
-                    let eachBlock = draggingSpace / CGFloat(downloads.count)
-                    
-                    // getting index...
+                    let draggingSpace = UIScreen.main.bounds.width - 60  // 60 padding = 2 * 15 Horizontal
+                    let eachBlock = draggingSpace / CGFloat(trend.count)
                     let temp = Int(offset / eachBlock)
-                    
-                    // safe Wrapping index...
-                    let index = max(min(temp, downloads.count - 1), 0)
-                    
-                    // updating ID
-                    self.currentDownloadID = downloads[index].id
+                    let index = max(min(temp, trend.count - 1), 0)
+                    self.currentDownloadID = trend[index].id
                 })
-                .onEnded({ value in
-                    
+                .onEnded( { value in
                     withAnimation{
                         offset = .zero
                         currentDownloadID = ""
@@ -68,11 +49,8 @@ struct BarGraph: View {
     
     @ViewBuilder
     func CardView(download: StockDataPoint) -> some View {
-        
         VStack(spacing: 20){
-            
-            GeometryReader{proxy in
-                
+            GeometryReader{ proxy in
                 let size = proxy.size
                 
                 RoundedRectangle(cornerRadius: 6)
@@ -100,7 +78,7 @@ struct BarGraph: View {
     
     
     func getMax() -> CGFloat {
-        let max = downloads.max { first, second in
+        let max = trend.max { first, second in
             return second.value > first.value
         }
         

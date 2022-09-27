@@ -7,16 +7,7 @@
 
 import SwiftUI
 
-var weekDownloads: [StockDataPoint] = [
-    StockDataPoint(value: 56, title: "S. Buy", color: Color.green),
-    StockDataPoint(value: 78, title: "Buy", color: Color.green.opacity(0.8)),
-    StockDataPoint(value: 42, title: "Hold", color: Color.gray),
-    StockDataPoint(value: 12, title: "Sell", color: Color.red.opacity(0.8)),
-    StockDataPoint(value: 5, title: "S. Sell", color: Color.red),
-]
-
 struct AnalystRatingView: View {
-    
     var body: some View {
         Section(content: { AnalystRatingFlippingView()        
             .foregroundColor(Color.black) })
@@ -26,26 +17,9 @@ struct AnalystRatingView: View {
 
 struct AnalystRatingDataView: View {
     let analystRating: AnalystRatings
+    let analystChartData: [StockDataPoint]
     
     var body: some View {
-        
-        //        if let subkey = analystRating.subkey, let key = analystRating.key {
-        //            Text(String(describing: "subkey (key): \(subkey) (\(key)) "))
-        //        }
-        //
-        //        if let id = analystRating.id, let symbol = analystRating.symbol {
-        //            Text(String(describing: "Id: \(id) for \(symbol)"))
-        //        }
-        //
-        //        if let analystCount = analystRating.analystCount, let marketConsensusTargetPrice = analystRating.marketConsensusTargetPrice {
-        //            Text(String(describing: "\(analystCount) analysts predict a price of \(marketConsensusTargetPrice)"))
-        //        }
-        //
-        //        if let marketConsensus = analystRating.marketConsensus, let consensusDate = analystRating.consensusDate {
-        //            Text(String(describing: "market consensus \(marketConsensus) on \(consensusDate)"))
-        //        }
-        
-        
         VStack(spacing: 0) {
             
             HStack {
@@ -55,25 +29,10 @@ struct AnalystRatingDataView: View {
                 Spacer()
             }
             
-            DownloadStats()
+            DownloadStats(analystChartData: analystChartData)
             
-            Group {
-                Text("Analysts are")
-                    .font(.title)
-                //.bold()
-                + Text(" bullish")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.green)
-                + Text("  on TSLA with a price target of")
-                    .font(.title)
-                //.bold()
-                + Text(" $189.12")
-                    .font(.title)
-                    .bold()
-                    .foregroundColor(.green)
-            }
-            .frame(height: 150)
+            AnalystText(consensus: analystRating.isBullish, targetPrice: analystRating.truncatedConsensusPrice!)
+                    .frame(height: 150)
             
             Spacer()
         }
@@ -83,12 +42,28 @@ struct AnalystRatingDataView: View {
 
 
 @ViewBuilder
-func DownloadStats() -> some View {
-    
-        
-        BarGraph(downloads: weekDownloads)
-            .padding(.top, 5)
-    .padding(.vertical,20)
+func DownloadStats(analystChartData: [StockDataPoint]) -> some View {
+    BarGraph(trend: analystChartData)
+        .padding(.top, 5)
+        .padding(.vertical,20)
+}
+
+@ViewBuilder
+func AnalystText(consensus: Bool, targetPrice: Double) -> some View {
+        Text("Analysts are")
+            .font(.title)
+        //.bold()
+        + Text(consensus ? " Bullish" : " Bearish")
+            .font(.title)
+            .bold()
+            .foregroundColor(.green)
+        + Text("  on {TSLA} with a price target of")
+            .font(.title)
+        //.bold()
+        + Text(" $\(targetPrice)")
+            .font(.title)
+            .bold()
+            .foregroundColor(.green)
 }
 
 struct AnalystRatingView_Previews: PreviewProvider {

@@ -12,6 +12,7 @@ import Foundation
     let stock: String = "AAPL"
     
     @Published var analystRatings: [AnalystRatings]?
+    @Published var analystChartData: [StockDataPoint]?
     @Published var state: State = .loading
     
     func load() {
@@ -20,27 +21,43 @@ import Foundation
             let result = await service.getAnalystRatings(stock: stock)
             switch result {
             case .success(let response):
-                print(response ?? "")
+                print("zzz \(response)")
                 self.analystRatings = response
                 
             case .failure(let error):
                 self.analystRatings = nil
             }
-            state = self.analystRatings == nil  ? .loading : .loaded
+            
         }
-        
+
         Task(priority: .medium) {
-            let result = await service.getDummyData(stock: "TSLA", socialMedia: "Twitter")
+            let result = await service.getAnalystData(stock: stock)
             switch result {
             case .success(let response):
                 print("zzz \(response)")
-                //self.analystRatings = response
+                let data = response[0].recommendationTrend.trend[0]
+                let chartData: [StockDataPoint] = [
+                    StockDataPoint(value: CGFloat(integerLiteral: data.strongBuy) , title: "S. Buy", color: .green),
+                    StockDataPoint(value: CGFloat(integerLiteral: data.buy), title: "Buy", color: .green.opacity(0.8)),
+                    StockDataPoint(value: CGFloat(integerLiteral: data.hold), title: "Hold", color: .gray),
+                    StockDataPoint(value: CGFloat(integerLiteral: data.sell), title: "Sell", color: .red.opacity(0.8)),
+                    StockDataPoint(value: CGFloat(integerLiteral: data.strongSell), title: "S. Sell", color: .red)
+                ]
+                self.analystChartData = chartData
                 
             case .failure(let error):
                 print("zzz error: \(error)")
-                //self.analystRatings = nil
+                self.analystChartData = nil
             }
             // state = self.analystRatings == nil  ? .loading : .loaded
         }
+
+        // This is a workaround bug fix. Having weird issue with Task. Going to remove DispatchQueue code once resolved.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.state = self.analystRatings == nil || self.analystChartData == nil ? .loading : .loaded
+        }
+        
+        print("state \(state)")
+        
     }
 }

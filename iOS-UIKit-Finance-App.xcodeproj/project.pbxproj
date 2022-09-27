@@ -79,6 +79,7 @@
 		2951BD7628B81F7C0083C10A /* WatchlistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951BD7528B81F7C0083C10A /* WatchlistCellView.swift */; };
 		2951BD7828B81FA70083C10A /* WatchlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951BD7728B81FA70083C10A /* WatchlistView.swift */; };
 		2951BD7A28B81FE50083C10A /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2951BD7928B81FE50083C10A /* DummyData.swift */; };
+		296D355028E27D24000198CC /* Analyst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296D354F28E27D24000198CC /* Analyst.swift */; };
 		2981E2A128D80933008185FC /* NSNotification+SentimentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2981E2A028D80933008185FC /* NSNotification+SentimentScore.swift */; };
 		29954FC0283971430086949E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FBF283971430086949E /* AppDelegate.swift */; };
 		29954FC4283971430086949E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29954FC3283971430086949E /* FirstViewController.swift */; };
@@ -179,6 +180,7 @@
 		2951BD7528B81F7C0083C10A /* WatchlistCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistCellView.swift; sourceTree = "<group>"; };
 		2951BD7728B81FA70083C10A /* WatchlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistView.swift; sourceTree = "<group>"; };
 		2951BD7928B81FE50083C10A /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		296D354F28E27D24000198CC /* Analyst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyst.swift; sourceTree = "<group>"; };
 		2981E2A028D80933008185FC /* NSNotification+SentimentScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+SentimentScore.swift"; sourceTree = "<group>"; };
 		29954FBC283971430086949E /* iOS-UIKit-Finance-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-UIKit-Finance-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29954FBF283971430086949E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				290BA37228B584B2008123B4 /* DividendsForcast.swift */,
 				290BA37428B584BD008123B4 /* AnalystRatings.swift */,
 				2912A65C28D3EB2900062361 /* Sentiment.swift */,
+				296D354F28E27D24000198CC /* Analyst.swift */,
 			);
 			path = "IEX Models";
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				290BA36328B58474008123B4 /* Logo.swift in Sources */,
 				29F1B3A428723E10002BCA20 /* CompanyHeaderViewModel.swift in Sources */,
 				293B69C52860D85200BE90B9 /* Endpoint.swift in Sources */,
+				296D355028E27D24000198CC /* Analyst.swift in Sources */,
 				29293C42288786B6006D7EF8 /* NewsTableViewCell.swift in Sources */,
 				29492107286D579700E2653B /* DividendsForcastView.swift in Sources */,
 				2912A62C28D14EDC00062361 /* FundamentalViewContainer.swift in Sources */,
