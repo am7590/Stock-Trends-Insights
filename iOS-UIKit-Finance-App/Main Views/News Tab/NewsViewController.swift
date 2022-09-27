@@ -106,7 +106,6 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
                         Spacer()
                         
                         
-                        if let logo = data {
                             Group {
                                 if image == "https://storage.googleapis.com/iexcloud-hl37opg/images/iex_cloud_image.png" {
                                     Image("apple")
@@ -127,7 +126,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
                                 }
                             }
                             
-                        }
+                        
                         
                         Spacer()
                     }

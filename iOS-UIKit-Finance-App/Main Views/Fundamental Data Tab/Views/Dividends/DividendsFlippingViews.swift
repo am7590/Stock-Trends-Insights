@@ -56,9 +56,7 @@ struct DividendsForcastFront: View {
            
                switch viewModel.state {
                case .loaded:
-                   if let forcast =  viewModel.dividendsForcast?[0] {
-                       DividendsForcastDataView(dividendsForcast: forcast)
-                   }
+                    DividendsForcastDataView(viewModel: viewModel)
                case .error(let error):
                    Text(error)
                case .empty(let empty):

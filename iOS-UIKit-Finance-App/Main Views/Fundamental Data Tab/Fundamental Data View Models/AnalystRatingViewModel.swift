@@ -27,7 +27,6 @@ import Foundation
             case .failure(let error):
                 self.analystRatings = nil
             }
-            
         }
 
         Task(priority: .medium) {
