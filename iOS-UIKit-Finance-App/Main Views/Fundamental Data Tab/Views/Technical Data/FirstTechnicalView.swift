@@ -18,7 +18,7 @@ struct FirstTechnicalDataView: View {
     let stats: Stats
     
     var body: some View {
-        FundamentalStatsView(size: false)
+        FundamentalStatsView(size: false, stats: stats)
         //        if let beta = stats.beta, let EBITDA = stats.EBITDA {
         //            Text(String(describing: "beta: \(beta), EBITDA: \(EBITDA)"))
         //        }
