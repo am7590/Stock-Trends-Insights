@@ -21,6 +21,7 @@ protocol IEXServicable {
     func getDummyData(stock: String, socialMedia: String) async -> Result<Sentiment, RequestError>
     func getSectorData() async -> Result<[Sector], RequestError>
     func getCurrencyData() async -> Result<[Currency], RequestError>
+    func getAnalystData(stock: String) async -> Result<[Analyst], RequestError>
 }
 
 struct IEXApiService: HTTPClient, IEXServicable {
@@ -75,5 +76,9 @@ struct IEXApiService: HTTPClient, IEXServicable {
     
     func getCurrencyData() async -> Result<[Currency], RequestError> {
         return await sendRequest(endpoint: IEXEndpoint.currency, responseModel: [Currency].self)
+    }
+    
+    func getAnalystData(stock: String) async -> Result<[Analyst], RequestError> {
+        return await sendRequest(endpoint: IEXEndpoint.analyst(stock: stock), responseModel: [Analyst].self)
     }
 }

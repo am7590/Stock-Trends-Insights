@@ -21,6 +21,7 @@ enum IEXEndpoint {
     case dummyData(stock: String, socialMedia: String)
     case sector
     case currency
+    case analyst(stock: String)
 }
 
 extension IEXEndpoint: Endpoint {
@@ -52,6 +53,8 @@ extension IEXEndpoint: Endpoint {
             return "/sectors"
         case .currency:
             return "/currency"
+        case .analyst(stock: let stock):
+            return "/analyst/\(stock)"
         }
     }
 }
