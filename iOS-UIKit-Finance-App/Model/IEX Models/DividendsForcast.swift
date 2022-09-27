@@ -23,7 +23,7 @@ struct DividendsForcast: Codable, Identifiable {
     let marker: String?
     let name: String?
     // nonTaxedAmount
-    let paymentDate: String?
+    let paymentDate: String
     // periodEndDate
     let position: Int?
     let recordDate: String?
