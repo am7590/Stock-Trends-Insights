@@ -9,7 +9,6 @@ import UIKit
 import SwiftUI
 
 class SocialMediaViewController: UIViewController {
-    let ticker = "TSLA"
     var tableView = UITableView()
     
     // TODO: Refactor
@@ -31,7 +30,7 @@ class SocialMediaViewController: UIViewController {
         tableView.register(SocialMediaSummaryCell.self, forCellReuseIdentifier: SocialMediaSummaryCell.reuseID)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        let headerView = UIHostingController(rootView: SentimentDialView(ticker: ticker)).view
+        let headerView = UIHostingController(rootView: SentimentDialView()).view
         var size = headerView?.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size?.width = UIScreen.main.bounds.width
         size?.height = 216

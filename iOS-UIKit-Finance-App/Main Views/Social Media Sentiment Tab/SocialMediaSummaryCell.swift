@@ -24,7 +24,7 @@ class SocialMediaSummaryCell: UITableViewCell {
     let underlineView = UIView()
     let nameLabel = UILabel()
     
-    var cellSubView = UIHostingController(rootView: SocialMediaCellSubView(viewModel: SocialMediaCellViewModel(ticker: "TSLA", socialMedia: "Twitter")))
+    var cellSubView = UIHostingController(rootView: SocialMediaCellSubView(viewModel: SocialMediaCellViewModel(ticker: WatchlistManager.shared.coreDataTicker, socialMedia: "Twitter")))
     
     let balanceStackView = UIStackView()
     let balanceLabel = UILabel()

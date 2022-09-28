@@ -30,9 +30,9 @@ struct StockSelectionSplashView: View {
             
             VStack {
                 ButtonView(title: "AAPL")
-                ButtonView(title: "TSLA")
-                ButtonView(title: "SPY")
-                ButtonView(title: "GME")
+                ButtonView(title: "MSFT")
+                ButtonView(title: "INTC")
+                ButtonView(title: "IBM")
             }
             .padding()
             

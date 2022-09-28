@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SentimentDialView: View {
-    let ticker: String
+    let ticker: String = WatchlistManager.shared.coreDataTicker
     @State var averageScore: Double = 0.0
     
     var body: some View {
@@ -55,7 +55,7 @@ struct SentimentDialView: View {
 
 struct SentimentDialView_Previews: PreviewProvider {
     static var previews: some View {
-        SentimentDialView(ticker: "TSLA")
+        SentimentDialView()
     }
 }
 

@@ -69,7 +69,7 @@ class NewsViewController: UIViewController {
             // self.listOfSecurities = try context.fetch(Stock.fetchRequest()) // Get all items
             
             //for item in self.listOfSecurities! {
-                getNews(ticker: "AAPL")
+                getNews(ticker: WatchlistManager.shared.coreDataTicker)
             
             //}
             newsDataNotLoaded = false
@@ -95,7 +95,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseID, for: indexPath)
         cell.selectionStyle = .none
-        let newsData = NewsViewModel(ticker: "AAPL", news: newsArray[indexPath.row]).news
+        let newsData = NewsViewModel(ticker: WatchlistManager.shared.coreDataTicker, news: newsArray[indexPath.row]).news
         let dateString = Date(timeIntervalSince1970: (newsData?.datetime ?? 0.0)/1000).timeAgoDisplay()
         let image = newsData?.image ?? ""
         

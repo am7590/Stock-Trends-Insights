@@ -125,6 +125,12 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
         LocalState.hasOnboarded = true
         prepMainView()
         setRootViewController(viewController)
+        DispatchQueue.main.async {
+            self.fetchTicker()
+            WatchlistManager.shared.fetchStockData()
+        }
+        
+        
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor class CEODataViewModel: StockAppViewModel {
     let service = IEXApiService()
-    let stock: String = "AAPL"
+    let stock: String = WatchlistManager.shared.coreDataTicker
     
     @Published var ceoCompensation: CeoCompensation?
     @Published var state: State = .loading

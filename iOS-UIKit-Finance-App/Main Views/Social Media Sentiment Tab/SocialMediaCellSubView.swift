@@ -25,11 +25,11 @@ struct SocialMediaCellSubView: View {
     }
 }
 
-struct SocialMediaCellSubView_Previews: PreviewProvider {
-    static var previews: some View {
-        SocialMediaCellSubView(viewModel: SocialMediaCellViewModel(ticker: "TSLA", socialMedia: "Twitter"))
-    }
-}
+//struct SocialMediaCellSubView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        // SocialMediaCellSubView(viewModel: SocialMediaCellViewModel(ticker: WatchlistManager.shared.coreDataTicker, socialMedia: "Twitter"))
+//    }
+//}
 
 
 struct LoadedCellView: View {

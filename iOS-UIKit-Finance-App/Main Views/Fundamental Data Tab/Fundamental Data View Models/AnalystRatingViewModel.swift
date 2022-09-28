@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor class AnalystRatingViewModel: StockAppViewModel {
     let service = IEXApiService()
-    let stock: String = "AAPL"
+    let stock: String = WatchlistManager.shared.coreDataTicker
     
     @Published var analystRatings: [AnalystRatings]?
     @Published var analystChartData: [StockDataPoint]?

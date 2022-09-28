@@ -19,7 +19,7 @@ struct NewsHeaderView: View {
         VStack {
             
             HStack {
-                Text("AAPL ")
+                Text("\(WatchlistManager.shared.coreDataTicker) ")
                     .font(.title.bold())
                 + Text("News Sentiment over the last")
                     .font(.title)
@@ -48,7 +48,7 @@ struct NewsHeaderView: View {
             }
             .onAppear {
                 if priceData.isEmpty {
-                    getSentiment(ticker: "AAPL")
+                    getSentiment(ticker: WatchlistManager.shared.coreDataTicker)
                 }
             }
             .frame(height: 190)
