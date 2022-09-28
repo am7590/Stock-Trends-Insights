@@ -19,7 +19,9 @@ import Foundation
             switch result {
             case .success(let response):
                 print("zzzz \(response)")
-                self.sectors = response.chunked(into: 6)
+                let sectorSet = Set(response)
+                let finalResponse = Array(sectorSet)
+                self.sectors = finalResponse.chunked(into: 6)
                 state = .loaded
                 
             case .failure(let error):

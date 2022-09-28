@@ -71,7 +71,7 @@ struct SmallCellView: View {
         .padding(.horizontal, 18)
         
         .frame(maxWidth: .infinity, alignment: .leading)
-        .frame(width: 150, height: 100)
+        .frame(width: 200, height: 100)
         .overlay(
             RoundedRectangle(cornerRadius: 16)
                 .stroke(.secondary, lineWidth: 2)

@@ -98,7 +98,8 @@ import Foundation
 
     func load() {
         Task(priority: .medium) {
-            let result = await sendRequest(url: "http://127.0.0.1:4200/welcome/?date=\(date.localDate().description.prefix(10))", responseModel: WelcomeDates.self)
+            print("aaaa: \(date.localDate().advanced(by: 24))")
+            let result = await sendRequest(url: "http://127.0.0.1:4200/welcome/?date=\(date.localDate().advanced(by: 1).description.prefix(10))", responseModel: WelcomeDates.self)
             switch result {
             case .success(let success):
                 self.welcomeData = success
@@ -175,3 +176,10 @@ extension Calendar {
         return numberOfDays.day!
     }
 }
+
+extension Date {
+    func adding(_ component: Calendar.Component, _ value: Int) -> Date? {
+        return  Calendar.current.date(byAdding: component, value: value, to: self)
+    }
+}
+

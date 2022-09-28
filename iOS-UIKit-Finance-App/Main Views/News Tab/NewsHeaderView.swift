@@ -20,13 +20,14 @@ struct NewsHeaderView: View {
             
             HStack {
                 Text("AAPL ")
-                    .font(.title2.bold())
+                    .font(.title.bold())
                 + Text("News Sentiment over the last")
-                    .font(.title2)
+                    .font(.title)
                 + Text(" 5 \(datePeriod)")
-                    .font(.title2.bold())
+                    .font(.title.bold())
                     .foregroundColor(.green)
             }.multilineTextAlignment(.center)
+                .padding(.top, -16)
             
             
             Spacer()
@@ -46,9 +47,9 @@ struct NewsHeaderView: View {
                 }
             }
             .onAppear {
-                //if data.isEmpty {
-                getSentiment(ticker: "AAPL")
-                // }
+                if priceData.isEmpty {
+                    getSentiment(ticker: "AAPL")
+                }
             }
             .frame(height: 190)
             

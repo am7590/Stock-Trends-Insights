@@ -38,8 +38,9 @@ struct CurrencyView: View {
                                 if let firstCurrencyList = viewModel.currencies?[0] {
                                     ForEach(firstCurrencyList, id: \.priceToday) { currency in
                                         if let difference = currency.difference.1 {
-                                            let percentDifference = String(difference)
-                                            SmallCellView(title: currency.currency, count: String(currency.truncatedPriceToday), percentChange: String(percentDifference), image: "", isPositive: currency.difference.2 ?? false)
+                                            let percentDifference = difference
+                                            SmallCellView(title: currency.currency+"/USD", count: String(percentDifference.truncate(places: 2)), percentChange: nil, image: "dollarsign.square.fill", isPositive: currency.difference.2 ?? false)
+      
                                         }
                                         
                                     }
@@ -51,8 +52,9 @@ struct CurrencyView: View {
                             if let firstCurrencyList = viewModel.currencies?[1] {
                                 ForEach(firstCurrencyList, id: \.priceToday) { currency in
                                     if let difference = currency.difference.1 {
-                                        let percentDifference = String(difference)
-                                        SmallCellView(title: currency.currency, count: String(currency.truncatedPriceToday), percentChange: String(percentDifference), image: "", isPositive: currency.difference.2 ?? false)
+                                        let percentDifference = difference
+                                        SmallCellView(title: currency.currency+"/USD", count: String(percentDifference.truncate(places: 2)), percentChange: nil, image: "dollarsign.square.fill", isPositive: currency.difference.2 ?? false)
+  
                                     }
                                 }
                             }

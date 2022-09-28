@@ -28,15 +28,15 @@ struct GreetingView: View {
             case .error(let error):
                 Text("Error loading data: \(error)")
             default:
-                VStack(alignment: .center) {
-                    Text("Good \(viewModel.morningStatus), Aleksander")
-                        .font(.title)
+                VStack(alignment: .leading) {
+                    Text("Good \(viewModel.morningStatus),")
+                        .font(.largeTitle)
                     Group {
-                        Text("The market is currently ") +
+                        Text("The market is ") +
                         Text("\(viewModel.marketIsOpen ? "open." : "closed.")")
                             .foregroundColor(viewModel.marketIsOpen ? .green : .red)
                             .bold()
-                    }.font(.title2)
+                    }.font(.title)
                     
                     HStack {
                         Spacer()
@@ -58,7 +58,6 @@ struct GreetingView: View {
                                 .background(.black)
                         }.frame(height: 100)
                         
-                        Spacer()
                         Spacer()
                         
                         // Events

@@ -94,6 +94,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         guard !newsArray.isEmpty else { return UITableViewCell() }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseID, for: indexPath)
+        cell.selectionStyle = .none
         let newsData = NewsViewModel(ticker: "AAPL", news: newsArray[indexPath.row]).news
         let dateString = Date(timeIntervalSince1970: (newsData?.datetime ?? 0.0)/1000).timeAgoDisplay()
         let image = newsData?.image ?? ""
@@ -152,6 +153,13 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let urlString =  newsArray[indexPath.row].url
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
 

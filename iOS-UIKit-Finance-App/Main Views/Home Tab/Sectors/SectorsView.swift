@@ -37,7 +37,8 @@ struct SectorsView: View {
                             HStack {
                                 if let firstSectorList = viewModel.sectors?[0] {
                                     ForEach(firstSectorList, id: \.symbol) { sector in
-                                        SmallCellView(title: sector.name, count: String(sector.performance), percentChange: nil, image: "", isPositive: sector.performanceIsPositive)
+                                        SmallCellView(title: sector.name, count: String(sector.performance), percentChange: nil, image: sector.icon, isPositive: sector.performanceIsPositive)
+                                        
                                     }
                                 }
                                 

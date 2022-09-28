@@ -31,7 +31,7 @@ import Foundation
  {"type":"sector","name":"Energy","symbol":"XLE","performance":-0.06896,"lastUpdated":1663963200056}]
  powerplug */
 
-struct Sector: Codable {
+struct Sector: Codable, Hashable {
     let name: String
     let symbol: String
     let performance: Double
@@ -40,29 +40,33 @@ struct Sector: Codable {
 
 extension Sector {
     var icon: String {
-        switch self.name {
-        case "Health Care":
+        switch self.symbol {
+        case "XLV":
             return "staroflife.fill"
-        case "Utilities":
+        case "XLU":
             return "fuelpump.fill"
-        case "Real Estate":
+        case "XLRE":
             return "house"
-        case "Technology":
+        case "XLK":
             return "sparkles.tv"
-        case "Financials":
+        case "XLF":
             return "dollarsign.square"
-        case "Consumer Staples":
+        case "XLP":
             return "cart"
-        case "Industrials":
+        case "XLI":
             return "doc.badge.gearshape.fill"
-        case "Communication Services":
+        case "XLC":
             return "iphone.radiowaves.left.and.right"
         case "Materials":
             return "wrench.and.screwdriver"
-        case "Consumer Discretionary":
+        case "XLB":
             return "car.2"
-        default:
+        case "XLY":
+            return "ipad.and.iphone"
+        case "XLE":
             return "powerplug"
+        default:
+            return "newspaper"
         }
     }
     
