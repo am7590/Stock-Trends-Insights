@@ -73,7 +73,7 @@ struct CompanyHeaderDataView: View {
                             
                         }
                     }
-                } .frame(minHeight: 0, maxHeight: .infinity)
+                } .frame(minHeight: 0, maxHeight: 300)
             }
         }
     }

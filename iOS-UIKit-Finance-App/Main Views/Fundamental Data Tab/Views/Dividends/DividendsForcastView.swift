@@ -11,7 +11,7 @@ import Charts
 struct DividendsForcastView: View {
     var body: some View {
         Section(content: { DividendsForcastFlippingView().foregroundColor(Color.black) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 350, alignment: .leading)
+            .frame(width: UIScreen.main.bounds.size.width, height: 325, alignment: .leading)
     }
 }
 
@@ -23,20 +23,19 @@ struct DividendsForcastDataView: View {
         VStack {
             
             HStack {
+                
+                
+                
                 if viewModel.hasDividendPrediction {
                     Text("The next dividend payout is \(viewModel.dividendsForcast![0].paymentDate)")
                         .font(.largeTitle.bold())
                 } else {
-                    Text("No dividend has been declared for ")
+                    Text("No dividend has been declared for \(WatchlistManager.shared.coreDataTicker).")
                         .font(.title)
-                    + Text("{tsla}")
-                        .font(.title.bold())
-                        .foregroundColor(.green)
                     + Text(" Below are past predictions.")
                         .font(.title)
                 }
                 
-                Spacer()
             }
             
             

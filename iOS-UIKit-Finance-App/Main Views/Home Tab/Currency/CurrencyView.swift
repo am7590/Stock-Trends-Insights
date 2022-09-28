@@ -37,9 +37,10 @@ struct CurrencyView: View {
                             HStack {
                                 if let firstCurrencyList = viewModel.currencies?[0] {
                                     ForEach(firstCurrencyList, id: \.priceToday) { currency in
-                                        // TODO: Fix
-//                                        let percentDifference = String(currency.difference.1!)
-//                                        SmallCellView(title: currency.currency, count: String(currency.truncatedPriceToday), percentChange: String(percentDifference), image: "", isPositive: currency.difference.2 ?? false)
+                                        if let difference = currency.difference.1 {
+                                            let percentDifference = String(difference)
+                                            SmallCellView(title: currency.currency, count: String(currency.truncatedPriceToday), percentChange: String(percentDifference), image: "", isPositive: currency.difference.2 ?? false)
+                                        }
                                         
                                     }
                                 }
@@ -49,10 +50,10 @@ struct CurrencyView: View {
                             HStack {
                             if let firstCurrencyList = viewModel.currencies?[1] {
                                 ForEach(firstCurrencyList, id: \.priceToday) { currency in
-                                    
-                                    let percentDifference = String(currency.difference.1!)
-                                    SmallCellView(title: currency.currency, count: String(currency.truncatedPriceToday), percentChange: String(percentDifference), image: "", isPositive: currency.difference.2 ?? false)
-                                    
+                                    if let difference = currency.difference.1 {
+                                        let percentDifference = String(difference)
+                                        SmallCellView(title: currency.currency, count: String(currency.truncatedPriceToday), percentChange: String(percentDifference), image: "", isPositive: currency.difference.2 ?? false)
+                                    }
                                 }
                             }
                             

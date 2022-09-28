@@ -18,11 +18,14 @@ struct FundamentalViewContainer: View {
                     ChartView()
                         .foregroundColor(Color.black)
                 })
-                    .frame(width: UIScreen.main.bounds.size.width, height: 275, alignment: .leading)
+                .frame(width: UIScreen.main.bounds.size.width, height: 275, alignment: .leading)
+                .padding(.top, -50)
                 
                 DividendsForcastView()
+                    .padding(.top, 35)
+                
                     .padding()
-//                    .padding(.top, 40)
+                //                    .padding(.top, 40)
                 
                 // This will be in the next beta version
                 // TODO: Make new API endpoint to retrieve CEO png

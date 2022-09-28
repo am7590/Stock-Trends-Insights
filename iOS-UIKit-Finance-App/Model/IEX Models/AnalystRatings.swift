@@ -18,9 +18,18 @@ struct AnalystRatings: Codable, Identifiable {
     let marketConsensus: Double?
     let marketConsensusTargetPrice: Double?
     
-    var truncatedConsensusPrice: Double? {
-        guard let consensus = marketConsensus else { return nil }
-        return consensus.truncate(places: 2)
+    var truncatedConsensusPrice: String? {
+        guard let consensus = self.marketConsensus else { return nil }
+        
+        var trimmedString = String(consensus)
+        if let dotRange = trimmedString.range(of: ".") {
+            trimmedString.removeSubrange(dotRange.lowerBound..<trimmedString.index(trimmedString.endIndex, offsetBy: -3))
+        }
+        return trimmedString
+            
+//        print("xyz \(consensus)")
+//        print("xyz \(consensus.truncate(places: 2))")
+//        return consensus.truncate(places: 2)
     }
     
     var isBullish: Bool {

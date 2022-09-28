@@ -19,6 +19,7 @@ public class WatchlistManager {
         (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     }() as! NSManagedObjectContext
     
+    
     public var tickerSelected: String = "" {
         didSet {
             do {

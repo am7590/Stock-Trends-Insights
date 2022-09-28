@@ -53,7 +53,7 @@ struct WatchlistView: View {
                 Text("No data to display")
             }
         }
-        .frame(height: 300)
+        .frame(height: 150)
         .padding(.horizontal)
         .onAppear {
             viewModel.load()

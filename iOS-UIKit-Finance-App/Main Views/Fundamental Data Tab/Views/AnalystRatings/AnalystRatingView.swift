@@ -31,7 +31,7 @@ struct AnalystRatingDataView: View {
             
             DownloadStats(analystChartData: analystChartData)
             
-            AnalystText(consensus: analystRating.isBullish, targetPrice: analystRating.truncatedConsensusPrice!)
+            AnalystText(consensus: analystRating.isBullish, truncatedConsensusPrice: (analystRating.truncatedConsensusPrice!))
                     .frame(height: 150)
             
             Spacer()
@@ -49,7 +49,7 @@ func DownloadStats(analystChartData: [StockDataPoint]) -> some View {
 }
 
 @ViewBuilder
-func AnalystText(consensus: Bool, targetPrice: Double) -> some View {
+func AnalystText(consensus: Bool, truncatedConsensusPrice: String) -> some View {
         Text("Analysts are")
             .font(.title)
         //.bold()
@@ -57,10 +57,10 @@ func AnalystText(consensus: Bool, targetPrice: Double) -> some View {
             .font(.title)
             .bold()
             .foregroundColor(.green)
-        + Text("  on {TSLA} with a price target of")
+        + Text("  on \(WatchlistManager.shared.coreDataTicker) with a price target of")
             .font(.title)
         //.bold()
-        + Text(" $\(targetPrice)")
+        + Text(" $\(truncatedConsensusPrice)")
             .font(.title)
             .bold()
             .foregroundColor(.green)
