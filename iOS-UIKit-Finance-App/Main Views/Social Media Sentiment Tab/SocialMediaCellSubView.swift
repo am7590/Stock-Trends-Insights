@@ -19,7 +19,9 @@ struct SocialMediaCellSubView: View {
             default:
                 Text("Loading...")
             }
-        }.onAppear(perform: { viewModel.fetchDummyData() })
+        }.onAppear(perform: {
+            viewModel.fetchDummyData()
+        })
     }
 }
 

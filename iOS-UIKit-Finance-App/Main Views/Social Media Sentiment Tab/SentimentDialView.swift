@@ -17,19 +17,19 @@ struct SentimentDialView: View {
         ZStack {
             VStack {
                 Spacer()
-                DialView(maxProgress: averageScore/3)
+                DialView(maxProgress: averageScore/4)
                 
                 VStack(spacing: 0) {
                     Text("Social Media is ")
                         .font(.title)
-                    + Text(averageScore/3 < 33.3 ? "bearish" : (averageScore/4 < 66.6 ? "neutral" : "bearish"))
+                    + Text(averageScore/4 < 33.3 ? "bearish" : (averageScore/4 < 66.6 ? "neutral" : "bearish"))
                         .font(.title.bold())
-                        .foregroundColor(averageScore/3 < 33.3 ? .red : (averageScore/3 < 66.6 ? .gray : .green))
+                        .foregroundColor(averageScore/4 < 33.3 ? .red : (averageScore/4 < 66.6 ? .gray : .green))
                     Text(" on \(ticker)")
                         .font(.title)
                     + Text("(" + String(round((averageScore/4) * 10) / 10.0) + ")%")
                         .font(.title)
-                        .foregroundColor(averageScore/4 < 33.3 ? .red : (averageScore/3 < 66.6 ? .gray : .green))
+                        .foregroundColor(averageScore/4 < 33.3 ? .red : (averageScore/4 < 66.6 ? .gray : .green))
                 }
                 .padding(.top, 16)
                 
@@ -48,6 +48,7 @@ struct SentimentDialView: View {
         
             
         }
+        
         
     }
 }
@@ -74,18 +75,21 @@ struct DialView: View {
                 return
             }
             DispatchQueue.main.async {
-                maxProgress += (sentimentScore as! Double)/5
+                maxProgress += sentimentScore as! Double
             }
         
             
         }
+        .onAppear {
+            self.progress = 0
+        }
     }
     
     func increaseDial() {
-        withAnimation(Animation.default.speed(0.55)) {
+        withAnimation(Animation.default.speed(0.255)) {
             print("maxprogress: \(maxProgress)")
-            if self.progress <= maxProgress {
-                self.progress += 3
+            if self.progress <= maxProgress/4 {
+                self.progress += 5
             } else {
                 // Stop the timer
                 self.timer.upstream.connect().cancel()

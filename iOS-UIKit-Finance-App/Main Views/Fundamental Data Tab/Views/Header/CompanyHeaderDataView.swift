@@ -54,7 +54,7 @@ struct CompanyHeaderDataView: View {
                                 Group {
                                     FlexibleView(
                                         availableWidth: size.width-size.width/4-16, data: tags[0...2],
-                                        spacing: 8,
+                                        spacing: 4,
                                         alignment: .leading
                                     ) { item in
                                         Text(verbatim: item)
@@ -65,7 +65,7 @@ struct CompanyHeaderDataView: View {
                                             )
                                     }
                                 }
-                                .padding(.top, -24)
+                                .padding(.top, -20)
                                 .padding(.leading, 4)
                                 
                             }
