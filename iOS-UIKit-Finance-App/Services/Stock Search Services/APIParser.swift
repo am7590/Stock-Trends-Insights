@@ -9,9 +9,9 @@ import Foundation
 
 class APIParser {
 
-    var newsComponent = URLComponents(string: "http://127.0.0.1:4200/news/")
-    var sentimentComponent = URLComponents(string: "http://127.0.0.1:4200/sentiment/")
-    var welcomeComponent = URLComponents(string: "http://127.0.0.1:4200/welcome/")
+    var newsComponent = URLComponents(string: "https://finviz-news-sentiment-analysis-non-redis-api.apps.okd4.csh.rit.edu/news/")
+    var sentimentComponent = URLComponents(string: "https://finviz-news-sentiment-analysis-non-redis-api.apps.okd4.csh.rit.edu/sentiment/")
+    var welcomeComponent = URLComponents(string: "https://finviz-news-sentiment-analysis-non-redis-api.apps.okd4.csh.rit.edu/welcome/")
 
     func getNewsRequest(ticker : String) -> URLComponents {
         newsComponent?.queryItems = [
