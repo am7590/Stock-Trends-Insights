@@ -34,6 +34,6 @@ class APIParser {
             URLQueryItem(name: "date", value: date),
         ]
         
-        return sentimentComponent!
+        return welcomeComponent!
     }
 }

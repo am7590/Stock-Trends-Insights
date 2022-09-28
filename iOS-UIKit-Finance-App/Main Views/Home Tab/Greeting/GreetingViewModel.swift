@@ -99,7 +99,9 @@ import Foundation
     func load() {
         Task(priority: .medium) {
             print("aaaa: \(date.localDate().advanced(by: 24))")
-            let result = await sendRequest(url: "https://finviz-news-sentiment-analysis-non-redis-api.apps.okd4.csh.rit.edu/?date=\(date.localDate().advanced(by: 1).description.prefix(10))", responseModel: WelcomeDates.self)
+            let url = "https://finviz-news-sentiment-analysis-non-redis-api.apps.okd4.csh.rit.edu/welcome/?date=\(date.localDate().advanced(by: 1).description.prefix(10))"
+            print("aaaaa: \(url)")
+            let result = await sendRequest(url: url, responseModel: WelcomeDates.self)
             switch result {
             case .success(let success):
                 self.welcomeData = success
