@@ -10,6 +10,7 @@ import SwiftUI
 struct StockSelectionSplashView: View {
     
     @State var stockSelected = WatchlistManager.shared.tickerSelected
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
@@ -24,9 +25,8 @@ struct StockSelectionSplashView: View {
                 Text("The finished app will allow you to track your entire portfolio. For this beta test, please pick only one stock.")
             }
             .frame(maxHeight: .infinity)
-            .groupBoxStyle(ColoredGroupBox(color: .yellow))
+            .groupBoxStyle(ColoredGroupBox(color: colorScheme == .dark ? Color.blue : Color.yellow))
             .padding(.horizontal)
-            .colorInvert()
             
             
             VStack {

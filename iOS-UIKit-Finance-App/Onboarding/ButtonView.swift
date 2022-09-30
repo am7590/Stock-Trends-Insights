@@ -20,9 +20,10 @@ struct ButtonView: View {
                    .frame(minWidth: 0, maxWidth: .infinity)
                    .font(.system(size: 24).bold())
                    .padding()
+                   .foregroundColor(.white)
                    .overlay(
                        RoundedRectangle(cornerRadius: 25)
-                           .stroke(Color.secondary, lineWidth: 2)
+                           .stroke(Color.white, lineWidth: 2)
                )
            }
            .background(color)
