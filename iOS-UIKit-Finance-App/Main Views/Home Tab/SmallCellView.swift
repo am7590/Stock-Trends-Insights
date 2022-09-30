@@ -20,12 +20,20 @@ struct SmallCellView: View {
             HStack{
                 Image(systemName: image)
                     .font(.caption.bold())
-                    .foregroundColor(Color.white)
+                    // .foregroundColor()
                     .padding(6)
-                    .background(Color.secondary)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(.secondary, lineWidth: 1)
+                    )
+                    .background((isPositive ? Color.green : Color.red).opacity(0.6))
                     .cornerRadius(8)
+
+                    // .cornerRadius(8)
                 
                 Text(title)
+                    .foregroundColor(.primary)
+                    // .bold()
                 
             }
             
@@ -42,7 +50,7 @@ struct SmallCellView: View {
                     .padding(4)
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .fill((isPositive ? Color.green : Color.red).opacity(0.4))
+                                .fill((isPositive ? Color.green : Color.red).opacity(0.6))
                         )
                     
                     Spacer()
@@ -59,7 +67,7 @@ struct SmallCellView: View {
                     .padding(4)
                         .background(
                             RoundedRectangle(cornerRadius: 8)
-                                .fill((isPositive ? Color.green : Color.red).opacity(0.4))
+                                .fill((isPositive ? Color.green : Color.red).opacity(0.6))
                         )
                     
                     Spacer()
@@ -74,11 +82,11 @@ struct SmallCellView: View {
         .frame(width: 200, height: 100)
         .overlay(
             RoundedRectangle(cornerRadius: 16)
-                .stroke(.secondary, lineWidth: 2)
+                .stroke(.secondary, lineWidth: 4)
         )
-        .background(Color(uiColor: UIColor.systemGray5))
+        .background(.clear)
         .cornerRadius(15)
-        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+        .shadow(color: Color.black.opacity(0.4), radius: 5, x: 0, y: 2)
         
     }
 }

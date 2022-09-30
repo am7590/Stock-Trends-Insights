@@ -47,7 +47,7 @@ struct GreetingView: View {
 //                                .font(.subheadline)
                             Text(viewModel.dayOfWeek)
                             Text(viewModel.welcomeData?.openDate.prefix(5) ?? "")
-                        }.foregroundColor(.black)
+                        }.foregroundColor(.primary)
                             .font(.largeTitle.bold())
                             .scaleEffect(0.8)
                         

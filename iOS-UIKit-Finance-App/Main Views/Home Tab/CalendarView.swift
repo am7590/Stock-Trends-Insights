@@ -19,7 +19,7 @@ struct CalendarView: View {
                     Text("Market Opens")
                     Text("Friday")
                     Text("29")
-                }.foregroundColor(.black)
+                }.foregroundColor(.primary)
                     .font(.largeTitle.bold())
                     .scaleEffect(0.8)
                 
@@ -47,7 +47,7 @@ struct CalendarView: View {
                 }
                 
                 Spacer()
-            }.foregroundColor(.black)
+            }.foregroundColor(.primary)
                 .padding(15)
                 .background(
                     
