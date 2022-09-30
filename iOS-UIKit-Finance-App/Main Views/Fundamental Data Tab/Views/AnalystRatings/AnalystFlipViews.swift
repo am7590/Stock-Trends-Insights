@@ -35,7 +35,6 @@ struct AnalystRatingFlippingView: View {
     
     var body: some View {
         ZStack {
-            // Color(UIColor.secondarySystemBackground)
             AnalystRatingBack(degree: $frontDegree)
             AnalystRatingFront(degree: $backDegree)
         }
@@ -51,6 +50,8 @@ struct AnalystRatingFront: View {
     @StateObject var viewModel = AnalystRatingViewModel()
     @Binding var degree: Double
     
+    @Environment(\.colorScheme) var scheme
+    
     var body: some View {
         
        Group {
@@ -59,7 +60,8 @@ struct AnalystRatingFront: View {
                 AnalystRatingDataView(analystRating: viewModel.analystRatings![0], analystChartData: viewModel.analystChartData!)
                     .background {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(Color.white.shadow(.drop(radius: 2)))
+                            .fill((scheme == .dark ? Color.black : Color.white).shadow(.drop(radius: 2)))
+                            .addBorder(Color.primary.opacity(0.4), width: 1, cornerRadius: 10)
                     }
                 
             case .error(let error):

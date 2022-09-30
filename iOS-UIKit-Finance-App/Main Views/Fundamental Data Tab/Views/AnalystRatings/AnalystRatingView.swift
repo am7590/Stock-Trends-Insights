@@ -9,9 +9,9 @@ import SwiftUI
 
 struct AnalystRatingView: View {
     var body: some View {
-        Section(content: { AnalystRatingFlippingView()        
-            .foregroundColor(.secondary) })
-            .frame(width: UIScreen.main.bounds.size.width, height: 400, alignment: .leading)
+        Section(content: { AnalystRatingFlippingView()
+        })
+        .frame(width: UIScreen.main.bounds.size.width, height: 400, alignment: .leading)
     }
 }
 
@@ -24,7 +24,7 @@ struct AnalystRatingDataView: View {
             
             HStack {
                 Text("Analyst Ratings")
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                     .font(.largeTitle.bold())
                 Spacer()
             }
@@ -32,7 +32,7 @@ struct AnalystRatingDataView: View {
             DownloadStats(analystChartData: analystChartData)
             
             AnalystText(consensus: analystRating.isBullish, truncatedConsensusPrice: (analystRating.truncatedConsensusPrice!))
-                    .frame(height: 150)
+                .frame(height: 150)
             
             Spacer()
         }
@@ -50,20 +50,20 @@ func DownloadStats(analystChartData: [StockDataPoint]) -> some View {
 
 @ViewBuilder
 func AnalystText(consensus: Bool, truncatedConsensusPrice: String) -> some View {
-        Text("Analysts are")
-            .font(.title)
-        //.bold()
-        + Text(consensus ? " Bullish" : " Bearish")
-            .font(.title)
-            .bold()
-            .foregroundColor(.green)
-        + Text("  on \(WatchlistManager.shared.coreDataTicker) with a price target of")
-            .font(.title)
-        //.bold()
-        + Text(" $\(truncatedConsensusPrice)")
-            .font(.title)
-            .bold()
-            .foregroundColor(.green)
+    Text("Analysts are")
+        .font(.title)
+    //.bold()
+    + Text(consensus ? " Bullish" : " Bearish")
+        .font(.title)
+        .bold()
+        .foregroundColor(.green)
+    + Text("  on \(WatchlistManager.shared.coreDataTicker) with a price target of")
+        .font(.title)
+    //.bold()
+    + Text(" $\(truncatedConsensusPrice)")
+        .font(.title)
+        .bold()
+        .foregroundColor(.green)
 }
 
 struct AnalystRatingView_Previews: PreviewProvider {

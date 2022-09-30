@@ -33,7 +33,7 @@ struct ChartView: View {
                                 VStack {
                                     VStack {
                                         HStack {
-                                            Text("$278.92")
+                                            Text((viewModel.tickerChartdata.last?.convertToCurrency())!)
                                                 .font(.largeTitle.bold())
                                             Spacer()
                                         }
@@ -52,6 +52,7 @@ struct ChartView: View {
                                         Text("Year")
                                             .tag("Year")
                                     }
+                                    .padding(.top, 8)
                                     .frame(width: proxy.size.width-64)
                                     .pickerStyle(.segmented)
                                 }
@@ -60,6 +61,7 @@ struct ChartView: View {
                                 .background {
                                     RoundedRectangle(cornerRadius: 10, style: .continuous)
                                         .fill((scheme == .dark ? Color.black : Color.white).shadow(.drop(radius: 2)))
+                                        .addBorder(Color.primary.opacity(0.4), width: 1, cornerRadius: 10)     
                                 }
                             }
                         }
@@ -116,3 +118,11 @@ struct ChartDataView: View {
     //        ChartView_Previews()
     //    }
     //}
+
+extension View {
+    public func addBorder<S>(_ content: S, width: CGFloat = 1, cornerRadius: CGFloat) -> some View where S : ShapeStyle {
+        let roundedRect = RoundedRectangle(cornerRadius: cornerRadius)
+        return clipShape(roundedRect)
+             .overlay(roundedRect.strokeBorder(content, lineWidth: width))
+    }
+}

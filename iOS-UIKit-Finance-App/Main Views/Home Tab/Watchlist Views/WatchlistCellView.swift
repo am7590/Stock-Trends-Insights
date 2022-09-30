@@ -157,7 +157,7 @@ struct LineGraph: View {
 
 // MARK: Converting Double to Currency
 extension Double{
-    func convertToCurrency()->String{
+    func convertToCurrency() -> String{
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.locale = Locale(identifier: "en_US")

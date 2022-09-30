@@ -38,8 +38,10 @@ struct CompanyHeaderDataView: View {
                             HStack {
                                 if let securityName = companyInfo.securityName{
                                     Text(securityName)
+                                        .fixedSize(horizontal: false, vertical: true)
                                         .font(.largeTitle)
                                         .bold()
+                                        .lineLimit(2)
                                 }
                                 
                                 Spacer()
@@ -65,7 +67,7 @@ struct CompanyHeaderDataView: View {
                                             )
                                     }
                                 }
-                                .padding(.top, -20)
+                                //.padding(.top, 10)
                                 .padding(.leading, 4)
                                 
                             }
@@ -73,7 +75,7 @@ struct CompanyHeaderDataView: View {
                             
                         }
                     }
-                } .frame(minHeight: 0, maxHeight: 300)
+                } .frame(minHeight: 0, maxHeight: .infinity)
             }
         }
     }

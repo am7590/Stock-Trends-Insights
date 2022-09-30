@@ -10,6 +10,8 @@ import SwiftUI
 struct CEOCompensationView: View {
     let viewModel: CEODataViewModel
     
+    @Environment(\.colorScheme) var scheme
+    
     var body: some View {
         VStack(spacing: 0) {
             CEOHeaderView()
@@ -50,7 +52,7 @@ struct CEOCompensationView: View {
         .padding(-15)
         .background {
             RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill((Color.white).shadow(.drop(radius: 2)))
+                .fill((scheme == .dark ? Color.black : Color.white).shadow(.drop(radius: 2)))
         }.padding(.horizontal)
     }
 }
