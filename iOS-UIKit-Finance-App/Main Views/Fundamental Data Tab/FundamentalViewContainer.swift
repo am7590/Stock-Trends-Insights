@@ -16,7 +16,7 @@ struct FundamentalViewContainer: View {
                 
                 Section(content: {
                     ChartView()
-                        .foregroundColor(Color.black)
+                        .foregroundColor(.primary)
                 })
                 .frame(width: UIScreen.main.bounds.size.width, height: 275, alignment: .leading)
                 .padding(.top, -50)

@@ -26,6 +26,7 @@ struct StockSelectionSplashView: View {
             .frame(maxHeight: .infinity)
             .groupBoxStyle(ColoredGroupBox(color: .yellow))
             .padding(.horizontal)
+            .colorInvert()
             
             
             VStack {

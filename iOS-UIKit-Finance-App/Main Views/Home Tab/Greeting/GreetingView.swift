@@ -24,7 +24,7 @@ struct GreetingView: View {
         Group {
             switch viewModel.state {
             case .loading:
-                Text("Loading...")
+                ProgressView()
             case .error(let error):
                 Text("Error loading data: \(error)")
             default:

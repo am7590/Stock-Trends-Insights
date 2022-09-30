@@ -17,7 +17,7 @@ struct SocialMediaCellSubView: View {
             case .loaded:
                 LoadedCellView(viewModel: viewModel)
             default:
-                Text("Loading...")
+                ProgressView()
             }
         }.onAppear(perform: {
             viewModel.fetchDummyData()

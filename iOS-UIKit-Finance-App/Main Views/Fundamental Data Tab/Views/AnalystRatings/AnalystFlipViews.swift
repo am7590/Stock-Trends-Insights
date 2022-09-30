@@ -67,7 +67,7 @@ struct AnalystRatingFront: View {
             case .empty(let empty):
                 Text(empty)
             default:
-                Text("Loading...")
+                ProgressView()
             }
         }
         .onAppear(perform: { viewModel.load() })

@@ -11,7 +11,7 @@ import SwiftUI
 struct CompanyHeaderView: View {
     
     var body: some View {
-        Section(content: { CompanyHeaderFlippingView().foregroundColor(Color.black) })
+        Section(content: { CompanyHeaderFlippingView().foregroundColor(.primary) })
         
             .frame(width: UIScreen.main.bounds.size.width, height: 200, alignment: .leading)
     }

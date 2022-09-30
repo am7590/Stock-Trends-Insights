@@ -10,7 +10,7 @@ import Charts
 
 struct DividendsForcastView: View {
     var body: some View {
-        Section(content: { DividendsForcastFlippingView().foregroundColor(Color.black) })
+        Section(content: { DividendsForcastFlippingView().foregroundColor(.primary) })
             .frame(width: UIScreen.main.bounds.size.width, height: 325, alignment: .leading)
     }
 }

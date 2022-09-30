@@ -11,7 +11,7 @@ let width: CGFloat = UIScreen.main.bounds.size.width
 
 struct CEODataView: View {
     var body: some View {
-        Section(content: { CEOFlippingView().foregroundColor(Color.black) })
+        Section(content: { CEOFlippingView().foregroundColor(.primary) })
             .frame(width: UIScreen.main.bounds.size.width, height: 225, alignment: .leading)  // TODO: Refactor UIScreen.main.bounds.size.width
     }
 }

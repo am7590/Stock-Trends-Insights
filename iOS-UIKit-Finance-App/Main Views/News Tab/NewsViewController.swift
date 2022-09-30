@@ -20,7 +20,7 @@ class NewsViewController: UIViewController {
     let array = ["News", "Array"]
     
     // Chart
-    let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), style: .grouped)
+    let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
     
     override func viewDidLoad() {
         setupHeader()

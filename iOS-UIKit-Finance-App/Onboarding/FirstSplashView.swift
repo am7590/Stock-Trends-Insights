@@ -18,7 +18,7 @@ struct FirstSplashView: View {
                 
                 Group {
                     Text("Welcome to ")
-                    + Text("<name>")
+                    + Text("Portfolio Insights")
                         .foregroundColor(.green)
                 }
                 .font(.largeTitle.bold())

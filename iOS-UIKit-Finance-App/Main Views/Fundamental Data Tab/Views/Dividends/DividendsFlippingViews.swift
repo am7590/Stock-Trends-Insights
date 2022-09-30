@@ -62,7 +62,7 @@ struct DividendsForcastFront: View {
                case .empty(let empty):
                    Text(empty)
                default:
-                   Text("Loading...")
+                   ProgressView()
                }
            //}
             

@@ -10,7 +10,7 @@ import SwiftUI
 struct AnalystRatingView: View {
     var body: some View {
         Section(content: { AnalystRatingFlippingView()        
-            .foregroundColor(Color.black) })
+            .foregroundColor(.secondary) })
             .frame(width: UIScreen.main.bounds.size.width, height: 400, alignment: .leading)
     }
 }

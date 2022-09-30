@@ -15,7 +15,7 @@ struct FundamentalStatsView: View {
             VStack{
                 HStack{
                     Text("Fundamentals")
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
                         .font(.largeTitle.bold())
                     
                     Spacer()
@@ -77,7 +77,7 @@ struct StatView: View {
                 .font(.title.bold())
                 .foregroundColor(.green)
         }
-        .foregroundColor(Color.black)
+        .foregroundColor(.primary)
         .padding(.vertical,18)
         .padding(.horizontal,18)
         .frame(maxWidth: .infinity,alignment: .leading)
